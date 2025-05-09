@@ -12,6 +12,7 @@ import {
 import Introducao from "./components/Introducao";
 import Selecao from "./components/Selecao";
 import Confirmacao from "./components/Confirmacao";
+import Download from "./components/Download";
 // import CheckIcon from "@mui/icons-material/Check";
 
 // Passos do processo
@@ -77,7 +78,7 @@ const StepperFlow = () => {
       case 2:
         return <Confirmacao />;
       case 3:
-        return <>4</>;
+        return <Download />;
       default:
         return <Typography>Passo desconhecido</Typography>;
     }
