@@ -1,95 +1,139 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useState } from "react";
+import {
+  Box,
+  Button,
+  Step,
+  StepLabel,
+  Stepper,
+  Typography,
+  // StepIconProps,
+} from "@mui/material";
+import Introducao from "./components/Introducao";
+import Selecao from "./components/Selecao";
+import Confirmacao from "./components/Confirmacao";
+// import CheckIcon from "@mui/icons-material/Check";
 
-export default function Home() {
+// Passos do processo
+const steps = [
+  "Introdução",
+  "Seleção de Turmas",
+  "Confirmação de Seleção",
+  "Download do Arquivo",
+];
+
+// Ícone customizado para indicar concluído
+// const CustomStepIcon = (props: StepIconProps) => {
+//   const { active, completed, className } = props;
+
+//   return completed ? (
+//     <CheckIcon color="success" />
+//   ) : (
+//     <div className={className} />
+//   );
+// };
+
+const StepperFlow = () => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [completed, setCompleted] = useState<{ [k: number]: boolean }>({});
+
+  const totalSteps = () => steps.length;
+
+  const isLastStep = () => activeStep === totalSteps() - 1;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setCompleted((prev) => {
+      const newCompleted = { ...prev };
+      const targetStep = activeStep - 1;
+      if (targetStep >= 0) {
+        delete newCompleted[targetStep];
+      }
+      return newCompleted;
+    });
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleComplete = () => {
+    const newCompleted = { ...completed };
+    newCompleted[activeStep] = true;
+    setCompleted(newCompleted);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+    setCompleted({});
+  };
+
+  const getStepContent = (step: number) => {
+    switch (step) {
+      case 0:
+        return <Introducao />;
+      case 1:
+        return <Selecao />;
+      case 2:
+        return <Confirmacao />;
+      case 3:
+        return <>4</>;
+      default:
+        return <Typography>Passo desconhecido</Typography>;
+    }
+  };
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Box sx={{ width: "100%" }}>
+      <Stepper activeStep={activeStep}>
+        {steps.map((label, index) => (
+          <Step key={label} completed={completed[index]}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+      <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+        <Button
+          variant="contained"
+          disabled={activeStep === 0}
+          onClick={handleBack}
+          sx={{ mr: 1 }}
+        >
+          Voltar
+        </Button>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Box sx={{ flex: "1 1 auto" }} />
+
+        <Button
+          onClick={handleNext}
+          disabled={!completed[activeStep] || isLastStep()}
+          variant="contained"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          {isLastStep() ? "Finalizado" : "Próximo"}
+        </Button>
+      </Box>
+      <Box sx={{ mt: 2, mb: 1 }}>{getStepContent(activeStep)}</Box>
+
+      <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="flex-end">
+        {!completed[activeStep] && (
+          <Button onClick={handleComplete} variant="outlined" sx={{ mr: 1 }}>
+            Marcar como Concluído
+          </Button>
+        )}
+
+        {activeStep === totalSteps() - 1 && completed[activeStep] && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="h6">
+              Todos os passos foram concluídos ✅
+            </Typography>
+            <Button onClick={handleReset} sx={{ mt: 1 }}>
+              Resetar
+            </Button>
+          </Box>
+        )}
+      </Box>
+    </Box>
   );
-}
+};
+
+export default StepperFlow;
