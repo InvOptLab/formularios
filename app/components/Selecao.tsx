@@ -17,7 +17,7 @@ const Selecao = () => {
       if (prioridade) {
         turmaData.prioridade = prioridade;
       } else {
-        turmaData.prioridade = undefined;
+        turmaData.prioridade = 0;
       }
       turmas.set(key, turmaData);
       addTurma(key);

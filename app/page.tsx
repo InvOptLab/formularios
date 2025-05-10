@@ -45,14 +45,20 @@ const steps = [
  * @param turmas Turmas Selecionadas
  * @returns {boolean} ´True´ caso possa avançar, `False` caso contrário.
  */
-function avancaStepConfirmacao(turmas: TurmaData[]): boolean {
+function avancaStepConfirmacao(turmas: TurmaData[]): {
+  podeContinuar: boolean;
+  mensagem: string;
+} {
   const prioridadesDefinidas = new Set<number>();
   /**
    * Verifica se todas as turmas apresentam prioridades definidas.
    */
   for (const turma of turmas) {
     if (turma.prioridade === undefined || turma.prioridade === 0) {
-      return false;
+      return {
+        podeContinuar: false,
+        mensagem: "Todas as Turmas devem apresentar Prioridades maiores que 0.",
+      };
     }
     prioridadesDefinidas.add(turma.prioridade);
   }
@@ -63,10 +69,14 @@ function avancaStepConfirmacao(turmas: TurmaData[]): boolean {
    * de turmas, isso quer dizer que algum valor foi repetido.
    */
   if (prioridadesDefinidas.size !== turmas.length) {
-    return false;
+    return {
+      podeContinuar: false,
+      mensagem:
+        "Todas as Turmas devem apresentar prioridades diferentes entre si.",
+    };
   }
 
-  return true;
+  return { podeContinuar: true, mensagem: "" };
 }
 
 const StepperFlow = () => {
@@ -95,15 +105,16 @@ const StepperFlow = () => {
       /**
        * Para ter continuídade no processo de confirmação, nenhuma Turma pode apresentar Prioridade 0 ou repetida.
        */
-    } else if (
-      activeStep === 2 &&
-      !avancaStepConfirmacao(selectedTurmas.values().toArray())
-    ) {
-      addAlerta(
-        "Todas as Turmas devem apresentar Prioridades diferetes de 0 e diferetes entre si.",
-        "error",
-        6
+    } else if (activeStep === 2) {
+      const { podeContinuar, mensagem } = avancaStepConfirmacao(
+        selectedTurmas.values().toArray()
       );
+      if (!podeContinuar) {
+        addAlerta(mensagem, "error", 6);
+      } else {
+        handleComplete();
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      }
     } else if (activeStep === 3 && !avaliacao.nota) {
       addAlerta("Uma Nota deve ser selecionada.", "error", 6);
     } else {
@@ -192,7 +203,12 @@ const StepperFlow = () => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="center">
+      <Box
+        sx={{ mt: 2, mb: 1 }}
+        display="flex"
+        justifyContent="center"
+        width="100%"
+      >
         {getStepContent(activeStep)}
       </Box>
 

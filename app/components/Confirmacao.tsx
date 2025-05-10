@@ -25,11 +25,14 @@ const Confirmacao = () => {
   };
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ width: "80%", maxHeight: "80vh" }}>
       <Typography variant="h4" textAlign="center" p={2}>
         Confirme suas turmas selecionadas
       </Typography>
-      <Table>
+      <Table
+        stickyHeader
+        aria-label="Tabela para confirmação de turmas selecionadas."
+      >
         <TableHead>
           <TableRow>
             <TableCell />
@@ -48,6 +51,11 @@ const Confirmacao = () => {
               turma={turma}
               onPriorityChange={handlePriorityChange}
               onRemove={handleRemove}
+              prioridadesSelecionadas={selectedTurmas
+                .values()
+                .filter((t) => t.id !== turma.id)
+                .map((t) => t.prioridade)
+                .toArray()}
             />
           ))}
         </TableBody>

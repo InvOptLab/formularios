@@ -20,12 +20,14 @@ interface RowTurmaProps {
   turma: TurmaData;
   onPriorityChange: (idTurma: string, newPriority: number) => void;
   onRemove: (idTurma: string) => void;
+  prioridadesSelecionadas: number[];
 }
 
 const RowTurma: React.FC<RowTurmaProps> = ({
   turma,
   onPriorityChange,
   onRemove,
+  prioridadesSelecionadas,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -55,6 +57,18 @@ const RowTurma: React.FC<RowTurmaProps> = ({
             onChange={(e) => handlePriorityChange(e.target)}
             size="small"
             sx={{ width: "80px" }}
+            error={
+              !turma.prioridade ||
+              turma.prioridade <= 0 ||
+              prioridadesSelecionadas.includes(turma.prioridade)
+            }
+            helperText={
+              !turma.prioridade || turma.prioridade <= 0
+                ? "Valor > 0"
+                : prioridadesSelecionadas.includes(turma.prioridade)
+                ? "Valor já selecionado."
+                : ""
+            }
           />
         </TableCell>
         <TableCell>
