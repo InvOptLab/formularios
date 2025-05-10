@@ -30,29 +30,30 @@ const Selecao = () => {
   return (
     <Grid container spacing={1} height="50%">
       {/* Lista de turmas */}
-      <Grid size={{ xs: 12, md: 8 }}>
+      <Grid
+        size={{ xs: 12, md: 8 }}
+        sx={{
+          maxHeight: "80vh", // altura máxima relativa à viewport (ajuste conforme necessário)
+          overflowY: "auto",
+          pr: 2, // padding-right para evitar que o scroll esconda conteúdo
+          scrollbarWidth: "revert-layer",
+          "&::-webkit-scrollbar": {
+            width: "0.4em",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#f1f1f1",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#888",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            background: "#555",
+          },
+        }}
+      >
         <Typography variant="h4" textAlign="center" marginBottom="0.5em">
           Selecione suas turmas
         </Typography>
-        {/* <Box
-          height="60%"
-          overflow="auto"
-          sx={{
-            scrollbarWidth: "revert-layer",
-            "&::-webkit-scrollbar": {
-              width: "0.4em",
-            },
-            "&::-webkit-scrollbar-track": {
-              background: "#f1f1f1",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "#888",
-            },
-            "&::-webkit-scrollbar-thumb:hover": {
-              background: "#555",
-            },
-          }}
-        > */}
         <Grid container spacing={2} justifyContent="center">
           {[...turmas.values()].map((turma) => (
             <Grid
@@ -75,7 +76,6 @@ const Selecao = () => {
             </Grid>
           ))}
         </Grid>
-        {/* </Box> */}
       </Grid>
 
       {/* <Grid size={{ xs: 12, md: 1 }}>
@@ -91,7 +91,26 @@ const Selecao = () => {
         {selectedTurmas.size === 0 ? (
           <Typography variant="body2">Nenhuma turma selecionada.</Typography>
         ) : (
-          <Box>
+          <Box
+            sx={{
+              maxHeight: "80vh", // altura máxima relativa à viewport (ajuste conforme necessário)
+              overflowY: "auto",
+              pr: 2, // padding-right para evitar que o scroll esconda conteúdo
+              scrollbarWidth: "revert-layer",
+              "&::-webkit-scrollbar": {
+                width: "0.4em",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "#f1f1f1",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#888",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "#555",
+              },
+            }}
+          >
             {[...selectedTurmas.entries()].map(([key, turma]) => (
               <CarrinhoItem
                 key={key}
