@@ -14,6 +14,8 @@ type AvaliacaoContextType = {
     preferencia: "Agrupar" | "Espalhar" | "Indiferente"
   ) => void;
   resetAvaliacao: () => void;
+  nome: string;
+  updateNome: (nome: string) => void;
 };
 
 const AvaliacaoContext = createContext<AvaliacaoContextType | undefined>(
@@ -27,6 +29,8 @@ export const AvaliacaoProvider = ({ children }: { children: ReactNode }) => {
     preferencia: "Indiferente",
   });
 
+  const [nome, setNome] = useState<string>("");
+
   const updateNota = (nota: number | null) => {
     setAvaliacao((prev) => ({ ...prev, nota }));
   };
@@ -39,6 +43,10 @@ export const AvaliacaoProvider = ({ children }: { children: ReactNode }) => {
     preferencia: "Agrupar" | "Espalhar" | "Indiferente"
   ) => {
     setAvaliacao((prev) => ({ ...prev, preferencia }));
+  };
+
+  const updateNome = (nome: string) => {
+    setNome(nome);
   };
 
   const resetAvaliacao = () => {
@@ -57,6 +65,8 @@ export const AvaliacaoProvider = ({ children }: { children: ReactNode }) => {
         updateComentario,
         updatePreferencia,
         resetAvaliacao,
+        nome,
+        updateNome,
       }}
     >
       {children}

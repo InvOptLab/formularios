@@ -8,6 +8,8 @@ import {
   Box,
   Typography,
   TextField,
+  Badge,
+  Tooltip,
 } from "@mui/material";
 import {
   KeyboardArrowDown,
@@ -38,13 +40,42 @@ const RowTurma: React.FC<RowTurmaProps> = ({
     onPriorityChange(turma.id, isNaN(value) ? 0 : value);
   };
 
+  const hasError =
+    !turma.prioridade ||
+    turma.prioridade <= 0 ||
+    prioridadesSelecionadas.includes(turma.prioridade);
+
+  const errorMessage =
+    !turma.prioridade || turma.prioridade <= 0
+      ? "A prioridade deve ser maior que 0."
+      : prioridadesSelecionadas.includes(turma.prioridade)
+      ? "Esta prioridade já foi selecionada para outra turma."
+      : "";
+
   return (
     <>
       <TableRow>
         <TableCell>
-          <IconButton size="small" onClick={() => setOpen(!open)}>
-            {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-          </IconButton>
+          <Badge
+            color="error"
+            anchorOrigin={{ horizontal: "left" }}
+            variant="dot"
+            invisible={!errorMessage}
+          >
+            <Tooltip title="Expandir">
+              <IconButton size="small" onClick={() => setOpen(!open)}>
+                {open ? (
+                  <KeyboardArrowUp
+                    sx={{ color: hasError ? "error.main" : "inherit" }}
+                  />
+                ) : (
+                  <KeyboardArrowDown
+                    sx={{ color: hasError ? "error.main" : "inherit" }}
+                  />
+                )}
+              </IconButton>
+            </Tooltip>
+          </Badge>
         </TableCell>
         <TableCell>{turma.codigo}</TableCell>
         <TableCell>{turma.turma}</TableCell>
@@ -57,18 +88,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
             onChange={(e) => handlePriorityChange(e.target)}
             size="small"
             sx={{ width: "80px" }}
-            error={
-              !turma.prioridade ||
-              turma.prioridade <= 0 ||
-              prioridadesSelecionadas.includes(turma.prioridade)
-            }
-            helperText={
-              !turma.prioridade || turma.prioridade <= 0
-                ? "Valor > 0"
-                : prioridadesSelecionadas.includes(turma.prioridade)
-                ? "Valor já selecionado."
-                : ""
-            }
+            error={hasError}
           />
         </TableCell>
         <TableCell>
@@ -82,47 +102,69 @@ const RowTurma: React.FC<RowTurmaProps> = ({
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box
-              margin={2}
-              p={2}
-              borderLeft="4px solid #1976d2"
-              bgcolor="#f5f5f5"
-              borderRadius={2}
+              display="flex"
+              flexDirection="row"
+              alignItems="flex-start"
+              flexWrap="wrap"
             >
-              <Typography variant="subtitle1" gutterBottom fontWeight="bold">
-                Horários:
-              </Typography>
-              <Box display="flex" flexDirection="column" gap={1}>
-                {turma.horarios.map((h, idx) => (
-                  <Box key={idx} display="flex" alignItems="center" gap={1}>
-                    <Typography variant="body2">
-                      🕒 {`${h.dia}: ${h.inicio} - ${h.fim}`}
-                    </Typography>
-                  </Box>
-                ))}
-                {turma.horarios.length === 0 && (
-                  <Box
-                    key={turma.id}
-                    display="flex"
-                    alignItems="center"
-                    gap={1}
-                  >
-                    <Typography variant="body2">🕒 A definir.</Typography>
-                  </Box>
-                )}
-              </Box>
+              <Box
+                margin={2}
+                p={2}
+                borderLeft="4px solid #1976d2"
+                bgcolor="#f5f5f5"
+                borderRadius={2}
+                width="40%"
+              >
+                <Typography variant="subtitle1" gutterBottom fontWeight="bold">
+                  Horários:
+                </Typography>
+                <Box display="flex" flexDirection="column" gap={1}>
+                  {turma.horarios.map((h, idx) => (
+                    <Box key={idx} display="flex" alignItems="center" gap={1}>
+                      <Typography variant="body2">
+                        🕒 {`${h.dia}: ${h.inicio} - ${h.fim}`}
+                      </Typography>
+                    </Box>
+                  ))}
+                  {turma.horarios.length === 0 && (
+                    <Box
+                      key={turma.id}
+                      display="flex"
+                      alignItems="center"
+                      gap={1}
+                    >
+                      <Typography variant="body2">🕒 A definir.</Typography>
+                    </Box>
+                  )}
+                </Box>
 
-              <Box mt={2} display="flex" alignItems="center" gap={1}>
-                <Typography variant="body2" fontWeight="bold">
-                  Disciplina em inglês:
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color={turma.ingles ? "success.main" : "text.secondary"}
-                  fontWeight="medium"
-                >
-                  {turma.ingles ? "Sim ✅" : "Não"}
-                </Typography>
+                <Box mt={2} display="flex" alignItems="center" gap={1}>
+                  <Typography variant="body2" fontWeight="bold">
+                    Disciplina em inglês:
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color={turma.ingles ? "success.main" : "text.secondary"}
+                    fontWeight="medium"
+                  >
+                    {turma.ingles ? "Sim ✅" : "Não"}
+                  </Typography>
+                </Box>
               </Box>
+              {hasError && (
+                <Box
+                  margin={2}
+                  p={2}
+                  borderLeft="4px solid rgb(210, 25, 25)"
+                  bgcolor="#f5f5f5"
+                  borderRadius={2}
+                  width="40%"
+                >
+                  <Typography variant="body2" color="error.main">
+                    ⚠️ {errorMessage}
+                  </Typography>
+                </Box>
+              )}
             </Box>
           </Collapse>
         </TableCell>

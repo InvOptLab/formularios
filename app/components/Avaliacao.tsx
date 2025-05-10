@@ -25,7 +25,7 @@ const Avaliacao = () => {
         Avaliação da Atribuição Anterior
       </Typography>
 
-      <Typography variant="body1" mb={4}>
+      <Typography variant="body1" mb={4} align="justify">
         A seguir estarão presentes alguns campos para que você avalie o quão
         satisfeito ficou com as atribuições que recebeu no semestre atual. Caso
         queira, gostaríamos muito que você apresentasse um comentário sobre o
@@ -89,7 +89,7 @@ const Avaliacao = () => {
       </Box>
 
       {/* Preferência de distribuição */}
-      <Typography variant="body1" mb={2}>
+      <Typography variant="body1" mb={2} align="justify">
         A seguir, indique sua preferência em relação à distribuição de horários
         e dias da semana em que você será alocado. Se prefere atribuições
         espalhadas pela semana, mais agrupadas ou se não tem preferência:

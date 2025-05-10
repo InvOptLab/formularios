@@ -83,6 +83,8 @@ const StepperFlow = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [completed, setCompleted] = useState<{ [k: number]: boolean }>({});
 
+  const [exportado, setExportado] = useState(false);
+
   const { selectedTurmas } = useTurmas();
   const { addAlerta } = useAlertsContext();
   const { avaliacao } = useAvaliacao();
@@ -90,6 +92,7 @@ const StepperFlow = () => {
   const totalSteps = () => steps.length;
 
   const isLastStep = () => activeStep === totalSteps() - 1;
+  const isFinalizado = () => activeStep === totalSteps();
 
   const handleNext = () => {
     /**
@@ -117,6 +120,12 @@ const StepperFlow = () => {
       }
     } else if (activeStep === 3 && !avaliacao.nota) {
       addAlerta("Uma Nota deve ser selecionada.", "error", 6);
+    } else if (activeStep === 4 && !exportado) {
+      addAlerta(
+        "Para poder continuar o arquivo deve ser exportado.",
+        "warning",
+        6
+      );
     } else {
       handleComplete();
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -157,7 +166,34 @@ const StepperFlow = () => {
       case 3:
         return <Avaliacao />;
       case 4:
-        return <Download />;
+        return <Download setExportado={setExportado} />;
+      case 5:
+        return (
+          <Box
+            sx={{ mt: 4, textAlign: "center" }}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            width="30%"
+            gap={2}
+          >
+            <Typography variant="h5" gutterBottom>
+              ✅ Todos os passos foram concluídos!
+            </Typography>
+
+            <Typography variant="body1" align="justify">
+              Agradecemos por ter preenchido os formulários. Sabemos que nem
+              sempre é possível atender todas as expectativas, mas estamos
+              continuamente trabalhando para aprimorar as plataformas e tornar o
+              processo cada vez mais justo, simples e eficiente. Seu feedback é
+              essencial nessa jornada.
+            </Typography>
+
+            {/* <Button variant="outlined" onClick={handleReset}>
+              Resetar Processo
+            </Button> */}
+          </Box>
+        );
       default:
         return <Typography>Passo desconhecido</Typography>;
     }
@@ -196,10 +232,10 @@ const StepperFlow = () => {
 
           <Button
             onClick={handleNext}
-            disabled={isLastStep()} //disabled={!completed[activeStep] || isLastStep()}
-            variant="contained"
+            disabled={isFinalizado()} //disabled={!completed[activeStep] || isLastStep()}
+            variant={activeStep === 4 && !exportado ? "outlined" : "contained"}
           >
-            {isLastStep() ? "Finalizado" : "Próximo"}
+            {isLastStep() ? "Finalizar" : "Próximo"}
           </Button>
         </Box>
       </Box>
