@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import CardTurma from "./Selecao/CardTurma";
 import CarrinhoItem from "./Selecao/CarrinhoItem";
 import { useTurmas } from "../context/TurmasContext";
+import WarningIcon from "@mui/icons-material/Warning";
 
 const Selecao = () => {
   // const [selectedTurmas, setSelectedTurmas] = useState<Map<string, TurmaData>>(
@@ -89,7 +90,12 @@ const Selecao = () => {
           Carrinho
         </Typography>
         {selectedTurmas.size === 0 ? (
-          <Typography variant="body2">Nenhuma turma selecionada.</Typography>
+          <Box display="flex" alignItems="center" flexWrap="wrap" gap={1}>
+            <WarningIcon color="warning" />
+            <Typography variant="body2" color="warning">
+              Nenhuma turma selecionada.
+            </Typography>
+          </Box>
         ) : (
           <Box
             sx={{
