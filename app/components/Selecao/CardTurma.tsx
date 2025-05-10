@@ -12,32 +12,34 @@ import {
 } from "@mui/material";
 
 interface CardTurmaProps {
-  codigo: string;
+  id: string;
   nome: string;
-  turma: string;
+  turma: number;
   horarios: { dia: string; inicio: string; fim: string }[];
   curso: string;
-  ementaUrl: string;
+  ementa: string;
   ingles: boolean;
-  onAdicionar: (codigo: string, turma: string, prioridade: number) => void;
+  nivel: string;
+  onAdicionar: (key: string, prioridade: number) => void;
   isSelected: boolean;
 }
 
 const CardTurma = ({
-  codigo,
+  id,
   nome,
   turma,
   horarios,
   curso,
-  ementaUrl,
+  ementa,
   ingles,
+  nivel,
   onAdicionar,
   isSelected,
 }: CardTurmaProps) => {
   const [prioridade, setPrioridade] = useState<number>(0);
 
   const handleAdd = () => {
-    onAdicionar(codigo, turma, prioridade);
+    onAdicionar(id, prioridade);
   };
 
   return (
@@ -51,7 +53,7 @@ const CardTurma = ({
         opacity: isSelected ? 0.5 : 1,
         pointerEvents: isSelected ? "none" : "auto",
         height: "100%",
-        width: "20em",
+        width: "21em",
       }}
       elevation={3}
     >
@@ -81,27 +83,40 @@ const CardTurma = ({
                 color="info"
               />
             ))}
+            {horarios.length === 0 && (
+              <Chip
+                key={id}
+                label={`A definir.`}
+                size="small"
+                color="warning"
+              />
+            )}
           </Stack>
         </Box>
 
         <Box mt={1}>
           <Typography variant="body2">
             Ementa:{" "}
-            <Link href={ementaUrl} target="_blank" rel="noopener">
+            <Link href={ementa} target="_blank" rel="noopener">
               Visualizar
             </Link>
           </Typography>
         </Box>
 
-        <Box mt={1}>
+        <Box mt={1} display="flex" justifyContent="space-around">
           {ingles ? (
-            <Chip label="Disciplina em Inglês" color="warning" size="small" />
+            <Chip label="Disciplina em Inglês" color="error" size="small" />
           ) : (
             <Chip
               label="Disciplina em Português"
               color="success"
               size="small"
             />
+          )}
+          {nivel === "g" ? (
+            <Chip label="Graduação" color="primary" size="small" />
+          ) : (
+            <Chip label="Pós-graduação" color="secondary" size="small" />
           )}
         </Box>
 

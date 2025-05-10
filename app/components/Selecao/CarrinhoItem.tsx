@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 interface CarrinhoItemProps {
   codigo: string;
-  turma: string;
+  turma: number;
   nome: string;
   curso: string;
   prioridade?: number;

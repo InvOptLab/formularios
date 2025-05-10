@@ -14,12 +14,12 @@ import {
   KeyboardArrowUp,
   Delete,
 } from "@mui/icons-material";
-import { TurmaData } from "../Selecao";
+import { TurmaData } from "@/app/types";
 
 interface RowTurmaProps {
   turma: TurmaData;
-  onPriorityChange: (codigoTurma: string, newPriority: number) => void;
-  onRemove: (codigoTurma: string) => void;
+  onPriorityChange: (idTurma: string, newPriority: number) => void;
+  onRemove: (idTurma: string) => void;
 }
 
 const RowTurma: React.FC<RowTurmaProps> = ({
@@ -33,10 +33,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
     e: EventTarget & (HTMLInputElement | HTMLTextAreaElement)
   ) => {
     const value = parseInt(e.value, 10);
-    onPriorityChange(
-      `${turma.codigo},${turma.turma}`,
-      isNaN(value) ? 0 : value
-    );
+    onPriorityChange(turma.id, isNaN(value) ? 0 : value);
   };
 
   return (
@@ -48,8 +45,9 @@ const RowTurma: React.FC<RowTurmaProps> = ({
           </IconButton>
         </TableCell>
         <TableCell>{turma.codigo}</TableCell>
-        <TableCell>{turma.nome}</TableCell>
         <TableCell>{turma.turma}</TableCell>
+        <TableCell>{turma.curso}</TableCell>
+        <TableCell>{turma.nome}</TableCell>
         <TableCell>
           <TextField
             type="number"
@@ -60,10 +58,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
           />
         </TableCell>
         <TableCell>
-          <IconButton
-            color="error"
-            onClick={() => onRemove(`${turma.codigo},${turma.turma}`)}
-          >
+          <IconButton color="error" onClick={() => onRemove(turma.id)}>
             <Delete />
           </IconButton>
         </TableCell>
@@ -90,6 +85,16 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                     </Typography>
                   </Box>
                 ))}
+                {turma.horarios.length === 0 && (
+                  <Box
+                    key={turma.id}
+                    display="flex"
+                    alignItems="center"
+                    gap={1}
+                  >
+                    <Typography variant="body2">🕒 A definir.</Typography>
+                  </Box>
+                )}
               </Box>
 
               <Box mt={2} display="flex" alignItems="center" gap={1}>

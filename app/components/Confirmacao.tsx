@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -11,60 +11,17 @@ import {
   Typography,
 } from "@mui/material";
 import RowTurma from "./Confirmacao/RowTurma";
-import { TurmaData } from "./Selecao";
+import { useTurmas } from "../context/TurmasContext";
 
 const Confirmacao = () => {
-  // Mock de dados selecionados (normalmente vem do estado global ou props)
-  const [selectedTurmas, setSelectedTurmas] = useState(
-    new Map<string, TurmaData>([
-      [
-        "MAT123,01",
-        {
-          codigo: "MAT123",
-          nome: "Matemática Discreta",
-          turma: "01",
-          horarios: [
-            { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-            { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-          ],
-          curso: "Ciência da Computação",
-          ementaUrl: "https://exemplo.com/ementa",
-          ingles: false,
-          prioridade: 1,
-        },
-      ],
-      [
-        "ENG456,02",
-        {
-          codigo: "ENG456",
-          nome: "Engenharia de Software",
-          turma: "02",
-          horarios: [{ dia: "Terça", inicio: "14:00", fim: "16:00" }],
-          curso: "Engenharia de Software",
-          ementaUrl: "https://exemplo.com/ementa2",
-          ingles: true,
-        },
-      ],
-    ])
-  );
+  const { selectedTurmas, setPrioridade, removeTurma } = useTurmas();
 
-  const handlePriorityChange = (codigoTurma: string, newPriority: number) => {
-    setSelectedTurmas((prev) => {
-      const updated = new Map(prev);
-      const turma = updated.get(codigoTurma);
-      if (turma) {
-        updated.set(codigoTurma, { ...turma, prioridade: newPriority });
-      }
-      return updated;
-    });
+  const handlePriorityChange = (idTurma: string, newPriority: number) => {
+    setPrioridade(idTurma, newPriority);
   };
 
-  const handleRemove = (codigoTurma: string) => {
-    setSelectedTurmas((prev) => {
-      const updated = new Map(prev);
-      updated.delete(codigoTurma);
-      return updated;
-    });
+  const handleRemove = (idTurma: string) => {
+    removeTurma(idTurma);
   };
 
   return (
@@ -77,8 +34,9 @@ const Confirmacao = () => {
           <TableRow>
             <TableCell />
             <TableCell>Código</TableCell>
-            <TableCell>Nome</TableCell>
             <TableCell>Turma</TableCell>
+            <TableCell>Curso</TableCell>
+            <TableCell>Nome</TableCell>
             <TableCell>Prioridade</TableCell>
             <TableCell>Remover</TableCell>
           </TableRow>
