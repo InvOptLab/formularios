@@ -54,7 +54,7 @@ const Confirmacao = () => {
               prioridadesSelecionadas={selectedTurmas
                 .values()
                 .filter((t) => t.id !== turma.id)
-                .map((t) => t.prioridade)
+                .map((t) => (t.prioridade ? t.prioridade : 0))
                 .toArray()}
             />
           ))}

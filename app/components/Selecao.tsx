@@ -57,12 +57,9 @@ const Selecao = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           {[...turmas.values()].map((turma) => (
-            <Grid
-              key={`card_selecao_${turma.codigo},${turma.turma}}`}
-              sx={{ xs: 12, sm: 6 }}
-            >
+            <Grid key={`card_selecao_${turma.id}`} sx={{ xs: 12, sm: 6 }}>
               <CardTurma
-                key={`${turma.codigo},${turma.turma}`}
+                key={`${turma.id}`}
                 id={turma.id}
                 nome={turma.nome}
                 turma={turma.turma}
@@ -120,7 +117,8 @@ const Selecao = () => {
             {[...selectedTurmas.entries()].map(([key, turma]) => (
               <CarrinhoItem
                 key={key}
-                codigo={turma.codigo}
+                id={turma.id}
+                //codigo={turma.codigo}
                 turma={turma.turma}
                 nome={turma.nome}
                 curso={turma.curso}

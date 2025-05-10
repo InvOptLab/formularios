@@ -2,7 +2,8 @@ import { Box, Typography, IconButton, Paper, Tooltip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 interface CarrinhoItemProps {
-  codigo: string;
+  id: string;
+  //codigo: string;
   turma: number;
   nome: string;
   curso: string;
@@ -11,14 +12,14 @@ interface CarrinhoItemProps {
 }
 
 const CarrinhoItem = ({
-  codigo,
+  id,
+  //codigo,
   turma,
   nome,
   curso,
   prioridade,
   onRemover,
 }: CarrinhoItemProps) => {
-  const key = `${codigo},${turma}`;
   return (
     <Paper
       sx={{
@@ -49,7 +50,7 @@ const CarrinhoItem = ({
         </Typography>
       </Box>
       <Tooltip title="Remover">
-        <IconButton onClick={() => onRemover(key)} about="Remover">
+        <IconButton onClick={() => onRemover(id)} about="Remover">
           <DeleteIcon color="error" />
         </IconButton>
       </Tooltip>

@@ -456,12 +456,12 @@ export const turmasJson: TurmaData[] = [
     codigo: "SME0808",
     nome: "Séries Temporais e Aprendizado Dinâmico",
     curso: "BCC",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0808",
     horarios: [],
-    id: "SME0808,1",
+    id: "SME0808,9",
   },
   {
     codigo: "SME0806",
@@ -478,12 +478,12 @@ export const turmasJson: TurmaData[] = [
     codigo: "SME0823",
     nome: "Modelos de Regressão e Aprendizado Supervisionado II",
     curso: "BCC",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0823",
     horarios: [],
-    id: "SME0823,1",
+    id: "SME0823,9",
   },
   {
     codigo: "SME0871 ",
@@ -500,12 +500,12 @@ export const turmasJson: TurmaData[] = [
     codigo: "SME0822",
     nome: "Análise Multivariada e Aprendizado Não Supervisionado",
     curso: "BCC",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0822",
     horarios: [],
-    id: "SME0822,1",
+    id: "SME0822,9",
   },
   {
     codigo: "SME0102",
@@ -1092,7 +1092,8 @@ export const turmasJson: TurmaData[] = [
     curso: "Estatística",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5975",
     horarios: [],
     id: "SME5975,1",
   },
@@ -1102,7 +1103,8 @@ export const turmasJson: TurmaData[] = [
     curso: "Estatística",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5978",
     horarios: [],
     id: "SME5978,1",
   },
@@ -1112,7 +1114,8 @@ export const turmasJson: TurmaData[] = [
     curso: "Otimização",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5962",
     horarios: [],
     id: "SME5962,1",
   },
@@ -1122,7 +1125,8 @@ export const turmasJson: TurmaData[] = [
     curso: "Matemática",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5934",
     horarios: [],
     id: "SMA5934,1",
   },
@@ -1132,7 +1136,8 @@ export const turmasJson: TurmaData[] = [
     curso: "Matemática",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5802",
     horarios: [],
     id: "SMA5802,1",
   },
@@ -1142,7 +1147,8 @@ export const turmasJson: TurmaData[] = [
     curso: "MFC",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5873",
     horarios: [],
     id: "SME5873,1",
   },
@@ -1152,7 +1158,8 @@ export const turmasJson: TurmaData[] = [
     curso: "MFC",
     turma: 1,
     nivel: "p",
-    ementa: "pos",
+    ementa:
+      "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
     horarios: [],
     id: "SME5827,1",
   },
