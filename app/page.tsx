@@ -13,6 +13,7 @@ import Introducao from "./components/Introducao";
 import Selecao from "./components/Selecao";
 import Confirmacao from "./components/Confirmacao";
 import Download from "./components/Download";
+import Avaliacao from "./components/Avaliacao";
 // import CheckIcon from "@mui/icons-material/Check";
 
 // Passos do processo
@@ -20,6 +21,7 @@ const steps = [
   "Introdução",
   "Seleção de Turmas",
   "Confirmação de Seleção",
+  "Avaliação da Atribuição Anterior",
   "Download do Arquivo",
 ];
 
@@ -78,6 +80,8 @@ const StepperFlow = () => {
       case 2:
         return <Confirmacao />;
       case 3:
+        return <Avaliacao />;
+      case 4:
         return <Download />;
       default:
         return <Typography>Passo desconhecido</Typography>;
@@ -113,7 +117,9 @@ const StepperFlow = () => {
           {isLastStep() ? "Finalizado" : "Próximo"}
         </Button>
       </Box>
-      <Box sx={{ mt: 2, mb: 1 }}>{getStepContent(activeStep)}</Box>
+      <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="center">
+        {getStepContent(activeStep)}
+      </Box>
 
       <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="flex-end">
         {!completed[activeStep] && (

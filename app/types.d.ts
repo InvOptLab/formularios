@@ -16,3 +16,9 @@ export type TurmaData = {
   prioridade?: number;
   nivel: string; // 'p' | 'g'
 };
+
+export type AvaliacaoData = {
+  nota: number | null;
+  comentario: string;
+  preferencia: "Agrupar" | "Espalhar" | "Indiferente";
+};

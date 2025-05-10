@@ -39,6 +39,8 @@ const Download = () => {
         margin="normal"
         error={erroNome}
         helperText={erroNome ? "Por favor, informe nome e sobrenome." : ""}
+        required
+        type="text"
       />
 
       <Typography variant="body1" gutterBottom mt={2}>
