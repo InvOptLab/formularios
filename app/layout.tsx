@@ -6,19 +6,22 @@ import { CssBaseline } from "@mui/material";
 import { TurmasProvider } from "./context/TurmasContext";
 import { turmasJson } from "./context/dados";
 import { AvaliacaoProvider } from "./context/AvaliacaoContext";
+import { AlertsWrapper } from "./context/AlertasContext";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-br">
-      <TurmasProvider initialTurmas={turmasJson}>
-        <AvaliacaoProvider>
-          <body style={{ padding: 15 }}>
-            <CssBaseline />
+      <body style={{ padding: 15 }}>
+        <AlertsWrapper>
+          <TurmasProvider initialTurmas={turmasJson}>
+            <AvaliacaoProvider>
+              <CssBaseline />
 
-            {children}
-          </body>
-        </AvaliacaoProvider>
-      </TurmasProvider>
+              {children}
+            </AvaliacaoProvider>
+          </TurmasProvider>
+        </AlertsWrapper>
+      </body>
     </html>
   );
 }
