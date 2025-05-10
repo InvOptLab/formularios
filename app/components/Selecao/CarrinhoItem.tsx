@@ -1,4 +1,4 @@
-import { Box, Typography, IconButton, Paper } from "@mui/material";
+import { Box, Typography, IconButton, Paper, Tooltip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 interface CarrinhoItemProps {
@@ -48,9 +48,11 @@ const CarrinhoItem = ({
           {prioridade ? prioridade : 0}
         </Typography>
       </Box>
-      <IconButton onClick={() => onRemover(key)}>
-        <DeleteIcon color="error" />
-      </IconButton>
+      <Tooltip title="Remover">
+        <IconButton onClick={() => onRemover(key)} about="Remover">
+          <DeleteIcon color="error" />
+        </IconButton>
+      </Tooltip>
     </Paper>
   );
 };

@@ -45,6 +45,7 @@ const StepperFlow = () => {
   const isLastStep = () => activeStep === totalSteps() - 1;
 
   const handleNext = () => {
+    handleComplete();
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
@@ -89,39 +90,50 @@ const StepperFlow = () => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={activeStep}>
-        {steps.map((label, index) => (
-          <Step key={label} completed={completed[index]}>
-            <StepLabel>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-      <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-        <Button
-          variant="contained"
-          disabled={activeStep === 0}
-          onClick={handleBack}
-          sx={{ mr: 1 }}
-        >
-          Voltar
-        </Button>
+    <Box
+      sx={{}}
+      width="100%"
+      display="flex"
+      flexDirection="column"
+      flexWrap="wrap"
+      alignContent="center"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box width="70%">
+        <Stepper activeStep={activeStep}>
+          {steps.map((label, index) => (
+            <Step key={label} completed={completed[index]}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+          <Button
+            variant="contained"
+            disabled={activeStep === 0}
+            onClick={handleBack}
+            sx={{ mr: 1 }}
+          >
+            Voltar
+          </Button>
 
-        <Box sx={{ flex: "1 1 auto" }} />
+          <Box sx={{ flex: "1 1 auto" }} />
 
-        <Button
-          onClick={handleNext}
-          disabled={!completed[activeStep] || isLastStep()}
-          variant="contained"
-        >
-          {isLastStep() ? "Finalizado" : "Próximo"}
-        </Button>
+          <Button
+            onClick={handleNext}
+            disabled={isLastStep()} //disabled={!completed[activeStep] || isLastStep()}
+            variant="contained"
+          >
+            {isLastStep() ? "Finalizado" : "Próximo"}
+          </Button>
+        </Box>
       </Box>
       <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="center">
         {getStepContent(activeStep)}
       </Box>
 
-      <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="flex-end">
+      {/* <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="flex-end">
         {!completed[activeStep] && (
           <Button onClick={handleComplete} variant="outlined" sx={{ mr: 1 }}>
             Marcar como Concluído
@@ -138,7 +150,7 @@ const StepperFlow = () => {
             </Button>
           </Box>
         )}
-      </Box>
+      </Box> */}
     </Box>
   );
 };

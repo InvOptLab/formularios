@@ -125,7 +125,7 @@ const CardTurma = ({
           display="flex"
           alignItems="center"
           justifyContent="end"
-          gap={1}
+          gap={2}
         >
           <TextField
             label="Prioridade"
@@ -133,7 +133,7 @@ const CardTurma = ({
             size="small"
             value={undefined}
             onChange={(e) => setPrioridade(Number(e.target.value))}
-            sx={{ width: 100 }}
+            sx={{ width: 120 }}
           />
           <Button variant="contained" onClick={handleAdd} disabled={isSelected}>
             {isSelected ? "Adicionado" : "Adicionar"}
