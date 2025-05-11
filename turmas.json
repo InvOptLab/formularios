@@ -18,7 +18,13 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0142,1"
+        "id": "SME0142,1",
+        "conflitos": [
+            "SME0212,1",
+            "SME0300,1",
+            "SME0300,2",
+            "SME0341,2"
+        ]
     },
     {
         "codigo": "SME0142",
@@ -39,7 +45,8 @@
                 "fim": "09:50"
             }
         ],
-        "id": "SME0142,2"
+        "id": "SME0142,2",
+        "conflitos": []
     },
     {
         "codigo": "SME0123",
@@ -60,7 +67,15 @@
                 "fim": "09:50"
             }
         ],
-        "id": "SME0123,1"
+        "id": "SME0123,1",
+        "conflitos": [
+            "SME0332,1",
+            "SME0300,2",
+            "SME0285,1",
+            "SME0240,1",
+            "SME0241,1",
+            "SME0320,3"
+        ]
     },
     {
         "codigo": "SME0123",
@@ -81,7 +96,17 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0123,2"
+        "id": "SME0123,2",
+        "conflitos": [
+            "SME0306,1",
+            "SME0332,2",
+            "SME0341,1",
+            "SME0285,1",
+            "SME0220,1",
+            "SME0320,1",
+            "PRG-0027,1",
+            "SME0320,2"
+        ]
     },
     {
         "codigo": "SME0110",
@@ -102,7 +127,11 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0110,1"
+        "id": "SME0110,1",
+        "conflitos": [
+            "SME0300,1",
+            "SME0306,2"
+        ]
     },
     {
         "codigo": "SME0110",
@@ -123,7 +152,11 @@
                 "fim": "09:50"
             }
         ],
-        "id": "SME0110,2"
+        "id": "SME0110,2",
+        "conflitos": [
+            "SME0320,1",
+            "SME0320,4"
+        ]
     },
     {
         "codigo": "SME0800",
@@ -144,7 +177,11 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0800,1"
+        "id": "SME0800,1",
+        "conflitos": [
+            "SME0822,1",
+            "SME0805,1"
+        ]
     },
     {
         "codigo": "SME0809",
@@ -165,7 +202,11 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0809,1"
+        "id": "SME0809,1",
+        "conflitos": [
+            "SME0510,1",
+            "SME0823,1"
+        ]
     },
     {
         "codigo": "SME0805",
@@ -186,7 +227,11 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0805,1"
+        "id": "SME0805,1",
+        "conflitos": [
+            "SME0822,1",
+            "SME0800,1"
+        ]
     },
     {
         "codigo": "SME0828",
@@ -207,7 +252,10 @@
                 "fim": "20:40"
             }
         ],
-        "id": "SME0828,1"
+        "id": "SME0828,1",
+        "conflitos": [
+            "SME0810,1"
+        ]
     },
     {
         "codigo": "SME0824",
@@ -228,7 +276,10 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0824,1"
+        "id": "SME0824,1",
+        "conflitos": [
+            "SME0808,1"
+        ]
     },
     {
         "codigo": "SME0820",
@@ -249,7 +300,10 @@
                 "fim": "20:40"
             }
         ],
-        "id": "SME0820,1"
+        "id": "SME0820,1",
+        "conflitos": [
+            "SME0808,1"
+        ]
     },
     {
         "codigo": "SME0823",
@@ -270,7 +324,11 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0823,1"
+        "id": "SME0823,1",
+        "conflitos": [
+            "SME0510,1",
+            "SME0809,1"
+        ]
     },
     {
         "codigo": "SME0822",
@@ -291,7 +349,11 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0822,1"
+        "id": "SME0822,1",
+        "conflitos": [
+            "SME0805,1",
+            "SME0800,1"
+        ]
     },
     {
         "codigo": "SME0810",
@@ -312,7 +374,10 @@
                 "fim": "20:40"
             }
         ],
-        "id": "SME0810,1"
+        "id": "SME0810,1",
+        "conflitos": [
+            "SME0828,1"
+        ]
     },
     {
         "codigo": "SME0808",
@@ -333,7 +398,11 @@
                 "fim": "20:40"
             }
         ],
-        "id": "SME0808,1"
+        "id": "SME0808,1",
+        "conflitos": [
+            "SME0824,1",
+            "SME0820,1"
+        ]
     },
     {
         "codigo": "SME0814",
@@ -354,7 +423,12 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0814,9"
+        "id": "SME0814,9",
+        "conflitos": [
+            "SME0881,9",
+            "SME0815,9",
+            "SME0880,9"
+        ]
     },
     {
         "codigo": "SME0815",
@@ -375,7 +449,12 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0815,9"
+        "id": "SME0815,9",
+        "conflitos": [
+            "SME0881,9",
+            "SME0880,9",
+            "SME0814,9"
+        ]
     },
     {
         "codigo": "SME0880",
@@ -396,7 +475,12 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0880,9"
+        "id": "SME0880,9",
+        "conflitos": [
+            "SME0881,9",
+            "SME0815,9",
+            "SME0814,9"
+        ]
     },
     {
         "codigo": "SME0881",
@@ -417,77 +501,89 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0881,9"
+        "id": "SME0881,9",
+        "conflitos": [
+            "SME0880,9",
+            "SME0815,9",
+            "SME0814,9"
+        ]
     },
     {
         "codigo": "SME0110 ",
         "nome": "Redes Complexas",
         "curso": "BCC",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0110 ",
         "horarios": [],
-        "id": "SME0110 ,1"
+        "id": "SME0110,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0808",
         "nome": "Séries Temporais e Aprendizado Dinâmico",
         "curso": "BCC",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0808",
         "horarios": [],
-        "id": "SME0808,1"
+        "id": "SME0808,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0806",
         "nome": "Estatística Computacional",
         "curso": "BCC",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0806",
         "horarios": [],
-        "id": "SME0806,1"
+        "id": "SME0806,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0823",
         "nome": "Modelos de Regressão e Aprendizado Supervisionado II",
         "curso": "BCC",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0823",
         "horarios": [],
-        "id": "SME0823,1"
+        "id": "SME0823,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0871 ",
         "nome": "Bioestatística",
         "curso": "BECD\t",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0871 ",
         "horarios": [],
-        "id": "SME0871 ,1"
+        "id": "SME0871,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0822",
         "nome": "Análise Multivariada e Aprendizado Não Supervisionado",
         "curso": "BCC",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0822",
         "horarios": [],
-        "id": "SME0822,1"
+        "id": "SME0822,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0102",
         "nome": "Seminários Avançados de Matemática Computacional I",
         "curso": "BCC",
-        "turma": 1,
+        "turma": 9,
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0102",
         "horarios": [],
-        "id": "SME0102,1"
+        "id": "SME0102,9",
+        "conflitos": []
     },
     {
         "codigo": "SME0510",
@@ -508,7 +604,11 @@
                 "fim": "22:40"
             }
         ],
-        "id": "SME0510,1"
+        "id": "SME0510,1",
+        "conflitos": [
+            "SME0823,1",
+            "SME0809,1"
+        ]
     },
     {
         "codigo": "SME0220",
@@ -529,7 +629,15 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0220,1"
+        "id": "SME0220,1",
+        "conflitos": [
+            "SME0306,1",
+            "SME0332,2",
+            "SME0285,1",
+            "SME0123,2",
+            "PRG-0027,1",
+            "SME0320,2"
+        ]
     },
     {
         "codigo": "SME0212",
@@ -550,7 +658,15 @@
                 "fim": "15:50"
             }
         ],
-        "id": "SME0212,1"
+        "id": "SME0212,1",
+        "conflitos": [
+            "SME0332,1",
+            "SME0334,1",
+            "SME0300,1",
+            "SME0240,1",
+            "SME0341,1",
+            "SME0142,1"
+        ]
     },
     {
         "codigo": "SME0241",
@@ -566,7 +682,14 @@
                 "fim": "16:00"
             }
         ],
-        "id": "SME0241,1"
+        "id": "SME0241,1",
+        "conflitos": [
+            "SME0332,1",
+            "SME0123,1",
+            "SME0285,1",
+            "SME0240,1",
+            "SME0320,3"
+        ]
     },
     {
         "codigo": "SME0206",
@@ -587,7 +710,10 @@
                 "fim": "16:00"
             }
         ],
-        "id": "SME0206,1"
+        "id": "SME0206,1",
+        "conflitos": [
+            "SME0284,1"
+        ]
     },
     {
         "codigo": "SME0211",
@@ -608,7 +734,14 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0211,1"
+        "id": "SME0211,1",
+        "conflitos": [
+            "SME0320,4",
+            "SME0320,2",
+            "SME0284,1",
+            "SME0320,3",
+            "SME0245,1"
+        ]
     },
     {
         "codigo": "SME0240",
@@ -629,7 +762,17 @@
                 "fim": "16:00"
             }
         ],
-        "id": "SME0240,1"
+        "id": "SME0240,1",
+        "conflitos": [
+            "SME0341,1",
+            "SME0332,1",
+            "SME0123,1",
+            "SME0285,1",
+            "SME0334,1",
+            "SME0241,1",
+            "SME0212,1",
+            "SME0320,3"
+        ]
     },
     {
         "codigo": "SME0245",
@@ -650,7 +793,12 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0245,1"
+        "id": "SME0245,1",
+        "conflitos": [
+            "SME0320,2",
+            "SME0284,1",
+            "SME0211,1"
+        ]
     },
     {
         "codigo": "SME0285",
@@ -671,7 +819,19 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0285,1"
+        "id": "SME0285,1",
+        "conflitos": [
+            "SME0332,2",
+            "SME0332,1",
+            "SME0123,1",
+            "SME0123,2",
+            "SME0240,1",
+            "SME0241,1",
+            "SME0220,1",
+            "PRG-0027,1",
+            "SME0320,2",
+            "SME0320,3"
+        ]
     },
     {
         "codigo": "SME0284",
@@ -692,7 +852,13 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0284,1"
+        "id": "SME0284,1",
+        "conflitos": [
+            "SME0320,2",
+            "SME0206,1",
+            "SME0211,1",
+            "SME0245,1"
+        ]
     },
     {
         "codigo": "SME0213 ",
@@ -702,7 +868,8 @@
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0213 ",
         "horarios": [],
-        "id": "SME0213 ,1"
+        "id": "SME0213,1",
+        "conflitos": []
     },
     {
         "codigo": "SME0250 ",
@@ -712,7 +879,8 @@
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0250 ",
         "horarios": [],
-        "id": "SME0250 ,1"
+        "id": "SME0250,1",
+        "conflitos": []
     },
     {
         "codigo": "SME0252  ",
@@ -722,7 +890,8 @@
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0252  ",
         "horarios": [],
-        "id": "SME0252  ,1"
+        "id": "SME0252,1",
+        "conflitos": []
     },
     {
         "codigo": "SME0262 ",
@@ -732,7 +901,8 @@
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0262 ",
         "horarios": [],
-        "id": "SME0262 ,1"
+        "id": "SME0262,1",
+        "conflitos": []
     },
     {
         "codigo": "SME0870",
@@ -742,7 +912,8 @@
         "nivel": "g",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0870",
         "horarios": [],
-        "id": "SME0870,1"
+        "id": "SME0870,1",
+        "conflitos": []
     },
     {
         "codigo": "SME0300 ",
@@ -763,7 +934,13 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0300 ,1"
+        "id": "SME0300,1",
+        "conflitos": [
+            "SME0212,1",
+            "SME0306,2",
+            "SME0142,1",
+            "SME0110,1"
+        ]
     },
     {
         "codigo": "SME0300 ",
@@ -784,7 +961,12 @@
                 "fim": "09:50"
             }
         ],
-        "id": "SME0300 ,2"
+        "id": "SME0300,2",
+        "conflitos": [
+            "SME0341,2",
+            "SME0142,1",
+            "SME0123,1"
+        ]
     },
     {
         "codigo": "SME0306 ",
@@ -805,7 +987,14 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0306 ,1"
+        "id": "SME0306,1",
+        "conflitos": [
+            "SME0332,2",
+            "SME0123,2",
+            "SME0220,1",
+            "SME0320,1",
+            "SME0341,1"
+        ]
     },
     {
         "codigo": "SME0306 ",
@@ -826,7 +1015,11 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0306 ,2"
+        "id": "SME0306,2",
+        "conflitos": [
+            "SME0300,1",
+            "SME0110,1"
+        ]
     },
     {
         "codigo": "SME0320 ",
@@ -847,7 +1040,14 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0320 ,1"
+        "id": "SME0320,1",
+        "conflitos": [
+            "SME0306,1",
+            "SME0320,4",
+            "SME0123,2",
+            "SME0110,2",
+            "SME0341,1"
+        ]
     },
     {
         "codigo": "SME0320 ",
@@ -868,7 +1068,17 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0320 ,2"
+        "id": "SME0320,2",
+        "conflitos": [
+            "SME0332,2",
+            "SME0211,1",
+            "SME0285,1",
+            "SME0123,2",
+            "SME0220,1",
+            "PRG-0027,1",
+            "SME0284,1",
+            "SME0245,1"
+        ]
     },
     {
         "codigo": "SME0320 ",
@@ -889,7 +1099,16 @@
                 "fim": "16:00"
             }
         ],
-        "id": "SME0320 ,3"
+        "id": "SME0320,3",
+        "conflitos": [
+            "SME0332,1",
+            "SME0123,1",
+            "SME0320,4",
+            "SME0211,1",
+            "SME0285,1",
+            "SME0240,1",
+            "SME0241,1"
+        ]
     },
     {
         "codigo": "SME0320 ",
@@ -910,7 +1129,13 @@
                 "fim": "09:50"
             }
         ],
-        "id": "SME0320 ,4"
+        "id": "SME0320,4",
+        "conflitos": [
+            "SME0110,2",
+            "SME0320,1",
+            "SME0211,1",
+            "SME0320,3"
+        ]
     },
     {
         "codigo": "SME0332 ",
@@ -931,7 +1156,17 @@
                 "fim": "16:00"
             }
         ],
-        "id": "SME0332 ,1"
+        "id": "SME0332,1",
+        "conflitos": [
+            "SME0341,1",
+            "SME0123,1",
+            "SME0285,1",
+            "SME0334,1",
+            "SME0240,1",
+            "SME0241,1",
+            "SME0212,1",
+            "SME0320,3"
+        ]
     },
     {
         "codigo": "SME0332 ",
@@ -952,7 +1187,15 @@
                 "fim": "18:00"
             }
         ],
-        "id": "SME0332 ,2"
+        "id": "SME0332,2",
+        "conflitos": [
+            "SME0306,1",
+            "SME0285,1",
+            "SME0123,2",
+            "SME0220,1",
+            "PRG-0027,1",
+            "SME0320,2"
+        ]
     },
     {
         "codigo": "SME0334",
@@ -973,7 +1216,13 @@
                 "fim": "16:00"
             }
         ],
-        "id": "SME0334,1"
+        "id": "SME0334,1",
+        "conflitos": [
+            "SME0212,1",
+            "SME0240,1",
+            "SME0341,1",
+            "SME0332,1"
+        ]
     },
     {
         "codigo": "SME0341",
@@ -994,7 +1243,16 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0341,1"
+        "id": "SME0341,1",
+        "conflitos": [
+            "SME0306,1",
+            "SME0332,1",
+            "SME0123,2",
+            "SME0334,1",
+            "SME0240,1",
+            "SME0320,1",
+            "SME0212,1"
+        ]
     },
     {
         "codigo": "SME0341",
@@ -1010,7 +1268,11 @@
                 "fim": "11:50"
             }
         ],
-        "id": "SME0341,2"
+        "id": "SME0341,2",
+        "conflitos": [
+            "SME0142,1",
+            "SME0300,2"
+        ]
     },
     {
         "codigo": "PRG-0027",
@@ -1026,7 +1288,14 @@
                 "fim": "18:00"
             }
         ],
-        "id": "PRG-0027,1"
+        "id": "PRG-0027,1",
+        "conflitos": [
+            "SME0332,2",
+            "SME0285,1",
+            "SME0123,2",
+            "SME0220,1",
+            "SME0320,2"
+        ]
     },
     {
         "codigo": "SME5975",
@@ -1034,9 +1303,10 @@
         "curso": "Estatística",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5975",
         "horarios": [],
-        "id": "SME5975,1"
+        "id": "SME5975,1",
+        "conflitos": []
     },
     {
         "codigo": "SME5978",
@@ -1044,9 +1314,10 @@
         "curso": "Estatística",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5978",
         "horarios": [],
-        "id": "SME5978,1"
+        "id": "SME5978,1",
+        "conflitos": []
     },
     {
         "codigo": "SME5962",
@@ -1054,9 +1325,10 @@
         "curso": "Otimização",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5962",
         "horarios": [],
-        "id": "SME5962,1"
+        "id": "SME5962,1",
+        "conflitos": []
     },
     {
         "codigo": "SMA5934",
@@ -1064,9 +1336,10 @@
         "curso": "Matemática",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5934",
         "horarios": [],
-        "id": "SMA5934,1"
+        "id": "SMA5934,1",
+        "conflitos": []
     },
     {
         "codigo": "SMA5802",
@@ -1074,9 +1347,10 @@
         "curso": "Matemática",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5802",
         "horarios": [],
-        "id": "SMA5802,1"
+        "id": "SMA5802,1",
+        "conflitos": []
     },
     {
         "codigo": "SME5873",
@@ -1084,9 +1358,10 @@
         "curso": "MFC",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5873",
         "horarios": [],
-        "id": "SME5873,1"
+        "id": "SME5873,1",
+        "conflitos": []
     },
     {
         "codigo": "SME5827",
@@ -1094,8 +1369,9 @@
         "curso": "MFC",
         "turma": 1,
         "nivel": "p",
-        "ementa": "pos",
+        "ementa": "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
         "horarios": [],
-        "id": "SME5827,1"
+        "id": "SME5827,1",
+        "conflitos": []
     }
 ]

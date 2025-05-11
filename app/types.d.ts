@@ -4,6 +4,20 @@ export type Horario = {
   fim: string;
 };
 
+export type TurmaDataInicial = {
+  id: string;
+  codigo: string;
+  nome: string;
+  turma: number;
+  horarios: Horario[];
+  curso: string;
+  ementa: string;
+  ingles?: boolean;
+  prioridade?: number;
+  nivel: string; // 'p' | 'g'
+  conflitos: string[];
+};
+
 export type TurmaData = {
   id: string;
   codigo: string;
@@ -15,6 +29,7 @@ export type TurmaData = {
   ingles?: boolean;
   prioridade?: number;
   nivel: string; // 'p' | 'g'
+  conflitos: Set<string>;
 };
 
 export type AvaliacaoData = {

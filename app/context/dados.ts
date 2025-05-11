@@ -1,6 +1,6 @@
-import { TurmaData } from "../types";
+import { TurmaDataInicial } from "../types";
 
-export const turmasJson: TurmaData[] = [
+export const turmasJson: TurmaDataInicial[] = [
   {
     codigo: "SME0142",
     nome: "Algebra Linear e Aplicações",
@@ -22,6 +22,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0142,1",
+    conflitos: ["SME0212,1", "SME0300,1", "SME0300,2", "SME0341,2"],
   },
   {
     codigo: "SME0142",
@@ -44,6 +45,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0142,2",
+    conflitos: [],
   },
   {
     codigo: "SME0123",
@@ -66,6 +68,14 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0123,1",
+    conflitos: [
+      "SME0332,1",
+      "SME0300,2",
+      "SME0285,1",
+      "SME0240,1",
+      "SME0241,1",
+      "SME0320,3",
+    ],
   },
   {
     codigo: "SME0123",
@@ -88,6 +98,16 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0123,2",
+    conflitos: [
+      "SME0306,1",
+      "SME0332,2",
+      "SME0341,1",
+      "SME0285,1",
+      "SME0220,1",
+      "SME0320,1",
+      "PRG-0027,1",
+      "SME0320,2",
+    ],
   },
   {
     codigo: "SME0110",
@@ -110,6 +130,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0110,1",
+    conflitos: ["SME0300,1", "SME0306,2"],
   },
   {
     codigo: "SME0110",
@@ -132,6 +153,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0110,2",
+    conflitos: ["SME0320,1", "SME0320,4"],
   },
   {
     codigo: "SME0800",
@@ -154,6 +176,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0800,1",
+    conflitos: ["SME0822,1", "SME0805,1"],
   },
   {
     codigo: "SME0809",
@@ -176,6 +199,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0809,1",
+    conflitos: ["SME0510,1", "SME0823,1"],
   },
   {
     codigo: "SME0805",
@@ -198,6 +222,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0805,1",
+    conflitos: ["SME0822,1", "SME0800,1"],
   },
   {
     codigo: "SME0828",
@@ -220,6 +245,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0828,1",
+    conflitos: ["SME0810,1"],
   },
   {
     codigo: "SME0824",
@@ -242,6 +268,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0824,1",
+    conflitos: ["SME0808,1"],
   },
   {
     codigo: "SME0820",
@@ -264,6 +291,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0820,1",
+    conflitos: ["SME0808,1"],
   },
   {
     codigo: "SME0823",
@@ -286,6 +314,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0823,1",
+    conflitos: ["SME0510,1", "SME0809,1"],
   },
   {
     codigo: "SME0822",
@@ -308,6 +337,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0822,1",
+    conflitos: ["SME0805,1", "SME0800,1"],
   },
   {
     codigo: "SME0810",
@@ -330,6 +360,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0810,1",
+    conflitos: ["SME0828,1"],
   },
   {
     codigo: "SME0808",
@@ -352,6 +383,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0808,1",
+    conflitos: ["SME0824,1", "SME0820,1"],
   },
   {
     codigo: "SME0814",
@@ -374,6 +406,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0814,9",
+    conflitos: ["SME0881,9", "SME0815,9", "SME0880,9"],
   },
   {
     codigo: "SME0815",
@@ -396,6 +429,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0815,9",
+    conflitos: ["SME0881,9", "SME0880,9", "SME0814,9"],
   },
   {
     codigo: "SME0880",
@@ -418,6 +452,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0880,9",
+    conflitos: ["SME0881,9", "SME0815,9", "SME0814,9"],
   },
   {
     codigo: "SME0881",
@@ -440,17 +475,19 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0881,9",
+    conflitos: ["SME0880,9", "SME0815,9", "SME0814,9"],
   },
   {
     codigo: "SME0110 ",
     nome: "Redes Complexas",
     curso: "BCC",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0110 ",
     horarios: [],
-    id: "SME0110 ,1",
+    id: "SME0110,9",
+    conflitos: [],
   },
   {
     codigo: "SME0808",
@@ -462,17 +499,19 @@ export const turmasJson: TurmaData[] = [
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0808",
     horarios: [],
     id: "SME0808,9",
+    conflitos: [],
   },
   {
     codigo: "SME0806",
     nome: "Estatística Computacional",
     curso: "BCC",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0806",
     horarios: [],
-    id: "SME0806,1",
+    id: "SME0806,9",
+    conflitos: [],
   },
   {
     codigo: "SME0823",
@@ -484,17 +523,19 @@ export const turmasJson: TurmaData[] = [
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0823",
     horarios: [],
     id: "SME0823,9",
+    conflitos: [],
   },
   {
     codigo: "SME0871 ",
     nome: "Bioestatística",
     curso: "BECD\t",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0871 ",
     horarios: [],
-    id: "SME0871 ,1",
+    id: "SME0871,9",
+    conflitos: [],
   },
   {
     codigo: "SME0822",
@@ -506,17 +547,19 @@ export const turmasJson: TurmaData[] = [
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0822",
     horarios: [],
     id: "SME0822,9",
+    conflitos: [],
   },
   {
     codigo: "SME0102",
     nome: "Seminários Avançados de Matemática Computacional I",
     curso: "BCC",
-    turma: 1,
+    turma: 9,
     nivel: "g",
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0102",
     horarios: [],
-    id: "SME0102,1",
+    id: "SME0102,9",
+    conflitos: [],
   },
   {
     codigo: "SME0510",
@@ -539,6 +582,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0510,1",
+    conflitos: ["SME0823,1", "SME0809,1"],
   },
   {
     codigo: "SME0220",
@@ -561,6 +605,14 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0220,1",
+    conflitos: [
+      "SME0306,1",
+      "SME0332,2",
+      "SME0285,1",
+      "SME0123,2",
+      "PRG-0027,1",
+      "SME0320,2",
+    ],
   },
   {
     codigo: "SME0212",
@@ -583,6 +635,14 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0212,1",
+    conflitos: [
+      "SME0332,1",
+      "SME0334,1",
+      "SME0300,1",
+      "SME0240,1",
+      "SME0341,1",
+      "SME0142,1",
+    ],
   },
   {
     codigo: "SME0241",
@@ -600,6 +660,13 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0241,1",
+    conflitos: [
+      "SME0332,1",
+      "SME0123,1",
+      "SME0285,1",
+      "SME0240,1",
+      "SME0320,3",
+    ],
   },
   {
     codigo: "SME0206",
@@ -622,6 +689,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0206,1",
+    conflitos: ["SME0284,1"],
   },
   {
     codigo: "SME0211",
@@ -644,6 +712,13 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0211,1",
+    conflitos: [
+      "SME0320,4",
+      "SME0320,2",
+      "SME0284,1",
+      "SME0320,3",
+      "SME0245,1",
+    ],
   },
   {
     codigo: "SME0240",
@@ -666,6 +741,16 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0240,1",
+    conflitos: [
+      "SME0341,1",
+      "SME0332,1",
+      "SME0123,1",
+      "SME0285,1",
+      "SME0334,1",
+      "SME0241,1",
+      "SME0212,1",
+      "SME0320,3",
+    ],
   },
   {
     codigo: "SME0245",
@@ -688,6 +773,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0245,1",
+    conflitos: ["SME0320,2", "SME0284,1", "SME0211,1"],
   },
   {
     codigo: "SME0285",
@@ -710,6 +796,18 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0285,1",
+    conflitos: [
+      "SME0332,2",
+      "SME0332,1",
+      "SME0123,1",
+      "SME0123,2",
+      "SME0240,1",
+      "SME0241,1",
+      "SME0220,1",
+      "PRG-0027,1",
+      "SME0320,2",
+      "SME0320,3",
+    ],
   },
   {
     codigo: "SME0284",
@@ -732,6 +830,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0284,1",
+    conflitos: ["SME0320,2", "SME0206,1", "SME0211,1", "SME0245,1"],
   },
   {
     codigo: "SME0213 ",
@@ -742,7 +841,8 @@ export const turmasJson: TurmaData[] = [
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0213 ",
     horarios: [],
-    id: "SME0213 ,1",
+    id: "SME0213,1",
+    conflitos: [],
   },
   {
     codigo: "SME0250 ",
@@ -753,7 +853,8 @@ export const turmasJson: TurmaData[] = [
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0250 ",
     horarios: [],
-    id: "SME0250 ,1",
+    id: "SME0250,1",
+    conflitos: [],
   },
   {
     codigo: "SME0252  ",
@@ -764,7 +865,8 @@ export const turmasJson: TurmaData[] = [
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0252  ",
     horarios: [],
-    id: "SME0252  ,1",
+    id: "SME0252,1",
+    conflitos: [],
   },
   {
     codigo: "SME0262 ",
@@ -775,7 +877,8 @@ export const turmasJson: TurmaData[] = [
     ementa:
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0262 ",
     horarios: [],
-    id: "SME0262 ,1",
+    id: "SME0262,1",
+    conflitos: [],
   },
   {
     codigo: "SME0870",
@@ -787,6 +890,7 @@ export const turmasJson: TurmaData[] = [
       "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=SME0870",
     horarios: [],
     id: "SME0870,1",
+    conflitos: [],
   },
   {
     codigo: "SME0300 ",
@@ -808,7 +912,8 @@ export const turmasJson: TurmaData[] = [
         fim: "11:50",
       },
     ],
-    id: "SME0300 ,1",
+    id: "SME0300,1",
+    conflitos: ["SME0212,1", "SME0306,2", "SME0142,1", "SME0110,1"],
   },
   {
     codigo: "SME0300 ",
@@ -830,7 +935,8 @@ export const turmasJson: TurmaData[] = [
         fim: "09:50",
       },
     ],
-    id: "SME0300 ,2",
+    id: "SME0300,2",
+    conflitos: ["SME0341,2", "SME0142,1", "SME0123,1"],
   },
   {
     codigo: "SME0306 ",
@@ -852,7 +958,14 @@ export const turmasJson: TurmaData[] = [
         fim: "11:50",
       },
     ],
-    id: "SME0306 ,1",
+    id: "SME0306,1",
+    conflitos: [
+      "SME0332,2",
+      "SME0123,2",
+      "SME0220,1",
+      "SME0320,1",
+      "SME0341,1",
+    ],
   },
   {
     codigo: "SME0306 ",
@@ -874,7 +987,8 @@ export const turmasJson: TurmaData[] = [
         fim: "11:50",
       },
     ],
-    id: "SME0306 ,2",
+    id: "SME0306,2",
+    conflitos: ["SME0300,1", "SME0110,1"],
   },
   {
     codigo: "SME0320 ",
@@ -896,7 +1010,14 @@ export const turmasJson: TurmaData[] = [
         fim: "11:50",
       },
     ],
-    id: "SME0320 ,1",
+    id: "SME0320,1",
+    conflitos: [
+      "SME0306,1",
+      "SME0320,4",
+      "SME0123,2",
+      "SME0110,2",
+      "SME0341,1",
+    ],
   },
   {
     codigo: "SME0320 ",
@@ -918,7 +1039,17 @@ export const turmasJson: TurmaData[] = [
         fim: "18:00",
       },
     ],
-    id: "SME0320 ,2",
+    id: "SME0320,2",
+    conflitos: [
+      "SME0332,2",
+      "SME0211,1",
+      "SME0285,1",
+      "SME0123,2",
+      "SME0220,1",
+      "PRG-0027,1",
+      "SME0284,1",
+      "SME0245,1",
+    ],
   },
   {
     codigo: "SME0320 ",
@@ -940,7 +1071,16 @@ export const turmasJson: TurmaData[] = [
         fim: "16:00",
       },
     ],
-    id: "SME0320 ,3",
+    id: "SME0320,3",
+    conflitos: [
+      "SME0332,1",
+      "SME0123,1",
+      "SME0320,4",
+      "SME0211,1",
+      "SME0285,1",
+      "SME0240,1",
+      "SME0241,1",
+    ],
   },
   {
     codigo: "SME0320 ",
@@ -962,7 +1102,8 @@ export const turmasJson: TurmaData[] = [
         fim: "09:50",
       },
     ],
-    id: "SME0320 ,4",
+    id: "SME0320,4",
+    conflitos: ["SME0110,2", "SME0320,1", "SME0211,1", "SME0320,3"],
   },
   {
     codigo: "SME0332 ",
@@ -984,7 +1125,17 @@ export const turmasJson: TurmaData[] = [
         fim: "16:00",
       },
     ],
-    id: "SME0332 ,1",
+    id: "SME0332,1",
+    conflitos: [
+      "SME0341,1",
+      "SME0123,1",
+      "SME0285,1",
+      "SME0334,1",
+      "SME0240,1",
+      "SME0241,1",
+      "SME0212,1",
+      "SME0320,3",
+    ],
   },
   {
     codigo: "SME0332 ",
@@ -1006,7 +1157,15 @@ export const turmasJson: TurmaData[] = [
         fim: "18:00",
       },
     ],
-    id: "SME0332 ,2",
+    id: "SME0332,2",
+    conflitos: [
+      "SME0306,1",
+      "SME0285,1",
+      "SME0123,2",
+      "SME0220,1",
+      "PRG-0027,1",
+      "SME0320,2",
+    ],
   },
   {
     codigo: "SME0334",
@@ -1029,6 +1188,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0334,1",
+    conflitos: ["SME0212,1", "SME0240,1", "SME0341,1", "SME0332,1"],
   },
   {
     codigo: "SME0341",
@@ -1051,6 +1211,15 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0341,1",
+    conflitos: [
+      "SME0306,1",
+      "SME0332,1",
+      "SME0123,2",
+      "SME0334,1",
+      "SME0240,1",
+      "SME0320,1",
+      "SME0212,1",
+    ],
   },
   {
     codigo: "SME0341",
@@ -1068,6 +1237,7 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "SME0341,2",
+    conflitos: ["SME0142,1", "SME0300,2"],
   },
   {
     codigo: "PRG-0027",
@@ -1085,6 +1255,13 @@ export const turmasJson: TurmaData[] = [
       },
     ],
     id: "PRG-0027,1",
+    conflitos: [
+      "SME0332,2",
+      "SME0285,1",
+      "SME0123,2",
+      "SME0220,1",
+      "SME0320,2",
+    ],
   },
   {
     codigo: "SME5975",
@@ -1096,6 +1273,7 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5975",
     horarios: [],
     id: "SME5975,1",
+    conflitos: [],
   },
   {
     codigo: "SME5978",
@@ -1107,6 +1285,7 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5978",
     horarios: [],
     id: "SME5978,1",
+    conflitos: [],
   },
   {
     codigo: "SME5962",
@@ -1118,6 +1297,7 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5962",
     horarios: [],
     id: "SME5962,1",
+    conflitos: [],
   },
   {
     codigo: "SMA5934",
@@ -1129,6 +1309,7 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5934",
     horarios: [],
     id: "SMA5934,1",
+    conflitos: [],
   },
   {
     codigo: "SMA5802",
@@ -1140,6 +1321,7 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5802",
     horarios: [],
     id: "SMA5802,1",
+    conflitos: [],
   },
   {
     codigo: "SME5873",
@@ -1151,6 +1333,7 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5873",
     horarios: [],
     id: "SME5873,1",
+    conflitos: [],
   },
   {
     codigo: "SME5827",
@@ -1162,5 +1345,6 @@ export const turmasJson: TurmaData[] = [
       "https://icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
     horarios: [],
     id: "SME5827,1",
+    conflitos: [],
   },
 ];
