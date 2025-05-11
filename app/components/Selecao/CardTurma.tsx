@@ -22,6 +22,7 @@ interface CardTurmaProps {
   nivel: string;
   onAdicionar: (key: string, prioridade: number) => void;
   isSelected: boolean;
+  horariosConflito: Set<string>;
 }
 
 const CardTurma = ({
@@ -35,6 +36,7 @@ const CardTurma = ({
   nivel,
   onAdicionar,
   isSelected,
+  horariosConflito,
 }: CardTurmaProps) => {
   const [prioridade, setPrioridade] = useState<number>(0);
 
@@ -78,9 +80,21 @@ const CardTurma = ({
             {horarios.map((horario, idx) => (
               <Chip
                 key={idx}
-                label={`${horario.dia}: ${horario.inicio} - ${horario.fim}`}
+                label={`${horario.dia}: ${horario.inicio} - ${horario.fim} ${
+                  horariosConflito.has(
+                    `${horario.dia}-${horario.inicio}-${horario.fim}`
+                  )
+                    ? "(Conflito)"
+                    : ""
+                }`}
                 size="small"
-                color="info"
+                color={
+                  horariosConflito.has(
+                    `${horario.dia}-${horario.inicio}-${horario.fim}`
+                  )
+                    ? "warning"
+                    : "info"
+                }
               />
             ))}
             {horarios.length === 0 && (
@@ -88,7 +102,7 @@ const CardTurma = ({
                 key={id}
                 label={`A definir.`}
                 size="small"
-                color="warning"
+                color="default"
               />
             )}
           </Stack>
@@ -118,6 +132,7 @@ const CardTurma = ({
           ) : (
             <Chip label="Pós-graduação" color="secondary" size="small" />
           )}
+          {/* <Chip label="Conflito de horário" color="warning" size="small" /> */}
         </Box>
 
         <Box

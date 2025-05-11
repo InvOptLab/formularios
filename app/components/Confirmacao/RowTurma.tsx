@@ -23,6 +23,7 @@ interface RowTurmaProps {
   onPriorityChange: (idTurma: string, newPriority: number) => void;
   onRemove: (idTurma: string) => void;
   prioridadesSelecionadas: number[];
+  conflitos: Map<string, string>;
 }
 
 const RowTurma: React.FC<RowTurmaProps> = ({
@@ -30,6 +31,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
   onPriorityChange,
   onRemove,
   prioridadesSelecionadas,
+  conflitos,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -57,20 +59,34 @@ const RowTurma: React.FC<RowTurmaProps> = ({
       <TableRow>
         <TableCell>
           <Badge
-            color="error"
+            color={
+              errorMessage ? "error" : conflitos.size > 0 ? "warning" : "info"
+            }
             anchorOrigin={{ horizontal: "left" }}
             variant="dot"
-            invisible={!errorMessage}
+            invisible={!errorMessage && conflitos.size === 0}
           >
             <Tooltip title="Expandir">
               <IconButton size="small" onClick={() => setOpen(!open)}>
                 {open ? (
                   <KeyboardArrowUp
-                    sx={{ color: hasError ? "error.main" : "inherit" }}
+                    sx={{
+                      color: hasError
+                        ? "error.main"
+                        : conflitos.size > 0
+                        ? "warning.main"
+                        : "inherit",
+                    }}
                   />
                 ) : (
                   <KeyboardArrowDown
-                    sx={{ color: hasError ? "error.main" : "inherit" }}
+                    sx={{
+                      color: hasError
+                        ? "error.main"
+                        : conflitos.size > 0
+                        ? "warning.main"
+                        : "inherit",
+                    }}
                   />
                 )}
               </IconButton>
@@ -113,7 +129,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                 borderLeft="4px solid #1976d2"
                 bgcolor="#f5f5f5"
                 borderRadius={2}
-                width="40%"
+                width="30%"
               >
                 <Typography variant="subtitle1" gutterBottom fontWeight="bold">
                   Horários:
@@ -151,6 +167,34 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   </Typography>
                 </Box>
               </Box>
+              {conflitos.size > 0 && (
+                <Box
+                  margin={2}
+                  p={2}
+                  borderLeft="4px solid #ed6c02"
+                  bgcolor="#f5f5f5"
+                  borderRadius={2}
+                  width="30%"
+                >
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    fontWeight="bold"
+                  >
+                    ⚠️🕒 Conflitos de horários
+                  </Typography>
+                  <Box>
+                    {conflitos
+                      .entries()
+                      .toArray()
+                      .map((value, key) => (
+                        <Typography key={turma.id + "_" + key} variant="body2">
+                          - {value[1]}
+                        </Typography>
+                      ))}
+                  </Box>
+                </Box>
+              )}
               {hasError && (
                 <Box
                   margin={2}
@@ -158,7 +202,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   borderLeft="4px solid rgb(210, 25, 25)"
                   bgcolor="#f5f5f5"
                   borderRadius={2}
-                  width="40%"
+                  width="30%"
                 >
                   <Typography variant="body2" color="error.main">
                     ⚠️ {errorMessage}

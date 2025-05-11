@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { TurmaData } from "../types";
+import { TurmaData, TurmaDataInicial } from "../types";
 
 type TurmasContextType = {
   turmas: Map<string, TurmaData>;
@@ -12,7 +12,7 @@ type TurmasContextType = {
 const TurmasContext = createContext<TurmasContextType | undefined>(undefined);
 
 type Props = {
-  initialTurmas: TurmaData[];
+  initialTurmas: TurmaDataInicial[];
   children: ReactNode;
 };
 
@@ -20,7 +20,11 @@ export const TurmasProvider = ({ initialTurmas, children }: Props) => {
   const [turmas] = useState<Map<string, TurmaData>>(() => {
     const map = new Map<string, TurmaData>();
     initialTurmas.forEach((turma) => {
-      map.set(turma.id, turma);
+      const newTurma: TurmaData = {
+        ...turma,
+        conflitos: new Set(turma.conflitos),
+      };
+      map.set(turma.id, newTurma);
     });
     return map;
   });

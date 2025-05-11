@@ -3,13 +3,29 @@ import CardTurma from "./Selecao/CardTurma";
 import CarrinhoItem from "./Selecao/CarrinhoItem";
 import { useTurmas } from "../context/TurmasContext";
 import WarningIcon from "@mui/icons-material/Warning";
+import { useEffect, useState } from "react";
+import { TurmaData } from "../types";
 
 const Selecao = () => {
   // const [selectedTurmas, setSelectedTurmas] = useState<Map<string, TurmaData>>(
   //   new Map()
   // );
 
+  const [horariosSelecionados, setHorariosSelecionados] = useState(
+    new Set<string>()
+  );
+
   const { turmas, selectedTurmas, addTurma, removeTurma } = useTurmas();
+
+  useEffect(() => {
+    const novosHorarios = new Set<string>();
+    for (const turma of selectedTurmas.values()) {
+      for (const horario of turma.horarios) {
+        novosHorarios.add(`${horario.dia}-${horario.inicio}-${horario.fim}`);
+      }
+    }
+    setHorariosSelecionados(novosHorarios);
+  }, [selectedTurmas]);
 
   const handleAdicionar = (key: string, prioridade: number) => {
     const turmaData = turmas.get(key);
@@ -26,6 +42,19 @@ const Selecao = () => {
 
   const handleRemover = (key: string) => {
     removeTurma(key);
+  };
+
+  /** Implementada também em Seleção */
+  const getConflitos = (turma: TurmaData): Map<string, string> => {
+    const turmasQueConflita: Map<string, string> = new Map<string, string>();
+
+    for (const selecionada of selectedTurmas.values()) {
+      if (turma.conflitos.has(selecionada.id)) {
+        turmasQueConflita.set(selecionada.id, selecionada.nome);
+      }
+    }
+
+    return turmasQueConflita;
   };
 
   return (
@@ -70,6 +99,7 @@ const Selecao = () => {
                 nivel={turma.nivel}
                 onAdicionar={handleAdicionar}
                 isSelected={selectedTurmas.has(turma.id)}
+                horariosConflito={horariosSelecionados}
               />
             </Grid>
           ))}
@@ -96,7 +126,7 @@ const Selecao = () => {
         ) : (
           <Box
             sx={{
-              maxHeight: "80vh", // altura máxima relativa à viewport (ajuste conforme necessário)
+              maxHeight: "75vh", // altura máxima relativa à viewport (ajuste conforme necessário)
               overflowY: "auto",
               pr: 2, // padding-right para evitar que o scroll esconda conteúdo
               scrollbarWidth: "revert-layer",
@@ -124,6 +154,7 @@ const Selecao = () => {
                 curso={turma.curso}
                 prioridade={turma.prioridade}
                 onRemover={handleRemover}
+                conflitos={getConflitos(turma)}
               />
             ))}
           </Box>
