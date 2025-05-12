@@ -10,24 +10,10 @@ import {
 
 const Introducao = () => {
   return (
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ p: 2 }} width="60%">
       <Typography variant="h5" gutterBottom>
-        Bem-vindo à Plataforma de Atribuição de Turmas
+        Bem-vindo à Plataforma de Preenchimento de Formulários
       </Typography>
-
-      <Typography variant="body1" paragraph>
-        Esta ferramenta foi desenvolvida para auxiliar os docentes no
-        preenchimento dos formulários referentes às turmas de interesse para o
-        próximo semestre. O objetivo da plataforma é ser simples e objetiva, com
-        passos definidos e de fácil execução.
-      </Typography>
-
-      <Divider sx={{ my: 3 }} />
-
-      <Typography variant="h6" gutterBottom>
-        Como funciona o processo?
-      </Typography>
-
       <List>
         <ListItem alignItems="flex-start">
           <ListItemText
@@ -63,9 +49,9 @@ const Introducao = () => {
                 informadas anteriormente).
                 <br />
                 <strong>Importante:</strong> Todas as prioridades devem ser
-                preenchidas para liberar o botão de <em>Confirmação</em>. Só
-                após essa confirmação será possível prosseguir para a próxima
-                etapa.
+                preenchidas com valores maiores que zero. Além disso, não é
+                permitido atribuir o mesmo valor de prioridade para mais de uma
+                turma.
               </>
             }
           />
@@ -75,13 +61,37 @@ const Introducao = () => {
 
         <ListItem alignItems="flex-start">
           <ListItemText
-            primary="3️⃣ Download do Arquivo"
+            primary="3️⃣ Avaliação da Atribuição Anterior"
+            secondary={
+              <>
+                Antes de finalizar, você poderá preencher um pequeno formulário
+                com apenas três campos. Ele tem como objetivo nos ajudar a
+                entender onde e como podemos melhorar. As respostas serão
+                utilizadas como feedback para que seja possível refinar
+                continuamente o processo de atribuição.
+                <br />
+                <strong>Importante:</strong> A única exigência obrigatória é a
+                atribuição de uma nota.
+              </>
+            }
+          />
+        </ListItem>
+
+        <Divider component="li" sx={{ my: 2 }} />
+
+        <ListItem alignItems="flex-start">
+          <ListItemText
+            primary="4️⃣ Download do Arquivo"
             secondary={
               <>
                 No último passo, você poderá baixar o arquivo finalizado, que
                 deverá ser enviado à comissão responsável pelo processo de
                 atribuição. Detalhes adicionais e instruções estarão disponíveis
                 nesta etapa para garantir que tudo ocorra corretamente.
+                <br />
+                <strong>Importante:</strong> Para concluir o processo, é
+                necessário preencher o campo com seu nome completo e exportar o
+                arquivo final.
               </>
             }
           />

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Card,
@@ -12,32 +13,40 @@ import {
 } from "@mui/material";
 
 interface CardTurmaProps {
-  codigo: string;
+  id: string;
   nome: string;
-  turma: string;
+  turma: number;
   horarios: { dia: string; inicio: string; fim: string }[];
   curso: string;
-  ementaUrl: string;
-  ingles: boolean;
-  onAdicionar: (codigo: string, turma: string, prioridade: number) => void;
+  ementa: string;
+  //ingles: boolean;
+  nivel: string;
+  onAdicionar: (key: string, prioridade: number) => void;
   isSelected: boolean;
+  horariosConflito: Set<string>;
+  noturna: boolean;
+  codigo: string;
 }
 
 const CardTurma = ({
-  codigo,
+  id,
   nome,
   turma,
   horarios,
   curso,
-  ementaUrl,
-  ingles,
+  ementa,
+  //ingles,
+  nivel,
   onAdicionar,
   isSelected,
+  horariosConflito,
+  noturna,
+  codigo,
 }: CardTurmaProps) => {
   const [prioridade, setPrioridade] = useState<number>(0);
 
   const handleAdd = () => {
-    onAdicionar(codigo, turma, prioridade);
+    onAdicionar(id, prioridade);
   };
 
   return (
@@ -51,7 +60,7 @@ const CardTurma = ({
         opacity: isSelected ? 0.5 : 1,
         pointerEvents: isSelected ? "none" : "auto",
         height: "100%",
-        width: "20em",
+        width: "21em",
       }}
       elevation={3}
     >
@@ -64,6 +73,9 @@ const CardTurma = ({
           height: "100%",
         }}
       >
+        <Typography variant="body1" fontWeight="bold">
+          {codigo}
+        </Typography>
         <Typography variant="h6">{nome}</Typography>
         <Typography variant="h6">(Turma {turma})</Typography>
         <Typography variant="body2" color="text.secondary">
@@ -76,33 +88,76 @@ const CardTurma = ({
             {horarios.map((horario, idx) => (
               <Chip
                 key={idx}
-                label={`${horario.dia}: ${horario.inicio} - ${horario.fim}`}
+                label={`${horario.dia}: ${horario.inicio} - ${horario.fim} ${
+                  horariosConflito.has(
+                    `${horario.dia}-${horario.inicio}-${horario.fim}`
+                  )
+                    ? "(Conflito)"
+                    : ""
+                }`}
                 size="small"
-                color="info"
+                color={
+                  horariosConflito.has(
+                    `${horario.dia}-${horario.inicio}-${horario.fim}`
+                  )
+                    ? "warning"
+                    : "info"
+                }
               />
             ))}
+            {horarios.length === 0 && (
+              <Chip
+                key={id}
+                label={`A definir.`}
+                size="small"
+                color="default"
+              />
+            )}
           </Stack>
         </Box>
 
         <Box mt={1}>
           <Typography variant="body2">
             Ementa:{" "}
-            <Link href={ementaUrl} target="_blank" rel="noopener">
+            <Link href={ementa} target="_blank" rel="noopener">
               Visualizar
             </Link>
           </Typography>
         </Box>
 
-        <Box mt={1}>
-          {ingles ? (
-            <Chip label="Disciplina em Inglês" color="warning" size="small" />
+        <Box
+          mt={1}
+          display="flex"
+          justifyContent="space-evenly"
+          flexDirection="row"
+          flexWrap="wrap"
+        >
+          {/* {ingles ? (
+            <Chip label="Disciplina em Inglês" color="error" size="small" />
           ) : (
             <Chip
               label="Disciplina em Português"
               color="success"
               size="small"
             />
+          )} */}
+          {noturna && (
+            <Chip
+              label="Noturna"
+              sx={{ backgroundColor: "#131862", color: "#ffffff" }}
+              size="small"
+            />
           )}
+          {nivel === "g" ? (
+            <Chip label="Graduação" color="primary" size="small" />
+          ) : (
+            <Chip label="Pós-graduação" color="secondary" size="small" />
+          )}
+          {horarios.some((horario) =>
+            horariosConflito.has(
+              `${horario.dia}-${horario.inicio}-${horario.fim}`
+            )
+          ) && <Chip label="Conflito" color="warning" size="small" />}
         </Box>
 
         <Box
@@ -110,7 +165,7 @@ const CardTurma = ({
           display="flex"
           alignItems="center"
           justifyContent="end"
-          gap={1}
+          gap={2}
         >
           <TextField
             label="Prioridade"
@@ -118,7 +173,8 @@ const CardTurma = ({
             size="small"
             value={undefined}
             onChange={(e) => setPrioridade(Number(e.target.value))}
-            sx={{ width: 100 }}
+            sx={{ width: 120 }}
+            slotProps={{ htmlInput: { min: 0 } }}
           />
           <Button variant="contained" onClick={handleAdd} disabled={isSelected}>
             {isSelected ? "Adicionado" : "Adicionar"}

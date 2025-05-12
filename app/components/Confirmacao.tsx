@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -9,92 +9,130 @@ import {
   TableRow,
   Paper,
   Typography,
+  Box,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
 } from "@mui/material";
 import RowTurma from "./Confirmacao/RowTurma";
-import { TurmaData } from "./Selecao";
+import { useTurmas } from "../context/TurmasContext";
+import { TurmaData } from "../types";
 
 const Confirmacao = () => {
-  // Mock de dados selecionados (normalmente vem do estado global ou props)
-  const [selectedTurmas, setSelectedTurmas] = useState(
-    new Map<string, TurmaData>([
-      [
-        "MAT123,01",
-        {
-          codigo: "MAT123",
-          nome: "Matemática Discreta",
-          turma: "01",
-          horarios: [
-            { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-            { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-          ],
-          curso: "Ciência da Computação",
-          ementaUrl: "https://exemplo.com/ementa",
-          ingles: false,
-          prioridade: 1,
-        },
-      ],
-      [
-        "ENG456,02",
-        {
-          codigo: "ENG456",
-          nome: "Engenharia de Software",
-          turma: "02",
-          horarios: [{ dia: "Terça", inicio: "14:00", fim: "16:00" }],
-          curso: "Engenharia de Software",
-          ementaUrl: "https://exemplo.com/ementa2",
-          ingles: true,
-        },
-      ],
-    ])
-  );
+  const {
+    selectedTurmas,
+    setPrioridade,
+    removeTurma,
+    semNoturnaMinhaArea,
+    updateSemNoturnaMinhaArea,
+  } = useTurmas();
 
-  const handlePriorityChange = (codigoTurma: string, newPriority: number) => {
-    setSelectedTurmas((prev) => {
-      const updated = new Map(prev);
-      const turma = updated.get(codigoTurma);
-      if (turma) {
-        updated.set(codigoTurma, { ...turma, prioridade: newPriority });
-      }
-      return updated;
-    });
+  const handlePriorityChange = (idTurma: string, newPriority: number) => {
+    setPrioridade(idTurma, newPriority);
   };
 
-  const handleRemove = (codigoTurma: string) => {
-    setSelectedTurmas((prev) => {
-      const updated = new Map(prev);
-      updated.delete(codigoTurma);
-      return updated;
-    });
+  const handleRemove = (idTurma: string) => {
+    removeTurma(idTurma);
+  };
+
+  /** Implementada também em Seleção */
+  const getConflitos = (turma: TurmaData): Map<string, string> => {
+    const turmasQueConflita: Map<string, string> = new Map<string, string>();
+
+    for (const selecionada of selectedTurmas.values()) {
+      if (turma.conflitos.has(selecionada.id)) {
+        turmasQueConflita.set(selecionada.id, selecionada.nome);
+      }
+    }
+
+    return turmasQueConflita;
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Typography variant="h4" textAlign="center" p={2}>
-        Confirme suas turmas selecionadas
-      </Typography>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell>Código</TableCell>
-            <TableCell>Nome</TableCell>
-            <TableCell>Turma</TableCell>
-            <TableCell>Prioridade</TableCell>
-            <TableCell>Remover</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {[...selectedTurmas.entries()].map(([key, turma]) => (
-            <RowTurma
-              key={key}
-              turma={turma}
-              onPriorityChange={handlePriorityChange}
-              onRemove={handleRemove}
-            />
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Box
+      width="100%"
+      display="flex"
+      flexDirection="column"
+      flexWrap="wrap"
+      alignContent="center"
+      justifyContent="center"
+      alignItems="flex-end"
+    >
+      <TableContainer
+        component={Paper}
+        sx={{
+          width: "80%",
+          maxHeight: "80vh",
+          scrollbarWidth: "revert-layer",
+          "&::-webkit-scrollbar": {
+            width: "0.4em",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#f1f1f1",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#888",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            background: "#555",
+          },
+        }}
+      >
+        <Typography variant="h4" textAlign="center" p={2}>
+          Confirme suas turmas selecionadas
+        </Typography>
+        <Table
+          stickyHeader
+          aria-label="Tabela para confirmação de turmas selecionadas."
+        >
+          <TableHead>
+            <TableRow>
+              <TableCell />
+              <TableCell>Código</TableCell>
+              <TableCell>Turma</TableCell>
+              <TableCell>Curso</TableCell>
+              <TableCell>Nome</TableCell>
+              <TableCell>Prioridade</TableCell>
+              <TableCell>Remover</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {[...selectedTurmas.entries()].map(([key, turma]) => (
+              <RowTurma
+                key={key}
+                turma={turma}
+                onPriorityChange={handlePriorityChange}
+                onRemove={handleRemove}
+                prioridadesSelecionadas={selectedTurmas
+                  .values()
+                  .filter((t) => t.id !== turma.id)
+                  .map((t) => (t.prioridade ? t.prioridade : 0))
+                  .toArray()}
+                conflitos={getConflitos(turma)}
+              />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      {!selectedTurmas
+        .values()
+        .toArray()
+        .some((t) => t.noturna) && (
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={semNoturnaMinhaArea}
+                onChange={updateSemNoturnaMinhaArea}
+                name="semNoturnaMinhaArea"
+              />
+            }
+            label="Não há turma noturna para disciplinas de minha área."
+          />
+        </FormGroup>
+      )}
+    </Box>
   );
 };
 

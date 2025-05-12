@@ -1,229 +1,112 @@
-import { useState } from "react";
+"use client";
 import { Box, Grid, Typography } from "@mui/material";
 import CardTurma from "./Selecao/CardTurma";
 import CarrinhoItem from "./Selecao/CarrinhoItem";
-
-// Tipos
-export type Horario = {
-  dia: string;
-  inicio: string;
-  fim: string;
-};
-
-export type TurmaData = {
-  codigo: string;
-  nome: string;
-  turma: string;
-  horarios: Horario[];
-  curso: string;
-  ementaUrl: string;
-  ingles: boolean;
-  prioridade?: number;
-};
-
-// Mock das turmas
-const mockTurmas = new Map<string, TurmaData>([
-  [
-    "MAT123,01",
-    {
-      codigo: "MAT123",
-      nome: "Matemática Discreta",
-      turma: "01",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  [
-    "ENG456,02",
-    {
-      codigo: "ENG456",
-      nome: "Engenharia de Software",
-      turma: "02",
-      horarios: [{ dia: "Terça", inicio: "14:00", fim: "16:00" }],
-      curso: "Engenharia de Software",
-      ementaUrl: "https://exemplo.com/ementa2",
-      ingles: true,
-    },
-  ],
-  [
-    "MAT123,06",
-    {
-      codigo: "MAT123",
-      nome: "Modelos de Variáveis Latentes",
-      turma: "06",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  [
-    "MAT123,03",
-    {
-      codigo: "MAT123",
-      nome: "Modelos de Variáveis Latentes",
-      turma: "03",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  [
-    "MAT123,04",
-    {
-      codigo: "MAT123",
-      nome: "Modelos de Variáveis Latentes",
-      turma: "04",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  [
-    "MAT123,05",
-    {
-      codigo: "MAT123",
-      nome: "Modelos de Variáveis Latentes",
-      turma: "05",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  [
-    "MAT123,07",
-    {
-      codigo: "MAT123",
-      nome: "Modelos de Variáveis Latentes",
-      turma: "07",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  [
-    "MAT123,08",
-    {
-      codigo: "MAT123",
-      nome: "Modelos de Variáveis Latentes",
-      turma: "08",
-      horarios: [
-        { dia: "Segunda", inicio: "08:00", fim: "10:00" },
-        { dia: "Quarta", inicio: "10:00", fim: "12:00" },
-      ],
-      curso: "Ciência da Computação",
-      ementaUrl: "https://exemplo.com/ementa",
-      ingles: false,
-    },
-  ],
-  // ... outras turmas
-]);
+import { useTurmas } from "../context/TurmasContext";
+import WarningIcon from "@mui/icons-material/Warning";
+import { useEffect, useState } from "react";
+import { TurmaData } from "../types";
 
 const Selecao = () => {
-  const [selectedTurmas, setSelectedTurmas] = useState<Map<string, TurmaData>>(
-    new Map()
+  // const [selectedTurmas, setSelectedTurmas] = useState<Map<string, TurmaData>>(
+  //   new Map()
+  // );
+
+  const [horariosSelecionados, setHorariosSelecionados] = useState(
+    new Set<string>()
   );
 
-  const handleAdicionar = (
-    codigo: string,
-    turma: string,
-    prioridade: number
-  ) => {
-    const key = `${codigo},${turma}`;
-    const turmaData = mockTurmas.get(key);
+  const { turmas, selectedTurmas, addTurma, removeTurma } = useTurmas();
+
+  useEffect(() => {
+    const novosHorarios = new Set<string>();
+    for (const turma of selectedTurmas.values()) {
+      for (const horario of turma.horarios) {
+        novosHorarios.add(`${horario.dia}-${horario.inicio}-${horario.fim}`);
+      }
+    }
+    setHorariosSelecionados(novosHorarios);
+  }, [selectedTurmas]);
+
+  const handleAdicionar = (key: string, prioridade: number) => {
+    const turmaData = turmas.get(key);
     if (turmaData && !selectedTurmas.has(key)) {
       if (prioridade) {
         turmaData.prioridade = prioridade;
       } else {
-        turmaData.prioridade = undefined;
+        turmaData.prioridade = 0;
       }
-      mockTurmas.set(key, turmaData);
-      setSelectedTurmas((prev) => new Map(prev).set(key, turmaData));
+      turmas.set(key, turmaData);
+      addTurma(key);
     }
   };
 
   const handleRemover = (key: string) => {
-    setSelectedTurmas((prev) => {
-      const newMap = new Map(prev);
-      newMap.delete(key);
-      return newMap;
-    });
+    removeTurma(key);
+  };
+
+  /** Implementada também em Seleção */
+  const getConflitos = (turma: TurmaData): Map<string, string> => {
+    const turmasQueConflita: Map<string, string> = new Map<string, string>();
+
+    for (const selecionada of selectedTurmas.values()) {
+      if (turma.conflitos.has(selecionada.id)) {
+        turmasQueConflita.set(selecionada.id, selecionada.nome);
+      }
+    }
+
+    return turmasQueConflita;
   };
 
   return (
     <Grid container spacing={1} height="50%">
       {/* Lista de turmas */}
-      <Grid size={{ xs: 12, md: 8 }}>
-        <Typography variant="h4" textAlign="center">
+      <Grid
+        size={{ xs: 12, md: 8 }}
+        sx={{
+          maxHeight: "80vh", // altura máxima relativa à viewport (ajuste conforme necessário)
+          overflowY: "auto",
+          pr: 2, // padding-right para evitar que o scroll esconda conteúdo
+          scrollbarWidth: "revert-layer",
+          "&::-webkit-scrollbar": {
+            width: "0.4em",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#f1f1f1",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#888",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            background: "#555",
+          },
+        }}
+      >
+        <Typography variant="h4" textAlign="center" marginBottom="0.5em">
           Selecione suas turmas
         </Typography>
-        {/* <Box
-          height="60%"
-          overflow="auto"
-          sx={{
-            scrollbarWidth: "revert-layer",
-            "&::-webkit-scrollbar": {
-              width: "0.4em",
-            },
-            "&::-webkit-scrollbar-track": {
-              background: "#f1f1f1",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "#888",
-            },
-            "&::-webkit-scrollbar-thumb:hover": {
-              background: "#555",
-            },
-          }}
-        > */}
-        <Grid container spacing={4} justifyContent="center">
-          {[...mockTurmas.values()].map((turma) => (
-            <Grid
-              key={`card_selecao_${turma.codigo},${turma.turma}}`}
-              sx={{ xs: 12, sm: 6 }}
-            >
+        <Grid container spacing={2} justifyContent="center">
+          {[...turmas.values()].map((turma) => (
+            <Grid key={`card_selecao_${turma.id}`} sx={{ xs: 12, sm: 6 }}>
               <CardTurma
-                key={`${turma.codigo},${turma.turma}`}
-                codigo={turma.codigo}
+                key={`${turma.id}`}
+                id={turma.id}
                 nome={turma.nome}
                 turma={turma.turma}
                 horarios={turma.horarios}
                 curso={turma.curso}
-                ementaUrl={turma.ementaUrl}
-                ingles={turma.ingles}
+                ementa={turma.ementa}
+                //ingles={turma.ingles ? turma.ingles : false}
+                nivel={turma.nivel}
                 onAdicionar={handleAdicionar}
-                isSelected={selectedTurmas.has(
-                  `${turma.codigo},${turma.turma}`
-                )}
+                isSelected={selectedTurmas.has(turma.id)}
+                horariosConflito={horariosSelecionados}
+                noturna={turma.noturna}
+                codigo={turma.codigo}
               />
             </Grid>
           ))}
         </Grid>
-        {/* </Box> */}
       </Grid>
 
       {/* <Grid size={{ xs: 12, md: 1 }}>
@@ -231,24 +114,126 @@ const Selecao = () => {
         <Divider orientation="vertical" />
         <span></span>
       </Grid> */}
-      {/* Carrinho */}
+      {/* Carrinho
       <Grid size={{ xs: 12, md: 4 }} paddingLeft="5px">
         <Typography variant="h6" gutterBottom>
           Carrinho
         </Typography>
         {selectedTurmas.size === 0 ? (
-          <Typography variant="body2">Nenhuma turma selecionada.</Typography>
+          <Box display="flex" alignItems="center" flexWrap="wrap" gap={1}>
+            <WarningIcon color="warning" />
+            <Typography variant="body2" color="warning">
+              Nenhuma turma selecionada.
+            </Typography>
+          </Box>
         ) : (
-          <Box>
+          <Box
+            sx={{
+              maxHeight: "75vh", // altura máxima relativa à viewport (ajuste conforme necessário)
+              overflowY: "auto",
+              pr: 2, // padding-right para evitar que o scroll esconda conteúdo
+              scrollbarWidth: "revert-layer",
+              "&::-webkit-scrollbar": {
+                width: "0.4em",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "#f1f1f1",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#888",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "#555",
+              },
+            }}
+          >
             {[...selectedTurmas.entries()].map(([key, turma]) => (
               <CarrinhoItem
                 key={key}
-                codigo={turma.codigo}
+                id={turma.id}
+                //codigo={turma.codigo}
                 turma={turma.turma}
                 nome={turma.nome}
                 curso={turma.curso}
                 prioridade={turma.prioridade}
                 onRemover={handleRemover}
+                conflitos={getConflitos(turma)}
+                noturna={turma.noturna}
+              />
+            ))}
+          </Box>
+        )}
+      </Grid> */}
+      {/* Carrinho */}
+      <Grid size={{ xs: 12, md: 4 }} paddingLeft="5px">
+        <Typography variant="h6" gutterBottom>
+          Carrinho
+        </Typography>
+
+        {/* Contadores de seleção */}
+        <Box
+          mb={2}
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="space-evenly"
+        >
+          <Typography variant="body2">
+            Turmas selecionadas: <strong>{selectedTurmas.size}</strong> /{" "}
+            <strong>10</strong>
+          </Typography>
+          <Typography variant="body2">
+            Turmas noturnas selecionadas:{" "}
+            <strong>
+              {
+                [...selectedTurmas.values()].filter((turma) => turma.noturna)
+                  .length
+              }
+            </strong>{" "}
+            / <strong>1</strong>
+          </Typography>
+        </Box>
+
+        {selectedTurmas.size === 0 ? (
+          <Box display="flex" alignItems="center" flexWrap="wrap" gap={1}>
+            <WarningIcon color="warning" />
+            <Typography variant="body2" color="warning">
+              Nenhuma turma selecionada.
+            </Typography>
+          </Box>
+        ) : (
+          <Box
+            sx={{
+              maxHeight: "70vh",
+              overflowY: "auto",
+              pr: 2,
+              scrollbarWidth: "revert-layer",
+              "&::-webkit-scrollbar": {
+                width: "0.4em",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "#f1f1f1",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#888",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "#555",
+              },
+            }}
+          >
+            {[...selectedTurmas.entries()].map(([key, turma]) => (
+              <CarrinhoItem
+                key={key}
+                id={turma.id}
+                turma={turma.turma}
+                nome={turma.nome}
+                curso={turma.curso}
+                prioridade={turma.prioridade}
+                onRemover={handleRemover}
+                conflitos={getConflitos(turma)}
+                noturna={turma.noturna}
+                codigo={turma.codigo}
               />
             ))}
           </Box>
