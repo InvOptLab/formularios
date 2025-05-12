@@ -18,7 +18,7 @@ const Download = ({ setExportado }: DownloadProps) => {
 
   const { addAlerta } = useAlertsContext();
 
-  const { selectedTurmas } = useTurmas();
+  const { selectedTurmas, semNoturnaMinhaArea } = useTurmas();
   const { avaliacao, nome, updateNome } = useAvaliacao();
 
   const handleExportar = () => {
@@ -41,7 +41,8 @@ const Download = ({ setExportado }: DownloadProps) => {
       const objetoParaExportar = generateObjectToExport(
         selectedTurmas.values().toArray(),
         nome,
-        avaliacao
+        avaliacao,
+        semNoturnaMinhaArea
       );
       exportJsonToFile(objetoParaExportar, nome);
     } catch (err) {

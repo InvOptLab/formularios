@@ -3,7 +3,8 @@ import { AvaliacaoData, TurmaData } from "./types";
 export function generateObjectToExport(
   turmasSelecionadas: TurmaData[],
   nome: string,
-  avaliacao: AvaliacaoData
+  avaliacao: AvaliacaoData,
+  semNoturna: boolean
 ) {
   const formularios: Record<string, number> = {};
 
@@ -18,6 +19,7 @@ export function generateObjectToExport(
     [nome]: {
       formularios,
       avaliacao,
+      semNoturna,
     },
   };
 }
