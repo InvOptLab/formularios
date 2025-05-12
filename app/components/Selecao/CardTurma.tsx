@@ -174,6 +174,7 @@ const CardTurma = ({
             value={undefined}
             onChange={(e) => setPrioridade(Number(e.target.value))}
             sx={{ width: 120 }}
+            slotProps={{ htmlInput: { min: 0 } }}
           />
           <Button variant="contained" onClick={handleAdd} disabled={isSelected}>
             {isSelected ? "Adicionado" : "Adicionar"}

@@ -7,6 +7,8 @@ type TurmasContextType = {
   addTurma: (id: string) => void;
   removeTurma: (id: string) => void;
   setPrioridade: (id: string, prioridade: number) => void;
+  semNoturnaMinhaArea: boolean;
+  updateSemNoturnaMinhaArea: () => void;
 };
 
 const TurmasContext = createContext<TurmasContextType | undefined>(undefined);
@@ -59,9 +61,23 @@ export const TurmasProvider = ({ initialTurmas, children }: Props) => {
     });
   };
 
+  const [semNoturnaMinhaArea, setSemNoturnaMinhaArea] = useState(false);
+
+  const updateSemNoturnaMinhaArea = () => {
+    setSemNoturnaMinhaArea((prev) => !prev);
+  };
+
   return (
     <TurmasContext.Provider
-      value={{ turmas, selectedTurmas, addTurma, removeTurma, setPrioridade }}
+      value={{
+        turmas,
+        selectedTurmas,
+        addTurma,
+        removeTurma,
+        setPrioridade,
+        semNoturnaMinhaArea,
+        updateSemNoturnaMinhaArea,
+      }}
     >
       {children}
     </TurmasContext.Provider>

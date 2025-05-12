@@ -105,6 +105,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
             size="small"
             sx={{ width: "80px" }}
             error={hasError}
+            slotProps={{ htmlInput: { min: 0 } }}
           />
         </TableCell>
         <TableCell>

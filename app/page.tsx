@@ -49,7 +49,8 @@ const steps = [
  */
 function avancaStepConfirmacao(
   turmas: TurmaData[],
-  step: number
+  step: number,
+  semNoturnaMinhaArea: boolean
 ): {
   podeContinuar: boolean;
   mensagem: string;
@@ -82,17 +83,17 @@ function avancaStepConfirmacao(
           "Todas as Turmas devem apresentar prioridades diferentes entre si.",
       };
     }
-  }
 
-  /**
-   * Deve ter ao menos uma noturna Selecionada
-   */
+    /**
+     * Deve ter ao menos uma noturna Selecionada
+     */
 
-  if (!turmas.some((turma) => turma.noturna)) {
-    return {
-      podeContinuar: false,
-      mensagem: "Ao menos uma turma Noturna deve ser Selecionada.",
-    };
+    if (!turmas.some((turma) => turma.noturna) && !semNoturnaMinhaArea) {
+      return {
+        podeContinuar: false,
+        mensagem: "Ao menos uma turma Noturna deve ser Selecionada.",
+      };
+    }
   }
 
   if (turmas.length < 10) {
@@ -111,7 +112,7 @@ const StepperFlow = () => {
 
   const [exportado, setExportado] = useState(false);
 
-  const { selectedTurmas } = useTurmas();
+  const { selectedTurmas, semNoturnaMinhaArea } = useTurmas();
   const { addAlerta } = useAlertsContext();
   const { avaliacao } = useAvaliacao();
 
@@ -137,7 +138,8 @@ const StepperFlow = () => {
     } else if (activeStep === 1) {
       const { podeContinuar, mensagem } = avancaStepConfirmacao(
         selectedTurmas.values().toArray(),
-        1
+        1,
+        semNoturnaMinhaArea
       );
       if (!podeContinuar) {
         addAlerta(mensagem, "error", 6);
@@ -148,7 +150,8 @@ const StepperFlow = () => {
     } else if (activeStep === 2) {
       const { podeContinuar, mensagem } = avancaStepConfirmacao(
         selectedTurmas.values().toArray(),
-        2
+        2,
+        semNoturnaMinhaArea
       );
       if (!podeContinuar) {
         addAlerta(mensagem, "error", 6);
@@ -248,35 +251,49 @@ const StepperFlow = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Box width="70%">
-        <Stepper activeStep={activeStep}>
+      <Box
+        width="100%"
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          pt: 2,
+          justifyContent: "space-evenly",
+        }}
+      >
+        {/* <Stepper activeStep={activeStep}>
+          {steps.map((label, index) => (
+            <Step key={label} completed={completed[index]}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper> */}
+        {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}> */}
+        <Button
+          variant="contained"
+          disabled={activeStep === 0}
+          onClick={handleBack}
+          sx={{ mr: 1 }}
+        >
+          Voltar
+        </Button>
+
+        {/* <Box sx={{ flex: "1 1 auto" }} /> */}
+        <Stepper activeStep={activeStep} sx={{ width: "80%" }}>
           {steps.map((label, index) => (
             <Step key={label} completed={completed[index]}>
               <StepLabel>{label}</StepLabel>
             </Step>
           ))}
         </Stepper>
-        <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-          <Button
-            variant="contained"
-            disabled={activeStep === 0}
-            onClick={handleBack}
-            sx={{ mr: 1 }}
-          >
-            Voltar
-          </Button>
-
-          <Box sx={{ flex: "1 1 auto" }} />
-
-          <Button
-            onClick={handleNext}
-            disabled={isFinalizado()} //disabled={!completed[activeStep] || isLastStep()}
-            variant={activeStep === 4 && !exportado ? "outlined" : "contained"}
-          >
-            {isLastStep() ? "Finalizar" : "Próximo"}
-          </Button>
-        </Box>
+        <Button
+          onClick={handleNext}
+          disabled={isFinalizado()} //disabled={!completed[activeStep] || isLastStep()}
+          variant={activeStep === 4 && !exportado ? "outlined" : "contained"}
+        >
+          {isLastStep() ? "Finalizar" : "Próximo"}
+        </Button>
       </Box>
+      {/* </Box> */}
       <Box
         sx={{ mt: 2, mb: 1 }}
         display="flex"

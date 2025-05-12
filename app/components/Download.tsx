@@ -81,7 +81,7 @@ const Download = ({ setExportado }: DownloadProps) => {
 
       <Typography variant="body1" gutterBottom mt={2} align="justify">
         Abaixo está o botão para exportar os dados. Lembre-se: os arquivos devem
-        ser enviados para o e-mail <strong>formularios@gmail.com</strong>.
+        ser enviados para o e-mail <strong>carga-sme@icmc.usp.br</strong>.
       </Typography>
 
       <Box mt={2} justifyContent="flex-end" display="flex">
