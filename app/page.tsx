@@ -43,36 +43,62 @@ const steps = [
 /**
  * Retorna se o usuário poderá seguir para o step após a Confirmação.
  * @param turmas Turmas Selecionadas
+ * @param step Passo em que o usuário se encontra. Será utilizado para não aplicar determinadas verificações no step de seleção.
+ * Utilizado também para generalizar a função.
  * @returns {boolean} ´True´ caso possa avançar, `False` caso contrário.
  */
-function avancaStepConfirmacao(turmas: TurmaData[]): {
+function avancaStepConfirmacao(
+  turmas: TurmaData[],
+  step: number
+): {
   podeContinuar: boolean;
   mensagem: string;
 } {
-  const prioridadesDefinidas = new Set<number>();
-  /**
-   * Verifica se todas as turmas apresentam prioridades definidas.
-   */
-  for (const turma of turmas) {
-    if (turma.prioridade === undefined || turma.prioridade === 0) {
+  if (step === 2) {
+    const prioridadesDefinidas = new Set<number>();
+    /**
+     * Verifica se todas as turmas apresentam prioridades definidas.
+     */
+    for (const turma of turmas) {
+      if (turma.prioridade === undefined || turma.prioridade <= 0) {
+        return {
+          podeContinuar: false,
+          mensagem:
+            "Todas as Turmas devem apresentar Prioridades maiores que 0.",
+        };
+      }
+      prioridadesDefinidas.add(turma.prioridade);
+    }
+
+    /**
+     * Verifica se as prioridades definidas são diferentes.
+     * Caso o Set (que armazena apenas valores diferentes) tiver se tamanho menor que a quantidade total
+     * de turmas, isso quer dizer que algum valor foi repetido.
+     */
+    if (prioridadesDefinidas.size !== turmas.length) {
       return {
         podeContinuar: false,
-        mensagem: "Todas as Turmas devem apresentar Prioridades maiores que 0.",
+        mensagem:
+          "Todas as Turmas devem apresentar prioridades diferentes entre si.",
       };
     }
-    prioridadesDefinidas.add(turma.prioridade);
   }
 
   /**
-   * Verifica se as prioridades definidas são diferentes.
-   * Caso o Set (que armazena apenas valores diferentes) tiver se tamanho menor que a quantidade total
-   * de turmas, isso quer dizer que algum valor foi repetido.
+   * Deve ter ao menos uma noturna Selecionada
    */
-  if (prioridadesDefinidas.size !== turmas.length) {
+
+  if (!turmas.some((turma) => turma.noturna)) {
     return {
       podeContinuar: false,
-      mensagem:
-        "Todas as Turmas devem apresentar prioridades diferentes entre si.",
+      mensagem: "Ao menos uma turma Noturna deve ser Selecionada.",
+    };
+  }
+
+  if (turmas.length < 10) {
+    return {
+      podeContinuar: false,
+      mensagem: "Ao menos 10 turmas devem ser selecionadas.",
     };
   }
 
@@ -108,9 +134,21 @@ const StepperFlow = () => {
       /**
        * Para ter continuídade no processo de confirmação, nenhuma Turma pode apresentar Prioridade 0 ou repetida.
        */
+    } else if (activeStep === 1) {
+      const { podeContinuar, mensagem } = avancaStepConfirmacao(
+        selectedTurmas.values().toArray(),
+        1
+      );
+      if (!podeContinuar) {
+        addAlerta(mensagem, "error", 6);
+      } else {
+        handleComplete();
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      }
     } else if (activeStep === 2) {
       const { podeContinuar, mensagem } = avancaStepConfirmacao(
-        selectedTurmas.values().toArray()
+        selectedTurmas.values().toArray(),
+        2
       );
       if (!podeContinuar) {
         addAlerta(mensagem, "error", 6);

@@ -16,6 +16,7 @@ export type TurmaDataInicial = {
   prioridade?: number;
   nivel: string; // 'p' | 'g'
   conflitos: string[];
+  noturna: boolean;
 };
 
 export type TurmaData = {
@@ -30,6 +31,7 @@ export type TurmaData = {
   prioridade?: number;
   nivel: string; // 'p' | 'g'
   conflitos: Set<string>;
+  noturna: boolean;
 };
 
 export type AvaliacaoData = {

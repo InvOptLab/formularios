@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Card,
@@ -18,11 +19,13 @@ interface CardTurmaProps {
   horarios: { dia: string; inicio: string; fim: string }[];
   curso: string;
   ementa: string;
-  ingles: boolean;
+  //ingles: boolean;
   nivel: string;
   onAdicionar: (key: string, prioridade: number) => void;
   isSelected: boolean;
   horariosConflito: Set<string>;
+  noturna: boolean;
+  codigo: string;
 }
 
 const CardTurma = ({
@@ -32,11 +35,13 @@ const CardTurma = ({
   horarios,
   curso,
   ementa,
-  ingles,
+  //ingles,
   nivel,
   onAdicionar,
   isSelected,
   horariosConflito,
+  noturna,
+  codigo,
 }: CardTurmaProps) => {
   const [prioridade, setPrioridade] = useState<number>(0);
 
@@ -68,6 +73,9 @@ const CardTurma = ({
           height: "100%",
         }}
       >
+        <Typography variant="body1" fontWeight="bold">
+          {codigo}
+        </Typography>
         <Typography variant="h6">{nome}</Typography>
         <Typography variant="h6">(Turma {turma})</Typography>
         <Typography variant="body2" color="text.secondary">
@@ -117,13 +125,26 @@ const CardTurma = ({
           </Typography>
         </Box>
 
-        <Box mt={1} display="flex" justifyContent="space-around">
-          {ingles ? (
+        <Box
+          mt={1}
+          display="flex"
+          justifyContent="space-evenly"
+          flexDirection="row"
+          flexWrap="wrap"
+        >
+          {/* {ingles ? (
             <Chip label="Disciplina em Inglês" color="error" size="small" />
           ) : (
             <Chip
               label="Disciplina em Português"
               color="success"
+              size="small"
+            />
+          )} */}
+          {noturna && (
+            <Chip
+              label="Noturna"
+              sx={{ backgroundColor: "#131862", color: "#ffffff" }}
               size="small"
             />
           )}
@@ -132,7 +153,11 @@ const CardTurma = ({
           ) : (
             <Chip label="Pós-graduação" color="secondary" size="small" />
           )}
-          {/* <Chip label="Conflito de horário" color="warning" size="small" /> */}
+          {horarios.some((horario) =>
+            horariosConflito.has(
+              `${horario.dia}-${horario.inicio}-${horario.fim}`
+            )
+          ) && <Chip label="Conflito" color="warning" size="small" />}
         </Box>
 
         <Box

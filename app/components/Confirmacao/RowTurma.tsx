@@ -166,7 +166,30 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                     {turma.ingles ? "Sim ✅" : "Não"}
                   </Typography>
                 </Box>
+
+                {turma.noturna && (
+                  <Box mt={2} display="flex" alignItems="center" gap={1}>
+                    <Typography variant="body2" fontWeight="medium">
+                      🌙 Turma Noturna
+                    </Typography>
+                  </Box>
+                )}
               </Box>
+
+              {/* {turma.noturna && (
+                <Box
+                  margin={2}
+                  p={2}
+                  borderLeft="4px solid #131862"
+                  bgcolor="#f5f5f5"
+                  borderRadius={2}
+                  width="30%"
+                >
+                  <Typography variant="body1" gutterBottom>
+                    🌙 Turma Noturna
+                  </Typography>
+                </Box>
+              )} */}
               {conflitos.size > 0 && (
                 <Box
                   margin={2}
