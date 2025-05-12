@@ -27,8 +27,8 @@ const Introducao = () => {
                 adição. Mas fique tranquilo: o próximo passo permitirá revisar e
                 modificar essas prioridades.
                 <br />
-                <strong>Importante:</strong> Para prosseguir, ao menos uma turma
-                deve ser selecionada. Todas as telas apresentam botões de{" "}
+                <strong>Importante:</strong> Para prosseguir, ao menos 10 turmas
+                devem ser selecionadas. Todas as telas apresentam botões de{" "}
                 <em>Voltar</em> e <em>Continuar</em> para revisão do processo.
               </>
             }
