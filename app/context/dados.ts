@@ -188,10 +188,10 @@ export const turmasJson: TurmaDataInicial[] = [
     "id": "PRG0027,1",
     "conflitos": [
       "SME0220,1",
-      "SME0332,2",
-      "SME0123,2",
+      "SME0320,2",
       "SME0285,1",
-      "SME0320,2"
+      "SME0332,2",
+      "SME0123,2"
     ],
     "noturna": false
   },
@@ -302,12 +302,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0123,1",
     "conflitos": [
+      "SME0332,1",
       "SME0320,3",
       "SME0300,2",
-      "SME0285,1",
-      "SME0240,1",
       "SME0241,1",
-      "SME0332,1"
+      "SME0240,1",
+      "SME0285,1"
     ],
     "noturna": false
   },
@@ -334,15 +334,15 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0123,2",
     "conflitos": [
-      "SME0220,1",
-      "SME0332,2",
-      "SME0320,1",
       "SME0341,2",
-      "SME0285,1",
-      "SME0341,1",
       "PRG0027,1",
+      "SME0220,1",
       "SME0306,1",
-      "SME0320,2"
+      "SME0320,2",
+      "SME0285,1",
+      "SME0320,1",
+      "SME0332,2",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -383,10 +383,10 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0142,1",
     "conflitos": [
-      "SME0212,1",
-      "SME0341,2",
+      "SME0300,1",
       "SME0300,2",
-      "SME0300,1"
+      "SME0341,2",
+      "SME0212,1"
     ],
     "noturna": false
   },
@@ -467,9 +467,10 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [
       "SME0320,4",
       "SME0320,3",
+      "SME0320,4",
       "SME0320,2",
-      "SME0245,1",
-      "SME0284,1"
+      "SME0284,1",
+      "SME0245,1"
     ],
     "noturna": false
   },
@@ -496,12 +497,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0212,1",
     "conflitos": [
-      "SME0142,1",
-      "SME0300,1",
-      "SME0240,1",
-      "SME0341,1",
+      "SME0332,1",
       "SME0334,1",
-      "SME0332,1"
+      "SME0240,1",
+      "SME0300,1",
+      "SME0142,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -542,12 +543,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0220,1",
     "conflitos": [
-      "SME0332,2",
-      "SME0123,2",
-      "SME0285,1",
       "PRG0027,1",
       "SME0306,1",
-      "SME0320,2"
+      "SME0320,2",
+      "SME0285,1",
+      "SME0332,2",
+      "SME0123,2"
     ],
     "noturna": false
   },
@@ -574,14 +575,14 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0240,1",
     "conflitos": [
+      "SME0332,1",
       "SME0320,3",
-      "SME0212,1",
-      "SME0285,1",
-      "SME0341,1",
+      "SME0241,1",
       "SME0334,1",
       "SME0123,1",
-      "SME0241,1",
-      "SME0332,1"
+      "SME0285,1",
+      "SME0212,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -603,11 +604,11 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0241,1",
     "conflitos": [
+      "SME0332,1",
       "SME0320,3",
-      "SME0285,1",
       "SME0240,1",
       "SME0123,1",
-      "SME0332,1"
+      "SME0285,1"
     ],
     "noturna": false
   },
@@ -634,9 +635,9 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0245,1",
     "conflitos": [
-      "SME0284,1",
+      "SME0320,2",
       "SME0211,1",
-      "SME0320,2"
+      "SME0284,1"
     ],
     "noturna": false
   },
@@ -705,9 +706,9 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0284,1",
     "conflitos": [
-      "SME0211,1",
       "SME0320,2",
       "SME0206,1",
+      "SME0211,1",
       "SME0245,1"
     ],
     "noturna": false
@@ -735,16 +736,16 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0285,1",
     "conflitos": [
-      "SME0220,1",
-      "SME0332,2",
-      "SME0123,2",
-      "SME0320,3",
-      "SME0240,1",
-      "PRG0027,1",
-      "SME0123,1",
-      "SME0241,1",
       "SME0332,1",
-      "SME0320,2"
+      "SME0320,3",
+      "SME0241,1",
+      "PRG0027,1",
+      "SME0220,1",
+      "SME0320,2",
+      "SME0240,1",
+      "SME0123,1",
+      "SME0332,2",
+      "SME0123,2"
     ],
     "noturna": false
   },
@@ -771,9 +772,9 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0300,1",
     "conflitos": [
+      "SME0142,1",
       "SME0212,1",
       "SME0306,2",
-      "SME0142,1",
       "SME0110,1"
     ],
     "noturna": false
@@ -801,8 +802,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0300,2",
     "conflitos": [
-      "SME0123,1",
       "SME0142,1",
+      "SME0123,1",
       "SME0341,2"
     ],
     "noturna": false
@@ -830,11 +831,11 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0306,1",
     "conflitos": [
-      "SME0220,1",
-      "SME0332,2",
-      "SME0320,1",
-      "SME0123,2",
       "SME0341,2",
+      "SME0220,1",
+      "SME0320,1",
+      "SME0332,2",
+      "SME0123,2",
       "SME0341,1"
     ],
     "noturna": false
@@ -862,8 +863,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0306,2",
     "conflitos": [
-      "SME0110,1",
-      "SME0300,1"
+      "SME0300,1",
+      "SME0110,1"
     ],
     "noturna": false
   },
@@ -890,12 +891,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,1",
     "conflitos": [
-      "SME0110,2",
-      "SME0320,4",
-      "SME0123,2",
       "SME0341,2",
-      "SME0341,1",
-      "SME0306,1"
+      "SME0320,4",
+      "SME0306,1",
+      "SME0110,2",
+      "SME0123,2",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -922,13 +923,13 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,2",
     "conflitos": [
-      "SME0284,1",
-      "SME0220,1",
-      "SME0332,2",
-      "SME0211,1",
-      "SME0123,2",
-      "SME0285,1",
       "PRG0027,1",
+      "SME0220,1",
+      "SME0284,1",
+      "SME0285,1",
+      "SME0332,2",
+      "SME0123,2",
+      "SME0211,1",
       "SME0245,1"
     ],
     "noturna": false
@@ -956,13 +957,13 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,3",
     "conflitos": [
+      "SME0332,1",
+      "SME0241,1",
       "SME0320,4",
-      "SME0211,1",
-      "SME0285,1",
       "SME0240,1",
       "SME0123,1",
-      "SME0241,1",
-      "SME0332,1"
+      "SME0285,1",
+      "SME0211,1"
     ],
     "noturna": false
   },
@@ -989,10 +990,10 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,4",
     "conflitos": [
-      "SME0110,2",
-      "SME0320,1",
+      "SME0320,3",
       "SME0211,1",
-      "SME0320,3"
+      "SME0110,2",
+      "SME0320,1"
     ],
     "noturna": false
   },
@@ -1020,13 +1021,13 @@ export const turmasJson: TurmaDataInicial[] = [
     "id": "SME0332,1",
     "conflitos": [
       "SME0320,3",
-      "SME0212,1",
-      "SME0285,1",
-      "SME0240,1",
-      "SME0341,1",
+      "SME0241,1",
       "SME0334,1",
+      "SME0240,1",
       "SME0123,1",
-      "SME0241,1"
+      "SME0285,1",
+      "SME0212,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -1053,8 +1054,10 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0332,2",
     "conflitos": [
+      "PRG0027,1",
       "SME0220,1",
-      "SME0123,2",
+      "SME0306,1",
+      "SME0320,2",
       "SME0285,1",
       "PRG0027,1",
       "SME0306,1",
@@ -1085,10 +1088,10 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0334,1",
     "conflitos": [
-      "SME0212,1",
-      "SME0240,1",
       "SME0332,1",
-      "SME0341,1"
+      "SME0240,1",
+      "SME0341,1",
+      "SME0212,1"
     ],
     "noturna": false
   },
@@ -1115,6 +1118,11 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0341,1",
     "conflitos": [
+      "SME0332,1",
+      "SME0341,2",
+      "SME0306,1",
+      "SME0334,1",
+      "SME0240,1",
       "SME0320,1",
       "SME0123,2",
       "SME0341,2",
@@ -1149,12 +1157,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0341,2",
     "conflitos": [
-      "SME0123,2",
-      "SME0320,1",
-      "SME0142,1",
       "SME0300,2",
-      "SME0341,1",
-      "SME0306,1"
+      "SME0306,1",
+      "SME0320,1",
+      "SME0123,2",
+      "SME0142,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -1307,8 +1315,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0809,1",
     "conflitos": [
-      "SME0823,1",
-      "SME0510,1"
+      "SME0510,1",
+      "SME0823,1"
     ],
     "noturna": true
   },
@@ -1362,8 +1370,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0814,1",
     "conflitos": [
-      "SME0880,1",
       "SME0815,1",
+      "SME0880,1",
       "SME0881,1"
     ],
     "noturna": false
@@ -1614,8 +1622,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0881,1",
     "conflitos": [
-      "SME0880,1",
       "SME0815,1",
+      "SME0880,1",
       "SME0814,1"
     ],
     "noturna": false

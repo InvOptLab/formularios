@@ -103,6 +103,8 @@ const Selecao = () => {
                 horariosConflito={horariosSelecionados}
                 noturna={turma.noturna}
                 codigo={turma.codigo}
+                carga={turma.carga}
+                grupo={turma.grupo}
               />
             </Grid>
           ))}
@@ -234,6 +236,7 @@ const Selecao = () => {
                 conflitos={getConflitos(turma)}
                 noturna={turma.noturna}
                 codigo={turma.codigo}
+                carga={turma.carga}
               />
             ))}
           </Box>
