@@ -103,6 +103,7 @@ const Selecao = () => {
                 horariosConflito={horariosSelecionados}
                 noturna={turma.noturna}
                 codigo={turma.codigo}
+                grupo={turma.grupo}
               />
             </Grid>
           ))}

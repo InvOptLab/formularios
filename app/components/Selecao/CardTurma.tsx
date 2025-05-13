@@ -26,6 +26,7 @@ interface CardTurmaProps {
   horariosConflito: Set<string>;
   noturna: boolean;
   codigo: string;
+  grupo?: string;
 }
 
 const CardTurma = ({
@@ -42,6 +43,7 @@ const CardTurma = ({
   horariosConflito,
   noturna,
   codigo,
+  grupo,
 }: CardTurmaProps) => {
   const [prioridade, setPrioridade] = useState<number>(0);
 
@@ -75,13 +77,13 @@ const CardTurma = ({
       >
         <Typography variant="body1" fontWeight="bold">
           {codigo}
+          {grupo ? `, ${grupo}` : ""}
         </Typography>
         <Typography variant="h6">{nome}</Typography>
         <Typography variant="h6">(Turma {turma})</Typography>
         <Typography variant="body2" color="text.secondary">
           Curso: {curso}
         </Typography>
-
         <Box mt={1}>
           <Typography variant="subtitle2">Horários:</Typography>
           <Stack spacing={0.5}>

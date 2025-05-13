@@ -17,6 +17,7 @@ export type TurmaDataInicial = {
   nivel: string; // 'p' | 'g'
   conflitos: string[];
   noturna: boolean;
+  grupo?: string;
 };
 
 export type TurmaData = {
@@ -32,6 +33,7 @@ export type TurmaData = {
   nivel: string; // 'p' | 'g'
   conflitos: Set<string>;
   noturna: boolean;
+  grupo?: string;
 };
 
 export type AvaliacaoData = {
