@@ -26,6 +26,9 @@ const Introducao = () => {
                 já é possível definir a prioridade para cada turma no momento da
                 adição. Mas fique tranquilo: o próximo passo permitirá revisar e
                 modificar essas prioridades.
+                Como de costume, a comissão interpreta um baixo valor de
+                prioridade como uma elevada preferência do docente pela
+                disciplina correspondente.
                 <br />
                 <strong>Importante:</strong> Para prosseguir, ao menos 10 turmas
                 devem ser selecionadas. Todas as telas apresentam botões de{" "}
