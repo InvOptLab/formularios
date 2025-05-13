@@ -94,9 +94,10 @@ const RowTurma: React.FC<RowTurmaProps> = ({
           </Badge>
         </TableCell>
         <TableCell>{turma.codigo}</TableCell>
+        <TableCell>{turma.grupo}</TableCell>
         <TableCell>{turma.turma}</TableCell>
         <TableCell>{turma.curso}</TableCell>
-        <TableCell>{turma.nome}</TableCell>
+        <TableCell sx={{ textOverflow: "ellipsis" }}>{turma.nome}</TableCell>
         <TableCell>
           <TextField
             type="number"
@@ -175,7 +176,10 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   </Typography>
                   <Typography variant="body2" fontWeight="medium">
                     {" "}
-                    {turma.carga.toFixed(2)}
+                    {turma.carga.toLocaleString("pt-BR", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
                   </Typography>
                 </Box>
 

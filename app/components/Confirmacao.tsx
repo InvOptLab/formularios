@@ -89,6 +89,7 @@ const Confirmacao = () => {
             <TableRow>
               <TableCell />
               <TableCell>Código</TableCell>
+              <TableCell>Grupo</TableCell>
               <TableCell>Turma</TableCell>
               <TableCell>Curso</TableCell>
               <TableCell>Nome</TableCell>

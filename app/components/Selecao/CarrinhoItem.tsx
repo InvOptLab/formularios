@@ -166,7 +166,11 @@ const CarrinhoItem = ({
             Turma {turma} - {curso}
           </Typography>
           <Typography variant="caption" color="text.secondary">
-            Carga: {carga.toFixed(2)}
+            Carga:{" "}
+            {carga.toLocaleString("pt-BR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </Typography>
           <Typography
             variant="caption"

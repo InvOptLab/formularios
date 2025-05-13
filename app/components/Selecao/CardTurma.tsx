@@ -87,7 +87,11 @@ const CardTurma = ({
             {codigo}
           </Typography>
           <Typography variant="body1" fontWeight="bold">
-            Carga: {carga.toFixed(2)}
+            Carga:{" "}
+            {carga.toLocaleString("pt-BR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </Typography>
         </Box>
 
