@@ -6,6 +6,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Inferência Estatística",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5102",
     "nivel": "p",
     "horarios": [],
@@ -18,6 +20,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Tópicos de pesquisa II ",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5106",
     "nivel": "p",
     "horarios": [],
@@ -26,22 +30,12 @@ export const turmasJson: TurmaDataInicial[] = [
     "noturna": false
   },
   {
-    "codigo": "EST5108",
-    "nome": "Sistemas Complexos",
-    "curso": "PPG-PIPGEs",
-    "turma": 1,
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5108",
-    "nivel": "p",
-    "horarios": [],
-    "id": "EST5108,1",
-    "conflitos": [],
-    "noturna": false
-  },
-  {
     "codigo": "EST5507",
     "nome": "Modelos de Regressão",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5507",
     "nivel": "p",
     "horarios": [],
@@ -54,6 +48,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Simulação Estocástica",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5514",
     "nivel": "p",
     "horarios": [],
@@ -66,6 +62,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Capacitação Docente em Estatística I",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5519",
     "nivel": "p",
     "horarios": [],
@@ -78,6 +76,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Capacitação Docente em Estatística II",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5521",
     "nivel": "p",
     "horarios": [],
@@ -86,22 +86,12 @@ export const turmasJson: TurmaDataInicial[] = [
     "noturna": false
   },
   {
-    "codigo": "EST5523",
-    "nome": "Confiabilidade e Análise de Sobrevivência",
-    "curso": "PPG-PIPGEs",
-    "turma": 1,
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5523",
-    "nivel": "p",
-    "horarios": [],
-    "id": "EST5523,1",
-    "conflitos": [],
-    "noturna": false
-  },
-  {
     "codigo": "EST5525",
     "nome": "Processos Estocásticos",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5525",
     "nivel": "p",
     "horarios": [],
@@ -110,22 +100,12 @@ export const turmasJson: TurmaDataInicial[] = [
     "noturna": false
   },
   {
-    "codigo": "EST5527",
-    "nome": "Modelos de Séries Temporais",
-    "curso": "PPG-PIPGEs",
-    "turma": 1,
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5527",
-    "nivel": "p",
-    "horarios": [],
-    "id": "EST5527,1",
-    "conflitos": [],
-    "noturna": false
-  },
-  {
     "codigo": "EST5802",
     "nome": "Inferência Avançada",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5802",
     "nivel": "p",
     "horarios": [],
@@ -138,6 +118,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Tópicos Avançados de Pesquisa I",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5804",
     "nivel": "p",
     "horarios": [],
@@ -150,6 +132,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Tópicos Avançados em Machine Learning",
     "curso": "PPG-PIPGEs",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5822",
     "nivel": "p",
     "horarios": [],
@@ -158,22 +142,12 @@ export const turmasJson: TurmaDataInicial[] = [
     "noturna": false
   },
   {
-    "codigo": "MAI5002",
-    "nome": "Fundamentos de Matemática Aplicada",
-    "curso": "PPG-MECAI",
-    "turma": 1,
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55137&disciplina=MAI5002",
-    "nivel": "p",
-    "horarios": [],
-    "id": "MAI5002,1",
-    "conflitos": [],
-    "noturna": false
-  },
-  {
     "codigo": "MAI5003",
     "nome": "Probabilidade e Estatística",
     "curso": "PPG-MECAI",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55137&disciplina=MAI5003",
     "nivel": "p",
     "horarios": [],
@@ -186,6 +160,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Metodologia de Pesquisa e Desenvolvimento",
     "curso": "PPG-MECAI",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55137&disciplina=MAI5014",
     "nivel": "p",
     "horarios": [],
@@ -194,11 +170,13 @@ export const turmasJson: TurmaDataInicial[] = [
     "noturna": false
   },
   {
-    "codigo": "PRG-0027",
+    "codigo": "PRG0027",
     "nome": "Uma jornada lúdica pela topologia geométrica\t",
     "curso": "Optativa Livre para toda USP",
     "turma": 1,
-    "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=PRG-0027",
+    "grupo": "",
+    "carga": 1.0,
+    "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=PRG0027",
     "nivel": "g",
     "horarios": [
       {
@@ -207,11 +185,11 @@ export const turmasJson: TurmaDataInicial[] = [
         "fim": "18:00"
       }
     ],
-    "id": "PRG-0027,1",
+    "id": "PRG0027,1",
     "conflitos": [
-      "SME0332,2",
       "SME0320,2",
       "SME0220,1",
+      "SME0332,2",
       "SME0285,1",
       "SME0123,2"
     ],
@@ -222,6 +200,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Equações Diferenciais Ordinárias",
     "curso": "PPG-Mat",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55135&disciplina=SMA5802",
     "nivel": "p",
     "horarios": [],
@@ -234,6 +214,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Tópicos em Teoria Algébrica de Invariantes e Bifurcações",
     "curso": "PPG-Mat",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55135&disciplina=SMA5934",
     "nivel": "p",
     "horarios": [],
@@ -246,6 +228,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Programação Matemática",
     "curso": "BCC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0110",
     "nivel": "g",
     "horarios": [
@@ -262,8 +246,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0110,1",
     "conflitos": [
-      "SME0300,1",
-      "SME0306,2"
+      "SME0306,2",
+      "SME0300,1"
     ],
     "noturna": false
   },
@@ -272,6 +256,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Programação Matemática",
     "curso": "BCC",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0110",
     "nivel": "g",
     "horarios": [
@@ -298,6 +284,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística",
     "curso": "BCC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0123",
     "nivel": "g",
     "horarios": [
@@ -314,12 +302,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0123,1",
     "conflitos": [
-      "SME0320,3",
-      "SME0240,1",
-      "SME0285,1",
       "SME0241,1",
-      "SME0332,1",
-      "SME0300,2"
+      "SME0240,1",
+      "SME0300,2",
+      "SME0285,1",
+      "SME0320,3",
+      "SME0332,1"
     ],
     "noturna": false
   },
@@ -328,6 +316,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística",
     "curso": "BCC",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0123",
     "nivel": "g",
     "horarios": [
@@ -344,15 +334,15 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0123,2",
     "conflitos": [
-      "PRG-0027,1",
-      "SME0332,2",
-      "SME0306,1",
+      "PRG0027,1",
+      "SME0341,2",
       "SME0320,2",
       "SME0220,1",
+      "SME0332,2",
       "SME0285,1",
-      "SME0341,1",
       "SME0320,1",
-      "SME0341,2"
+      "SME0306,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -361,6 +351,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Redes Complexas",
     "curso": "BCC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0130",
     "nivel": "g",
     "horarios": [],
@@ -373,6 +365,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Algebra Linear e Aplicações",
     "curso": "BCC, BCDados",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0142",
     "nivel": "g",
     "horarios": [
@@ -401,6 +395,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Algebra Linear e Aplicações",
     "curso": "BCC",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0142",
     "nivel": "g",
     "horarios": [
@@ -424,6 +420,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Fundamentos de Análise Numérica ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0206",
     "nivel": "g",
     "horarios": [
@@ -449,6 +447,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Otimização Linear",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0211",
     "nivel": "g",
     "horarios": [
@@ -465,11 +465,11 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0211,1",
     "conflitos": [
-      "SME0320,3",
       "SME0320,2",
-      "SME0320,4",
       "SME0245,1",
-      "SME0284,1"
+      "SME0320,3",
+      "SME0284,1",
+      "SME0320,4"
     ],
     "noturna": false
   },
@@ -478,6 +478,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Otimização Não Linear",
     "curso": "BCDados, BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0212",
     "nivel": "g",
     "horarios": [
@@ -494,12 +496,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0212,1",
     "conflitos": [
-      "SME0300,1",
-      "SME0334,1",
+      "SME0142,1",
       "SME0240,1",
-      "SME0341,1",
+      "SME0334,1",
       "SME0332,1",
-      "SME0142,1"
+      "SME0300,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -508,6 +510,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Otimização Inteira ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0213",
     "nivel": "g",
     "horarios": [],
@@ -520,6 +524,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Introdução à Teoria das Probabilidades",
     "curso": "BCDados, BMACC, BMA, LMA",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0220",
     "nivel": "g",
     "horarios": [
@@ -536,12 +542,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0220,1",
     "conflitos": [
-      "PRG-0027,1",
-      "SME0332,2",
-      "SME0306,1",
+      "PRG0027,1",
       "SME0320,2",
+      "SME0332,2",
       "SME0285,1",
-      "SME0123,2"
+      "SME0123,2",
+      "SME0306,1"
     ],
     "noturna": false
   },
@@ -550,6 +556,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Equações Diferenciais Ordinárias ",
     "curso": "BMACC, LMA, BMA",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0240",
     "nivel": "g",
     "horarios": [
@@ -566,14 +574,14 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0240,1",
     "conflitos": [
+      "SME0123,1",
+      "SME0241,1",
+      "SME0285,1",
       "SME0334,1",
       "SME0320,3",
-      "SME0285,1",
-      "SME0241,1",
-      "SME0341,1",
+      "SME0212,1",
       "SME0332,1",
-      "SME0123,1",
-      "SME0212,1"
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -582,6 +590,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Introdução à Modelagem Matemática ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0241",
     "nivel": "g",
     "horarios": [
@@ -593,11 +603,11 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0241,1",
     "conflitos": [
-      "SME0320,3",
+      "SME0123,1",
       "SME0240,1",
       "SME0285,1",
-      "SME0332,1",
-      "SME0123,1"
+      "SME0320,3",
+      "SME0332,1"
     ],
     "noturna": false
   },
@@ -606,6 +616,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Funções de Variável Complexa",
     "curso": "BMACC, LMA, BMA",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0245",
     "nivel": "g",
     "horarios": [
@@ -633,6 +645,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Métodos Numéricos para Geração de Malhas ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0250",
     "nivel": "g",
     "horarios": [],
@@ -645,6 +659,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Sistemas Esparsos e Computação Paralela ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0252",
     "nivel": "g",
     "horarios": [],
@@ -657,6 +673,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Análise de Séries Temporais em Finanças",
     "curso": "BCDados",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0262",
     "nivel": "g",
     "horarios": [],
@@ -669,6 +687,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estágio Supervisionado ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0284",
     "nivel": "g",
     "horarios": [
@@ -685,10 +705,10 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0284,1",
     "conflitos": [
-      "SME0211,1",
       "SME0245,1",
-      "SME0206,1",
-      "SME0320,2"
+      "SME0211,1",
+      "SME0320,2",
+      "SME0206,1"
     ],
     "noturna": false
   },
@@ -697,6 +717,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Trabalho de Conclusão de Curso ",
     "curso": "BMACC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0285",
     "nivel": "g",
     "horarios": [
@@ -713,16 +735,16 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0285,1",
     "conflitos": [
-      "PRG-0027,1",
-      "SME0332,2",
-      "SME0320,3",
-      "SME0240,1",
-      "SME0220,1",
+      "PRG0027,1",
       "SME0320,2",
-      "SME0241,1",
-      "SME0332,1",
+      "SME0220,1",
       "SME0123,1",
-      "SME0123,2"
+      "SME0241,1",
+      "SME0332,2",
+      "SME0240,1",
+      "SME0320,3",
+      "SME0123,2",
+      "SME0332,1"
     ],
     "noturna": false
   },
@@ -731,6 +753,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Cálculo Numérico",
     "curso": "Elétrica -Eletrônica",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
     "nivel": "g",
     "horarios": [
@@ -748,9 +772,9 @@ export const turmasJson: TurmaDataInicial[] = [
     "id": "SME0300,1",
     "conflitos": [
       "SME0110,1",
-      "SME0212,1",
       "SME0306,2",
-      "SME0142,1"
+      "SME0142,1",
+      "SME0212,1"
     ],
     "noturna": false
   },
@@ -759,6 +783,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Cálculo Numérico",
     "curso": "Elétrica – Automação",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
     "nivel": "g",
     "horarios": [
@@ -776,8 +802,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "id": "SME0300,2",
     "conflitos": [
       "SME0341,2",
-      "SME0123,1",
-      "SME0142,1"
+      "SME0142,1",
+      "SME0123,1"
     ],
     "noturna": false
   },
@@ -786,6 +812,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Métodos Numéricos e Computacionais II",
     "curso": "Materiais e\nManufatura\t",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0306",
     "nivel": "g",
     "horarios": [
@@ -802,12 +830,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0306,1",
     "conflitos": [
+      "SME0341,2",
       "SME0332,2",
       "SME0220,1",
-      "SME0341,1",
+      "SME0123,2",
       "SME0320,1",
-      "SME0341,2",
-      "SME0123,2"
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -816,6 +844,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Métodos Numéricos e Computacionais II",
     "curso": "Civil",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0306",
     "nivel": "g",
     "horarios": [
@@ -842,6 +872,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística I",
     "curso": "Ambiental",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
     "nivel": "g",
     "horarios": [
@@ -858,12 +890,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,1",
     "conflitos": [
-      "SME0110,2",
-      "SME0306,1",
-      "SME0320,4",
-      "SME0341,1",
       "SME0341,2",
-      "SME0123,2"
+      "SME0306,1",
+      "SME0110,2",
+      "SME0123,2",
+      "SME0320,4",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -872,6 +904,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística I",
     "curso": "Aeronáutica",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
     "nivel": "g",
     "horarios": [
@@ -888,14 +922,14 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,2",
     "conflitos": [
-      "SME0211,1",
-      "PRG-0027,1",
-      "SME0332,2",
+      "PRG0027,1",
       "SME0220,1",
-      "SME0285,1",
+      "SME0332,2",
       "SME0245,1",
-      "SME0284,1",
-      "SME0123,2"
+      "SME0211,1",
+      "SME0285,1",
+      "SME0123,2",
+      "SME0284,1"
     ],
     "noturna": false
   },
@@ -904,6 +938,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística I",
     "curso": "Civil",
     "turma": 3,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
     "nivel": "g",
     "horarios": [
@@ -920,13 +956,13 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0320,3",
     "conflitos": [
-      "SME0211,1",
-      "SME0240,1",
-      "SME0285,1",
+      "SME0123,1",
       "SME0241,1",
-      "SME0320,4",
+      "SME0240,1",
+      "SME0211,1",
+      "SME0285,1",
       "SME0332,1",
-      "SME0123,1"
+      "SME0320,4"
     ],
     "noturna": false
   },
@@ -935,6 +971,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística I",
     "curso": "Mecatrônica",
     "turma": 4,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
     "nivel": "g",
     "horarios": [
@@ -952,9 +990,9 @@ export const turmasJson: TurmaDataInicial[] = [
     "id": "SME0320,4",
     "conflitos": [
       "SME0211,1",
-      "SME0320,1",
       "SME0320,3",
-      "SME0110,2"
+      "SME0110,2",
+      "SME0320,1"
     ],
     "noturna": false
   },
@@ -963,6 +1001,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Fundamentos da Programação para Computadores",
     "curso": "Física/ Ciências Físicas Biomoleculares",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0332",
     "nivel": "g",
     "horarios": [
@@ -979,14 +1019,14 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0332,1",
     "conflitos": [
-      "SME0334,1",
-      "SME0320,3",
+      "SME0123,1",
+      "SME0241,1",
       "SME0240,1",
       "SME0285,1",
-      "SME0241,1",
-      "SME0341,1",
-      "SME0123,1",
-      "SME0212,1"
+      "SME0334,1",
+      "SME0212,1",
+      "SME0320,3",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -995,6 +1035,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Fundamentos da Programação para Computadores",
     "curso": "Física/Ciências Físicas Biomoleculares",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0332",
     "nivel": "g",
     "horarios": [
@@ -1011,12 +1053,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0332,2",
     "conflitos": [
-      "PRG-0027,1",
-      "SME0306,1",
+      "PRG0027,1",
       "SME0320,2",
       "SME0220,1",
       "SME0285,1",
-      "SME0123,2"
+      "SME0123,2",
+      "SME0306,1"
     ],
     "noturna": false
   },
@@ -1025,6 +1067,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Computação Numérica e Simulações para Engenharia Ambiental II",
     "curso": "Ambiental",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0334",
     "nivel": "g",
     "horarios": [
@@ -1041,10 +1085,10 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0334,1",
     "conflitos": [
-      "SME0341,1",
-      "SME0212,1",
       "SME0240,1",
-      "SME0332,1"
+      "SME0332,1",
+      "SME0341,1",
+      "SME0212,1"
     ],
     "noturna": false
   },
@@ -1053,6 +1097,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Álgebra Linear e Equações Diferenciais",
     "curso": "Civil",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0341",
     "nivel": "g",
     "horarios": [
@@ -1069,14 +1115,14 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0341,1",
     "conflitos": [
-      "SME0334,1",
-      "SME0306,1",
-      "SME0240,1",
       "SME0341,2",
-      "SME0332,1",
-      "SME0320,1",
+      "SME0240,1",
+      "SME0334,1",
       "SME0212,1",
-      "SME0123,2"
+      "SME0320,1",
+      "SME0123,2",
+      "SME0332,1",
+      "SME0306,1"
     ],
     "noturna": false
   },
@@ -1085,6 +1131,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Álgebra Linear e Equações Diferenciais",
     "curso": "Produção",
     "turma": 2,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0341",
     "nivel": "g",
     "horarios": [
@@ -1101,12 +1149,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0341,2",
     "conflitos": [
-      "SME0306,1",
-      "SME0341,1",
+      "SME0142,1",
       "SME0300,2",
       "SME0320,1",
       "SME0123,2",
-      "SME0142,1"
+      "SME0306,1",
+      "SME0341,1"
     ],
     "noturna": false
   },
@@ -1115,6 +1163,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Introdução à Pesquisa Operacional ",
     "curso": "BSI",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0510",
     "nivel": "g",
     "horarios": [
@@ -1141,6 +1191,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Probabilidade I",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0800",
     "nivel": "g",
     "horarios": [
@@ -1167,6 +1219,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Processos Estocásticos",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0805",
     "nivel": "g",
     "horarios": [
@@ -1183,8 +1237,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0805,1",
     "conflitos": [
-      "SME0822,1",
-      "SME0800,1"
+      "SME0800,1",
+      "SME0822,1"
     ],
     "noturna": true
   },
@@ -1193,6 +1247,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística Computacional",
     "curso": "BCC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0806",
     "nivel": "g",
     "horarios": [],
@@ -1205,6 +1261,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Séries temporais e aprendizado dinâmico",
     "curso": "BECD, BCDados",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0808",
     "nivel": "g",
     "horarios": [
@@ -1221,8 +1279,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0808,1",
     "conflitos": [
-      "SME0824,1",
-      "SME0820,1"
+      "SME0820,1",
+      "SME0824,1"
     ],
     "noturna": true
   },
@@ -1231,6 +1289,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Inferência Bayesiana",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0809",
     "nivel": "g",
     "horarios": [
@@ -1247,8 +1307,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0809,1",
     "conflitos": [
-      "SME0823,1",
-      "SME0510,1"
+      "SME0510,1",
+      "SME0823,1"
     ],
     "noturna": true
   },
@@ -1257,6 +1317,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Métodos não Paramétricos",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0810",
     "nivel": "g",
     "horarios": [
@@ -1282,6 +1344,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estágio supervisionado em estatística I",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0814",
     "nivel": "g",
     "horarios": [
@@ -1298,8 +1362,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0814,1",
     "conflitos": [
-      "SME0881,1",
       "SME0815,1",
+      "SME0881,1",
       "SME0880,1"
     ],
     "noturna": false
@@ -1309,6 +1373,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estágio supervisionado em estatística II",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0815",
     "nivel": "g",
     "horarios": [
@@ -1336,6 +1402,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Modelos de regresão e aprendizado supervisionado I",
     "curso": "BECD, BCDados",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0820",
     "nivel": "g",
     "horarios": [
@@ -1361,6 +1429,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Análise Multivariada e aprendizado não supervisionado",
     "curso": "BECD, BCDados, BCC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0822",
     "nivel": "g",
     "horarios": [
@@ -1387,6 +1457,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Modelos de regresão e aprendizado não supervisionado II",
     "curso": "BECD, BCC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0823",
     "nivel": "g",
     "horarios": [
@@ -1403,8 +1475,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0823,1",
     "conflitos": [
-      "SME0809,1",
-      "SME0510,1"
+      "SME0510,1",
+      "SME0809,1"
     ],
     "noturna": true
   },
@@ -1413,6 +1485,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Gestão da qualidade",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0824",
     "nivel": "g",
     "horarios": [
@@ -1438,6 +1512,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Introdução à Ciência de dados",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0828",
     "nivel": "g",
     "horarios": [
@@ -1463,6 +1539,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Tópicos Especiais em Estatística Aplicada I",
     "curso": "BCDados",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0870",
     "nivel": "g",
     "horarios": [],
@@ -1475,6 +1553,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Bioestatística",
     "curso": "BECD\t",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0871",
     "nivel": "g",
     "horarios": [],
@@ -1487,6 +1567,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Projeto de graduação em estatística I",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0880",
     "nivel": "g",
     "horarios": [
@@ -1503,9 +1585,9 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0880,1",
     "conflitos": [
-      "SME0881,1",
+      "SME0815,1",
       "SME0814,1",
-      "SME0815,1"
+      "SME0881,1"
     ],
     "noturna": false
   },
@@ -1514,6 +1596,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Projeto de graduação em estatística II",
     "curso": "BECD",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0881",
     "nivel": "g",
     "horarios": [
@@ -1530,8 +1614,8 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "id": "SME0881,1",
     "conflitos": [
-      "SME0814,1",
       "SME0815,1",
+      "SME0814,1",
       "SME0880,1"
     ],
     "noturna": false
@@ -1541,6 +1625,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Geração de malhas",
     "curso": "PPG-CCMC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
     "nivel": "p",
     "horarios": [],
@@ -1553,6 +1639,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Ferramentas de Programação Paralela para Solução de EDPs",
     "curso": "PPG-CCMC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5873",
     "nivel": "p",
     "horarios": [],
@@ -1565,6 +1653,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Otimização Inteira",
     "curso": "PPG-CCMC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5962",
     "nivel": "p",
     "horarios": [],
@@ -1577,6 +1667,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Estatística na Ciência da Computação",
     "curso": "PPG-CCMC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5975",
     "nivel": "p",
     "horarios": [],
@@ -1589,6 +1681,8 @@ export const turmasJson: TurmaDataInicial[] = [
     "nome": "Sistemas Complexos",
     "curso": "PPG-CCMC",
     "turma": 1,
+    "grupo": "",
+    "carga": 1.0,
     "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5978",
     "nivel": "p",
     "horarios": [],
