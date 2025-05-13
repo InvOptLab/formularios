@@ -77,7 +77,7 @@ const CardTurma = ({
       >
         <Typography variant="body1" fontWeight="bold">
           {codigo}
-          {grupo ? `, ${grupo}` : ""}
+          {/* {grupo ? `, ${grupo}` : ""} */}
         </Typography>
         <Typography variant="h6">{nome}</Typography>
         <Typography variant="h6">(Turma {turma})</Typography>
@@ -160,6 +160,14 @@ const CardTurma = ({
               `${horario.dia}-${horario.inicio}-${horario.fim}`
             )
           ) && <Chip label="Conflito" color="warning" size="small" />}
+
+          {grupo && (
+            <Chip
+              label={grupo}
+              sx={{ backgroundColor: "#853C00", color: "#ffffff" }}
+              size="small"
+            />
+          )}
         </Box>
 
         <Box
