@@ -4,6 +4,7 @@ import React, {
   useState,
   ReactNode,
   useEffect,
+  // useEffect,
 } from "react";
 import { TurmaData, TurmaDataInicial } from "../types";
 
@@ -20,11 +21,12 @@ type TurmasContextType = {
 const TurmasContext = createContext<TurmasContextType | undefined>(undefined);
 
 type Props = {
+  initialTurmas: TurmaDataInicial[];
   children: ReactNode;
 };
 
 const carregarTurmas = async (): Promise<Map<string, TurmaData>> => {
-  const response = await fetch("/turmas.json"); // coloque em /public/
+  const response = await fetch("./turmas.json"); // coloque em /public/
   if (!response.ok) throw new Error("Erro ao carregar turmas.json");
 
   const turmas: TurmaDataInicial[] = await response.json();
@@ -40,26 +42,26 @@ const carregarTurmas = async (): Promise<Map<string, TurmaData>> => {
   return map;
 };
 
-export const TurmasProvider = ({ children }: Props) => {
-  const [turmas, setTurmas] = useState<Map<string, TurmaData>>(new Map());
+export const TurmasProvider = ({ initialTurmas, children }: Props) => {
+  //const [turmasNew, setTurmas] = useState<Map<string, TurmaData>>(new Map());
 
   useEffect(() => {
-    carregarTurmas()
-      .then(setTurmas)
-      .catch((err) => console.error("Erro ao carregar turmas:", err));
+    carregarTurmas();
+    // .then(setTurmas)
+    // .catch((err) => console.error("Erro ao carregar turmas:", err));
   }, []);
 
-  // const [turmas] = useState<Map<string, TurmaData>>(() => {
-  //   const map = new Map<string, TurmaData>();
-  //   initialTurmas.forEach((turma) => {
-  //     const newTurma: TurmaData = {
-  //       ...turma,
-  //       conflitos: new Set(turma.conflitos),
-  //     };
-  //     map.set(turma.id, newTurma);
-  //   });
-  //   return map;
-  // });
+  const [turmas] = useState<Map<string, TurmaData>>(() => {
+    const map = new Map<string, TurmaData>();
+    initialTurmas.forEach((turma) => {
+      const newTurma: TurmaData = {
+        ...turma,
+        conflitos: new Set(turma.conflitos),
+      };
+      map.set(turma.id, newTurma);
+    });
+    return map;
+  });
 
   const [selectedTurmas, setSelectedTurmas] = useState<Map<string, TurmaData>>(
     new Map()
