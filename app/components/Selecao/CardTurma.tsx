@@ -26,6 +26,8 @@ interface CardTurmaProps {
   horariosConflito: Set<string>;
   noturna: boolean;
   codigo: string;
+  grupo?: string;
+  carga: number;
 }
 
 const CardTurma = ({
@@ -42,6 +44,8 @@ const CardTurma = ({
   horariosConflito,
   noturna,
   codigo,
+  grupo,
+  carga,
 }: CardTurmaProps) => {
   const [prioridade, setPrioridade] = useState<number>(0);
 
@@ -73,9 +77,20 @@ const CardTurma = ({
           height: "100%",
         }}
       >
-        <Typography variant="body1" fontWeight="bold">
-          {codigo}
-        </Typography>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          flexDirection="row"
+          flexWrap="wrap"
+        >
+          <Typography variant="body1" fontWeight="bold">
+            {codigo}
+          </Typography>
+          <Typography variant="body1" fontWeight="bold">
+            Carga: {carga.toFixed(2)}
+          </Typography>
+        </Box>
+
         <Typography variant="h6">{nome}</Typography>
         <Typography variant="h6">(Turma {turma})</Typography>
         <Typography variant="body2" color="text.secondary">
@@ -158,6 +173,14 @@ const CardTurma = ({
               `${horario.dia}-${horario.inicio}-${horario.fim}`
             )
           ) && <Chip label="Conflito" color="warning" size="small" />}
+
+          {grupo && (
+            <Chip
+              label={grupo}
+              sx={{ backgroundColor: "#853C00", color: "#ffffff" }}
+              size="small"
+            />
+          )}
         </Box>
 
         <Box

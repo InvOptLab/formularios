@@ -126,16 +126,17 @@ const StepperFlow = () => {
      * Não pode haver continuidade do processo caso nas etapas de Seleção e Confirmação não exista nenhuma Turma selecionada.
      * Deve ser barrado em ambos os casos.
      */
-    if ([1, 2].includes(activeStep) && selectedTurmas.size === 0) {
-      addAlerta(
-        "Selecione ao menos uma Turma para que seja possível continuar.",
-        "error",
-        6
-      );
-      /**
-       * Para ter continuídade no processo de confirmação, nenhuma Turma pode apresentar Prioridade 0 ou repetida.
-       */
-    } else if (activeStep === 1) {
+    // if ([1, 2].includes(activeStep) && selectedTurmas.size === 0) {
+    //   addAlerta(
+    //     "Selecione ao menos uma Turma para que seja possível continuar.",
+    //     "error",
+    //     6
+    //   );
+    //   /**
+    //    * Para ter continuídade no processo de confirmação, nenhuma Turma pode apresentar Prioridade 0 ou repetida.
+    //    */
+    // } else
+    if (activeStep === 1) {
       const { podeContinuar, mensagem } = avancaStepConfirmacao(
         selectedTurmas.values().toArray(),
         1,

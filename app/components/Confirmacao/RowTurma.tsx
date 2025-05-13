@@ -123,6 +123,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
               flexDirection="row"
               alignItems="flex-start"
               flexWrap="wrap"
+              justifyContent="flex-start"
             >
               <Box
                 margin={2}
@@ -130,7 +131,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                 borderLeft="4px solid #1976d2"
                 bgcolor="#f5f5f5"
                 borderRadius={2}
-                width="30%"
+                width="20%"
               >
                 <Typography variant="subtitle1" gutterBottom fontWeight="bold">
                   Horários:
@@ -155,7 +156,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   )}
                 </Box>
 
-                <Box mt={2} display="flex" alignItems="center" gap={1}>
+                {/* <Box mt={2} display="flex" alignItems="center" gap={1}>
                   <Typography variant="body2" fontWeight="bold">
                     Disciplina em inglês:
                   </Typography>
@@ -166,6 +167,16 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   >
                     {turma.ingles ? "Sim ✅" : "Não"}
                   </Typography>
+                </Box> */}
+
+                <Box mt={2} display="flex" alignItems="center" gap={1}>
+                  <Typography variant="body2" fontWeight="bold">
+                    Carga:
+                  </Typography>
+                  <Typography variant="body2" fontWeight="medium">
+                    {" "}
+                    {turma.carga.toFixed(2)}
+                  </Typography>
                 </Box>
 
                 {turma.noturna && (
@@ -175,22 +186,20 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                     </Typography>
                   </Box>
                 )}
+
+                {/* {turma.grupo && (
+                  <>
+                    {" "}
+                    <Typography variant="body2" fontWeight="bold">
+                      Grupo:
+                    </Typography>
+                    <Typography variant="body2" fontWeight="medium">
+                      {turma.grupo}
+                    </Typography>
+                  </>
+                )} */}
               </Box>
 
-              {/* {turma.noturna && (
-                <Box
-                  margin={2}
-                  p={2}
-                  borderLeft="4px solid #131862"
-                  bgcolor="#f5f5f5"
-                  borderRadius={2}
-                  width="30%"
-                >
-                  <Typography variant="body1" gutterBottom>
-                    🌙 Turma Noturna
-                  </Typography>
-                </Box>
-              )} */}
               {conflitos.size > 0 && (
                 <Box
                   margin={2}
@@ -198,7 +207,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   borderLeft="4px solid #ed6c02"
                   bgcolor="#f5f5f5"
                   borderRadius={2}
-                  width="30%"
+                  width="auto"
                 >
                   <Typography
                     variant="subtitle1"
@@ -226,7 +235,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   borderLeft="4px solid rgb(210, 25, 25)"
                   bgcolor="#f5f5f5"
                   borderRadius={2}
-                  width="30%"
+                  width="auto"
                 >
                   <Typography variant="body2" color="error.main">
                     ⚠️ {errorMessage}
