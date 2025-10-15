@@ -1,1109 +1,56 @@
 [
     {
-        "codigo": "EST5102",
-        "nome": "Inferência Estatística",
-        "curso": "PPG-PIPGEs",
+        "codigo": "SME0280",
+        "nome": "Acompanhamento Profissional",
+        "curso": "BMACC",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5102",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5102,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5106",
-        "nome": "Tópicos de pesquisa II ",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5106",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5106,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5507",
-        "nome": "Modelos de Regressão",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5507",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5507,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5514",
-        "nome": "Simulação Estocástica",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.5,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5514",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5514,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5519",
-        "nome": "Capacitação Docente em Estatística I",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
         "carga": 0.5,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5519",
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0280",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0280,1",
+        "conflitos": [
+            "SME0130,1",
+            "SME0243,1",
+            "SME0300,4"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME5781",
+        "nome": "Álgebra Linear Aplicada",
+        "curso": "CCMC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5781",
         "nivel": "p",
         "horarios": [],
-        "id": "EST5519,1",
+        "id": "SME5781,1",
         "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5521",
-        "nome": "Capacitação Docente em Estatística II",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 0.5,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5521",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5521,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5525",
-        "nome": "Processos Estocásticos",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5525",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5525,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5802",
-        "nome": "Inferência Avançada",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5802",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5802,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5804",
-        "nome": "Tópicos Avançados de Pesquisa I",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5804",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5804,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "EST5822",
-        "nome": "Tópicos Avançados em Machine Learning",
-        "curso": "PPG-PIPGEs",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=104131&disciplina=EST5822",
-        "nivel": "p",
-        "horarios": [],
-        "id": "EST5822,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "MAI5003",
-        "nome": "Probabilidade e Estatística",
-        "curso": "PPG-MECAI",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 0.75,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55137&disciplina=MAI5003",
-        "nivel": "p",
-        "horarios": [],
-        "id": "MAI5003,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "MAI5014",
-        "nome": "Metodologia de Pesquisa e Desenvolvimento",
-        "curso": "PPG-MECAI",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 0.75,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55137&disciplina=MAI5014",
-        "nivel": "p",
-        "horarios": [],
-        "id": "MAI5014,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "PRG0027",
-        "nome": "Uma jornada lúdica pela topologia geométrica\t",
-        "curso": "Optativa Livre para toda USP",
-        "turma": 1,
-        "grupo": "Matemática",
-        "carga": 0.5,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=PRG0027",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "PRG0027,1",
-        "conflitos": [
-            "SME0320,2",
-            "SME0332,2",
-            "SME0220,1",
-            "SME0123,2",
-            "SME0285,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SMA5802",
-        "nome": "Equações Diferenciais Ordinárias",
-        "curso": "PPG-Mat",
-        "turma": 1,
-        "grupo": "Matemática",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55135&disciplina=SMA5802",
-        "nivel": "p",
-        "horarios": [],
-        "id": "SMA5802,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SMA5934",
-        "nome": "Tópicos em Teoria Algébrica de Invariantes e Bifurcações",
-        "curso": "PPG-Mat",
-        "turma": 1,
-        "grupo": "Matemática",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55135&disciplina=SMA5934",
-        "nivel": "p",
-        "horarios": [],
-        "id": "SMA5934,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0110",
-        "nome": "Programação Matemática",
-        "curso": "BCC",
-        "turma": 1,
-        "grupo": "Otimização",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0110",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0110,1",
-        "conflitos": [
-            "SME0300,1",
-            "SME0306,2"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0110",
-        "nome": "Programação Matemática",
-        "curso": "BCC",
-        "turma": 2,
-        "grupo": "Otimização",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0110",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            }
-        ],
-        "id": "SME0110,2",
-        "conflitos": [
-            "SME0320,1",
-            "SME0320,4"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0123",
-        "nome": "Estatística",
-        "curso": "BCC",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0123",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            }
-        ],
-        "id": "SME0123,1",
-        "conflitos": [
-            "SME0320,3",
-            "SME0240,1",
-            "SME0332,1",
-            "SME0300,2",
-            "SME0241,1",
-            "SME0285,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0123",
-        "nome": "Estatística",
-        "curso": "BCC",
-        "turma": 2,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0123",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0123,2",
-        "conflitos": [
-            "SME0341,1",
-            "SME0320,2",
-            "SME0332,2",
-            "SME0320,1",
-            "SME0220,1",
-            "SME0285,1",
-            "PRG0027,1",
-            "SME0306,1",
-            "SME0341,2"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0130 ",
-        "nome": "Redes Complexas",
-        "curso": "BCC",
-        "turma": 1,
-        "grupo": "Ciência de Dados",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0130",
-        "nivel": "g",
-        "horarios": [],
-        "id": "SME0130,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0142",
-        "nome": "Algebra Linear e Aplicações",
-        "curso": "BCC, BCDados",
-        "turma": 1,
-        "grupo": "Matemática",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0142",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0142,1",
-        "conflitos": [
-            "SME0300,2",
-            "SME0341,2",
-            "SME0300,1",
-            "SME0212,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0142",
-        "nome": "Algebra Linear e Aplicações",
-        "curso": "BCC",
-        "turma": 2,
-        "grupo": "Matemática",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0142",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            }
-        ],
-        "id": "SME0142,2",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0206",
-        "nome": "Fundamentos de Análise Numérica ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0206",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            }
-        ],
-        "id": "SME0206,1",
-        "conflitos": [
-            "SME0284,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0211",
-        "nome": "Otimização Linear",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Otimização",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0211",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0211,1",
-        "conflitos": [
-            "SME0320,3",
-            "SME0320,2",
-            "SME0245,1",
-            "SME0284,1",
-            "SME0320,4"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0212",
-        "nome": "Otimização Não Linear",
-        "curso": "BCDados, BMACC",
-        "turma": 1,
-        "grupo": "Otimização",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0212",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qui.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "14:10",
-                "fim": "15:50"
-            }
-        ],
-        "id": "SME0212,1",
-        "conflitos": [
-            "SME0341,1",
-            "SME0240,1",
-            "SME0332,1",
-            "SME0142,1",
-            "SME0300,1",
-            "SME0334,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0213 ",
-        "nome": "Otimização Inteira ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Otimização",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0213",
-        "nivel": "g",
-        "horarios": [],
-        "id": "SME0213,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0220",
-        "nome": "Introdução à Teoria das Probabilidades",
-        "curso": "BCDados, BMACC, BMA, LMA",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0220",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0220,1",
-        "conflitos": [
-            "SME0320,2",
-            "SME0332,2",
-            "PRG0027,1",
-            "SME0123,2",
-            "SME0285,1",
-            "SME0306,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0240",
-        "nome": "Equações Diferenciais Ordinárias ",
-        "curso": "BMACC, LMA, BMA",
-        "turma": 1,
-        "grupo": "Matemática",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0240",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            }
-        ],
-        "id": "SME0240,1",
-        "conflitos": [
-            "SME0320,3",
-            "SME0123,1",
-            "SME0341,1",
-            "SME0332,1",
-            "SME0212,1",
-            "SME0241,1",
-            "SME0285,1",
-            "SME0334,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0241",
-        "nome": "Introdução à Modelagem Matemática ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 0.5,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0241",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            }
-        ],
-        "id": "SME0241,1",
-        "conflitos": [
-            "SME0320,3",
-            "SME0123,1",
-            "SME0240,1",
-            "SME0332,1",
-            "SME0285,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0245",
-        "nome": "Funções de Variável Complexa",
-        "curso": "BMACC, LMA, BMA",
-        "turma": 1,
-        "grupo": "Matemática",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0245",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qua.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0245,1",
-        "conflitos": [
-            "SME0284,1",
-            "SME0320,2",
-            "SME0211,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0250 ",
-        "nome": "Métodos Numéricos para Geração de Malhas ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0250",
-        "nivel": "g",
-        "horarios": [],
-        "id": "SME0250,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0252  ",
-        "nome": "Sistemas Esparsos e Computação Paralela ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0252",
-        "nivel": "g",
-        "horarios": [],
-        "id": "SME0252,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0262 ",
-        "nome": "Análise de Séries Temporais em Finanças",
-        "curso": "BCDados",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0262",
-        "nivel": "g",
-        "horarios": [],
-        "id": "SME0262,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0284",
-        "nome": "Estágio Supervisionado ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 0.25,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0284",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qua.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0284,1",
-        "conflitos": [
-            "SME0245,1",
-            "SME0211,1",
-            "SME0320,2",
-            "SME0206,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0285",
-        "nome": "Trabalho de Conclusão de Curso ",
-        "curso": "BMACC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 0.25,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0285",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Ter.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0285,1",
-        "conflitos": [
-            "SME0320,3",
-            "SME0123,1",
-            "SME0240,1",
-            "SME0320,2",
-            "SME0332,2",
-            "SME0332,1",
-            "SME0241,1",
-            "SME0220,1",
-            "SME0123,2",
-            "PRG0027,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0300 ",
-        "nome": "Cálculo Numérico",
-        "curso": "Elétrica -Eletrônica",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qua.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0300,1",
-        "conflitos": [
-            "SME0142,1",
-            "SME0110,1",
-            "SME0306,2",
-            "SME0212,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0300 ",
-        "nome": "Cálculo Numérico",
-        "curso": "Elétrica – Automação",
-        "turma": 2,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            }
-        ],
-        "id": "SME0300,2",
-        "conflitos": [
-            "SME0142,1",
-            "SME0341,2",
-            "SME0123,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0306 ",
-        "nome": "Métodos Numéricos e Computacionais II",
-        "curso": "Materiais e\nManufatura\t",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0306",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qui.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0306,1",
-        "conflitos": [
-            "SME0341,1",
-            "SME0332,2",
-            "SME0320,1",
-            "SME0220,1",
-            "SME0123,2",
-            "SME0341,2"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0306 ",
-        "nome": "Métodos Numéricos e Computacionais II",
-        "curso": "Civil",
-        "turma": 2,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0306",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0306,2",
-        "conflitos": [
-            "SME0110,1",
-            "SME0300,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0320 ",
-        "nome": "Estatística I",
-        "curso": "Ambiental",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qua.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "10:10",
-                "fim": "11:50"
-            }
-        ],
-        "id": "SME0320,1",
-        "conflitos": [
-            "SME0341,1",
-            "SME0110,2",
-            "SME0123,2",
-            "SME0306,1",
-            "SME0320,4",
-            "SME0341,2"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0320 ",
-        "nome": "Estatística I",
-        "curso": "Aeronáutica",
-        "turma": 2,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0320,2",
-        "conflitos": [
-            "SME0332,2",
-            "SME0211,1",
-            "SME0245,1",
-            "SME0220,1",
-            "SME0123,2",
-            "SME0285,1",
-            "SME0284,1",
-            "PRG0027,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0320 ",
-        "nome": "Estatística I",
-        "curso": "Civil",
-        "turma": 3,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Ter.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            }
-        ],
-        "id": "SME0320,3",
-        "conflitos": [
-            "SME0123,1",
-            "SME0240,1",
-            "SME0332,1",
-            "SME0211,1",
-            "SME0241,1",
-            "SME0285,1",
-            "SME0320,4"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0320 ",
-        "nome": "Estatística I",
-        "curso": "Mecatrônica",
-        "turma": 4,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "08:10",
-                "fim": "09:50"
-            }
-        ],
-        "id": "SME0320,4",
-        "conflitos": [
-            "SME0320,3",
-            "SME0320,1",
-            "SME0110,2",
-            "SME0211,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0332 ",
-        "nome": "Fundamentos da Programação para Computadores",
-        "curso": "Física/ Ciências Físicas Biomoleculares",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0332",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            }
-        ],
-        "id": "SME0332,1",
-        "conflitos": [
-            "SME0320,3",
-            "SME0123,1",
-            "SME0341,1",
-            "SME0240,1",
-            "SME0212,1",
-            "SME0241,1",
-            "SME0285,1",
-            "SME0334,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0332 ",
-        "nome": "Fundamentos da Programação para Computadores",
-        "curso": "Física/Ciências Físicas Biomoleculares",
-        "turma": 2,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0332",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "16:20",
-                "fim": "18:00"
-            }
-        ],
-        "id": "SME0332,2",
-        "conflitos": [
-            "SME0320,2",
-            "SME0220,1",
-            "SME0123,2",
-            "SME0285,1",
-            "PRG0027,1",
-            "SME0306,1"
-        ],
-        "noturna": false
-    },
-    {
-        "codigo": "SME0334",
-        "nome": "Computação Numérica e Simulações para Engenharia Ambiental II",
-        "curso": "Ambiental",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0334",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Qui.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "14:20",
-                "fim": "16:00"
-            }
-        ],
-        "id": "SME0334,1",
-        "conflitos": [
-            "SME0341,1",
-            "SME0240,1",
-            "SME0332,1",
-            "SME0212,1"
-        ],
         "noturna": false
     },
     {
         "codigo": "SME0341",
         "nome": "Álgebra Linear e Equações Diferenciais",
-        "curso": "Civil",
+        "curso": "Ambiental",
         "turma": 1,
-        "grupo": "Matemática",
         "carga": 1.0,
+        "grupo": "",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0341",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Qui.",
-                "inicio": "14:20",
-                "fim": "16:00"
+                "inicio": "10:10",
+                "fim": "11:50"
             },
             {
                 "dia": "Sex.",
@@ -1113,31 +60,30 @@
         ],
         "id": "SME0341,1",
         "conflitos": [
-            "SME0240,1",
-            "SME0320,1",
-            "SME0332,1",
-            "SME0212,1",
-            "SME0123,2",
-            "SME0306,1",
-            "SME0341,2",
-            "SME0334,1"
+            "SME0340,4",
+            "SME0121,2",
+            "SME0340,2",
+            "SME0104,1",
+            "SME0340,3",
+            "SME0221,1",
+            "SME0341,2"
         ],
         "noturna": false
     },
     {
         "codigo": "SME0341",
         "nome": "Álgebra Linear e Equações Diferenciais",
-        "curso": "Produção",
+        "curso": "Materiais",
         "turma": 2,
-        "grupo": "Matemática",
         "carga": 1.0,
+        "grupo": "",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0341",
         "nivel": "g",
         "horarios": [
             {
-                "dia": "Ter.",
-                "inicio": "10:10",
-                "fim": "11:50"
+                "dia": "Qui.",
+                "inicio": "14:20",
+                "fim": "16:00"
             },
             {
                 "dia": "Sex.",
@@ -1148,202 +94,770 @@
         "id": "SME0341,2",
         "conflitos": [
             "SME0341,1",
-            "SME0320,1",
-            "SME0300,2",
-            "SME0142,1",
-            "SME0123,2",
-            "SME0306,1"
+            "SME0346,1",
+            "SME0340,5",
+            "SME0320,3",
+            "SME0340,3",
+            "SME0216,1",
+            "5500004,1"
         ],
         "noturna": false
     },
     {
-        "codigo": "SME0510",
-        "nome": "Introdução à Pesquisa Operacional ",
-        "curso": "BSI",
+        "codigo": "SLC0609",
+        "nome": "Álgebra Linear e Equações Diferenciais",
+        "curso": "Lic. Ciências Exatas",
         "turma": 1,
-        "grupo": "Otimização",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0510",
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SLC0609",
         "nivel": "g",
         "horarios": [
             {
-                "dia": "Seg.",
+                "dia": "Sex.",
                 "inicio": "19:00",
                 "fim": "20:40"
             },
+            {
+                "dia": "Sex.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            }
+        ],
+        "id": "SLC0609,1",
+        "conflitos": [
+            "SME0520,1",
+            "SME0806,1",
+            "SME0892,1",
+            "SME0821,1",
+            "SME0803,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0821",
+        "nome": "Análise de Sobrevivência e Confiabilidade",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0821",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            }
+        ],
+        "id": "SME0821,1",
+        "conflitos": [
+            "SME0520,1",
+            "SME0818,1",
+            "SLC0609,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0829",
+        "nome": "Aprendizado de Máquina",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0829",
+        "nivel": "g",
+        "horarios": [
             {
                 "dia": "Qua.",
                 "inicio": "21:00",
                 "fim": "22:40"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "19:00",
+                "fim": "20:40"
             }
         ],
-        "id": "SME0510,1",
+        "id": "SME0829,1",
         "conflitos": [
-            "SME0823,1",
-            "SME0809,1"
+            "SME0520,1",
+            "SME0825,1",
+            "SME0892,1",
+            "SME0878,1",
+            "SME0827,1",
+            "SME0803,1"
         ],
         "noturna": true
     },
     {
-        "codigo": "SME0800",
-        "nome": "Probabilidade I",
-        "curso": "BECD",
+        "codigo": "SME0860",
+        "nome": "Aprendizado de Máquina Aplicado a Problemas",
+        "curso": "BCDados",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0800",
+        "carga": 0.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0860",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Ter.",
-                "inicio": "19:00",
-                "fim": "20:40"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "21:00",
-                "fim": "22:40"
+                "inicio": "10:10",
+                "fim": "11:50"
             }
         ],
-        "id": "SME0800,1",
+        "id": "SME0860,1",
         "conflitos": [
-            "SME0822,1",
-            "SME0805,1"
+            "SME0340,4",
+            "SME0121,1",
+            "SME0221,1",
+            "SME0104,2",
+            "5500004,1"
         ],
-        "noturna": true
+        "noturna": false
     },
     {
-        "codigo": "SME0805",
-        "nome": "Processos Estocásticos",
-        "curso": "BECD",
+        "codigo": "EST5534",
+        "nome": "Aprendizado de Máquina Estatístico",
+        "curso": "PIPGes",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0805",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Ter.",
-                "inicio": "19:00",
-                "fim": "20:40"
-            },
-            {
-                "dia": "Qui.",
-                "inicio": "21:00",
-                "fim": "22:40"
-            }
-        ],
-        "id": "SME0805,1",
-        "conflitos": [
-            "SME0822,1",
-            "SME0800,1"
-        ],
-        "noturna": true
-    },
-    {
-        "codigo": "SME0806",
-        "nome": "Estatística Computacional",
-        "curso": "BCC",
-        "turma": 1,
-        "grupo": "Estatística",
         "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0806",
-        "nivel": "g",
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5534",
+        "nivel": "p",
         "horarios": [],
-        "id": "SME0806,1",
+        "id": "EST5534,1",
         "conflitos": [],
         "noturna": false
     },
     {
-        "codigo": "SME0808",
-        "nome": "Séries temporais e aprendizado dinâmico",
-        "curso": "BECD, BCDados",
+        "codigo": "SME0871",
+        "nome": "Bioestatística",
+        "curso": "BCDados",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0808",
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0871",
+        "nivel": "g",
+        "horarios": [],
+        "id": "SME0871,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0104",
+        "nome": "Cálculo Numérico",
+        "curso": "BCC",
+        "turma": 2,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0104",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Ter.",
-                "inicio": "21:00",
-                "fim": "22:40"
+                "inicio": "10:10",
+                "fim": "11:50"
             },
             {
                 "dia": "Qui.",
-                "inicio": "19:00",
-                "fim": "20:40"
+                "inicio": "08:10",
+                "fim": "09:50"
             }
         ],
-        "id": "SME0808,1",
+        "id": "SME0104,2",
         "conflitos": [
-            "SME0824,1",
-            "SME0820,1"
+            "SME0300,2",
+            "SME0340,4",
+            "SME0333,1",
+            "SME0860,1",
+            "SME0205,1",
+            "SME0121,1",
+            "SME0221,1",
+            "SME0620,1",
+            "5500004,1"
         ],
-        "noturna": true
+        "noturna": false
     },
     {
-        "codigo": "SME0809",
-        "nome": "Inferência Bayesiana",
-        "curso": "BECD",
+        "codigo": "SME0500",
+        "nome": "Cálculo Numérico",
+        "curso": "BSI",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0809",
+        "carga": 0.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0500",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Seg.",
                 "inicio": "19:00",
                 "fim": "20:40"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "21:00",
-                "fim": "22:40"
             }
         ],
-        "id": "SME0809,1",
+        "id": "SME0500,1",
         "conflitos": [
-            "SME0823,1",
-            "SME0510,1"
+            "SME0816,1",
+            "SME0818,1"
         ],
         "noturna": true
     },
     {
-        "codigo": "SME0810",
-        "nome": "Métodos não Paramétricos",
-        "curso": "BECD",
+        "codigo": "SME0300",
+        "nome": "Cálculo Numérico",
+        "curso": "Mecânica",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0810",
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0300,1",
+        "conflitos": [
+            "SME0285,1",
+            "SME0305,2",
+            "SME0340,1",
+            "SME0284,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0300",
+        "nome": "Cálculo Numérico",
+        "curso": "Aeronáutica",
+        "turma": 2,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0300,2",
+        "conflitos": [
+            "SME0333,1",
+            "SME0610,1",
+            "SME0340,3",
+            "SME0230,1",
+            "SME0205,1",
+            "SME0121,1",
+            "SME0602,1",
+            "SME0202,1",
+            "SME0620,1",
+            "SME0104,2",
+            "SME0340,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0300",
+        "nome": "Cálculo Numérico",
+        "curso": "Produção",
+        "turma": 3,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Seg.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "SME0300,3",
+        "conflitos": [
+            "SME0320,2",
+            "SME0130,1",
+            "SME0320,1",
+            "SME0243,1",
+            "SME0340,2",
+            "SME0300,4",
+            "SME0305,1",
+            "SME0273,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0300",
+        "nome": "Cálculo Numérico",
+        "curso": "Mecatrônica",
+        "turma": 4,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0300",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0300,4",
+        "conflitos": [
+            "SME0130,1",
+            "SME0243,1",
+            "SME0340,2",
+            "SME0305,1",
+            "SME0273,1",
+            "SME0280,1",
+            "SME0300,3"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0602",
+        "nome": "Cálculo Numérico",
+        "curso": "Eng. Computação",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0602",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0602,1",
+        "conflitos": [
+            "SME0320,2",
+            "SME0300,2",
+            "SME0320,1",
+            "SME0610,1",
+            "SME0340,3",
+            "SME0230,1",
+            "SME0202,1",
+            "SME0340,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0104",
+        "nome": "Cálculo Numérico",
+        "curso": "BCC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0104",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0104,1",
+        "conflitos": [
+            "SME0340,4",
+            "SME0341,1",
+            "SME0121,2",
+            "SME0340,2",
+            "SME0205,1",
+            "SME0221,1",
+            "SME0620,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0892",
+        "nome": "Cálculo Numérico para Estatística",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0892",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
                 "inicio": "21:00",
                 "fim": "22:40"
             },
             {
-                "dia": "Qua.",
+                "dia": "Sex.",
                 "inicio": "19:00",
                 "fim": "20:40"
             }
         ],
-        "id": "SME0810,1",
+        "id": "SME0892,1",
         "conflitos": [
-            "SME0828,1"
+            "SME0806,1",
+            "SLC0609,1",
+            "SME0829,1",
+            "SME0878,1",
+            "SME0803,1"
         ],
         "noturna": true
+    },
+    {
+        "codigo": "EST5519",
+        "nome": "Capacitação Docente em Estatística I",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": "",
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5519",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5519,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "EST5522",
+        "nome": "Teoria da Decisão",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5522",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5522,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0333",
+        "nome": "Computação numérica e simulações para Engenharia Ambiental I",
+        "curso": "Ambiental",
+        "turma": 1,
+        "carga": 0.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0333",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qui.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0333,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0205,1",
+            "SME0121,1",
+            "SME0620,1",
+            "SME0104,2"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0890",
+        "nome": "Direcionamento Acadêmico I",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 0.25,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0890",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qui.",
+                "inicio": "18:00",
+                "fim": "18:50"
+            }
+        ],
+        "id": "SME0890,1",
+        "conflitos": [
+            "SME0827,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0340",
+        "nome": "Equações Diferenciais Ordinárias",
+        "curso": "Eletrônica",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0340",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0340,1",
+        "conflitos": [
+            "SME0285,1",
+            "SME0300,2",
+            "SME0284,1",
+            "SME0610,1",
+            "SME0340,3",
+            "SME0230,1",
+            "SME0602,1",
+            "SME0202,1",
+            "SME0300,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0340",
+        "nome": "Equações Diferenciais Ordinárias",
+        "curso": "Automação",
+        "turma": 2,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0340",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0340,2",
+        "conflitos": [
+            "SME0340,4",
+            "SME0341,1",
+            "SME0121,2",
+            "SME0130,1",
+            "SME0243,1",
+            "SME0300,4",
+            "SME0104,1",
+            "SME0305,1",
+            "SME0273,1",
+            "SME0221,1",
+            "SME0300,3"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0340",
+        "nome": "Equações Diferenciais Ordinárias",
+        "curso": "Mecânica",
+        "turma": 3,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0340",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0340,3",
+        "conflitos": [
+            "SME0300,2",
+            "SME0341,1",
+            "SME0610,1",
+            "SME0230,1",
+            "SME0602,1",
+            "SME0202,1",
+            "SME0341,2",
+            "SME0340,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0340",
+        "nome": "Equações Diferenciais Ordinárias",
+        "curso": "Aeronáutica",
+        "turma": 4,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0340",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0340,4",
+        "conflitos": [
+            "SME0341,1",
+            "SME0121,2",
+            "SME0340,2",
+            "SME0104,1",
+            "SME0860,1",
+            "SME0121,1",
+            "SME0221,1",
+            "SME0104,2",
+            "5500004,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0340",
+        "nome": "Equações Diferenciais Ordinárias",
+        "curso": "Mecatrônica",
+        "turma": 5,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0340",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "SME0340,5",
+        "conflitos": [
+            "SME0346,1",
+            "SME0320,3",
+            "SME0216,1",
+            "SME0202,1",
+            "SME0852,1",
+            "SME0341,2",
+            "5500004,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0340",
+        "nome": "Equações Diferenciais Ordinárias",
+        "curso": "Eng. Computação",
+        "turma": 6,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0340",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0340,6",
+        "conflitos": [
+            "SME0610,1",
+            "SME0230,1",
+            "SME0216,1",
+            "SME0852,1",
+            "SME0202,1",
+            "SME0320,4"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0284",
+        "nome": "Estágio Supervisionado",
+        "curso": "BMACC",
+        "turma": 1,
+        "carga": 0.25,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0284",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Sex.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0284,1",
+        "conflitos": [
+            "SME0285,1",
+            "SME0340,1",
+            "SME0300,1",
+            "SME0305,1"
+        ],
+        "noturna": false
     },
     {
         "codigo": "SME0814",
-        "nome": "Estágio supervisionado em estatística I",
+        "nome": "Estágio Supervisionado em Estatística I",
         "curso": "BECD",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 0.27490234375,
+        "carga": 0.25,
+        "grupo": "",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0814",
         "nivel": "g",
         "horarios": [
@@ -1360,19 +874,19 @@
         ],
         "id": "SME0814,1",
         "conflitos": [
-            "SME0881,1",
             "SME0880,1",
-            "SME0815,1"
+            "SME0815,1",
+            "SME0881,1"
         ],
         "noturna": false
     },
     {
         "codigo": "SME0815",
-        "nome": "Estágio supervisionado em estatística II",
+        "nome": "Estágio Supervisionado em Estatística II",
         "curso": "BECD",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 0.27490234375,
+        "carga": 0.25,
+        "grupo": "",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0815",
         "nivel": "g",
         "horarios": [
@@ -1389,24 +903,24 @@
         ],
         "id": "SME0815,1",
         "conflitos": [
-            "SME0881,1",
+            "SME0880,1",
             "SME0814,1",
-            "SME0880,1"
+            "SME0881,1"
         ],
         "noturna": false
     },
     {
-        "codigo": "SME0820",
-        "nome": "Modelos de regresão e aprendizado supervisionado I",
+        "codigo": "SME0806",
+        "nome": "Estatística Computacional",
         "curso": "BECD, BCDados",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0820",
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0806",
         "nivel": "g",
         "horarios": [
             {
-                "dia": "Ter.",
+                "dia": "Qui.",
                 "inicio": "21:00",
                 "fim": "22:40"
             },
@@ -1416,157 +930,916 @@
                 "fim": "20:40"
             }
         ],
-        "id": "SME0820,1",
+        "id": "SME0806,1",
         "conflitos": [
-            "SME0808,1"
+            "SME0892,1",
+            "SME0801,1",
+            "SME0803,1",
+            "SLC0609,1"
         ],
         "noturna": true
     },
     {
-        "codigo": "SME0822",
-        "nome": "Análise Multivariada e aprendizado não supervisionado",
-        "curso": "BECD, BCDados, BCC",
+        "codigo": "SME0320",
+        "nome": "Estatística I",
+        "curso": "Eletrônica",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0822",
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "SME0320,1",
+        "conflitos": [
+            "SME0300,3",
+            "SME0202,1",
+            "SME0602,1",
+            "SME0320,2"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0320",
+        "nome": "Estatística I",
+        "curso": "Automação",
+        "turma": 2,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "SME0320,2",
+        "conflitos": [
+            "SME0300,3",
+            "SME0202,1",
+            "SME0320,1",
+            "SME0602,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0320",
+        "nome": "Estatística I",
+        "curso": "Mecânica",
+        "turma": 3,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Ter.",
-                "inicio": "19:00",
-                "fim": "20:40"
+                "inicio": "14:20",
+                "fim": "16:00"
             },
             {
                 "dia": "Qui.",
-                "inicio": "21:00",
-                "fim": "22:40"
+                "inicio": "14:20",
+                "fim": "16:00"
             }
         ],
-        "id": "SME0822,1",
+        "id": "SME0320,3",
         "conflitos": [
-            "SME0805,1",
-            "SME0800,1"
+            "SME0346,1",
+            "SME0340,5",
+            "SME0216,1",
+            "SME0202,1",
+            "SME0852,1",
+            "SME0341,2",
+            "5500004,1"
         ],
-        "noturna": true
+        "noturna": false
     },
     {
-        "codigo": "SME0823",
-        "nome": "Modelos de regresão e aprendizado não supervisionado II",
-        "curso": "BECD, BCC",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0823",
+        "codigo": "SME0320",
+        "nome": "Estatística I",
+        "curso": "Produção",
+        "turma": 4,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0320",
         "nivel": "g",
         "horarios": [
             {
-                "dia": "Seg.",
-                "inicio": "19:00",
-                "fim": "20:40"
+                "dia": "Ter.",
+                "inicio": "16:20",
+                "fim": "18:00"
             },
             {
-                "dia": "Qua.",
-                "inicio": "21:00",
-                "fim": "22:40"
+                "dia": "Qui.",
+                "inicio": "16:20",
+                "fim": "18:00"
             }
         ],
-        "id": "SME0823,1",
+        "id": "SME0320,4",
         "conflitos": [
-            "SME0510,1",
-            "SME0809,1"
+            "SME0216,1",
+            "SME0340,6",
+            "SME0273,1",
+            "SME0852,1"
         ],
-        "noturna": true
+        "noturna": false
     },
     {
-        "codigo": "SME0824",
-        "nome": "Gestão da qualidade",
+        "codigo": "SME0620",
+        "nome": "Estatística I",
+        "curso": "Eng. Computação",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0620",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0620,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0333,1",
+            "SME0121,2",
+            "SME0104,1",
+            "SME0205,1",
+            "SME0121,1",
+            "SME0104,2"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0827",
+        "nome": "Estruturas de Dados",
         "curso": "BECD",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0824",
+        "carga": 0.75,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0827",
         "nivel": "g",
         "horarios": [
             {
                 "dia": "Qui.",
-                "inicio": "19:00",
+                "inicio": "18:00",
                 "fim": "20:40"
-            },
-            {
-                "dia": "Sex.",
-                "inicio": "21:00",
-                "fim": "22:40"
             }
         ],
-        "id": "SME0824,1",
+        "id": "SME0827,1",
         "conflitos": [
-            "SME0808,1"
+            "SME0520,1",
+            "SME0825,1",
+            "SME0890,1",
+            "SME0829,1",
+            "SME0878,1"
         ],
         "noturna": true
     },
     {
-        "codigo": "SME0828",
-        "nome": "Introdução à Ciência de dados",
-        "curso": "BECD",
-        "turma": 1,
-        "grupo": "Ciência de Dados",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0828",
-        "nivel": "g",
-        "horarios": [
-            {
-                "dia": "Seg.",
-                "inicio": "21:00",
-                "fim": "22:40"
-            },
-            {
-                "dia": "Qua.",
-                "inicio": "19:00",
-                "fim": "20:40"
-            }
-        ],
-        "id": "SME0828,1",
-        "conflitos": [
-            "SME0810,1"
-        ],
-        "noturna": true
-    },
-    {
-        "codigo": "SME0870",
-        "nome": "Tópicos Especiais em Estatística Aplicada I",
+        "codigo": 5500004,
+        "nome": "Fundamentos em Ciências de Dados",
         "curso": "BCDados",
         "turma": 1,
-        "grupo": "Estatística",
         "carga": 1.0,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0870",
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=5500004",
         "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "5500004,1",
+        "conflitos": [
+            "SME0340,4",
+            "SME0346,1",
+            "SME0340,5",
+            "SME0320,3",
+            "SME0860,1",
+            "SME0121,1",
+            "SME0216,1",
+            "SME0221,1",
+            "SME0104,2",
+            "SME0341,2"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "EST5104",
+        "nome": "Inferência Bayesiana",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5104",
+        "nivel": "p",
         "horarios": [],
-        "id": "SME0870,1",
+        "id": "EST5104,1",
         "conflitos": [],
         "noturna": false
     },
     {
-        "codigo": "SME0871 ",
-        "nome": "Bioestatística",
-        "curso": "BECD\t",
+        "codigo": "SME0818",
+        "nome": "Inferência Estatística",
+        "curso": "BECD",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.099609375,
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0871",
+        "carga": 1.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0818",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "18:00",
+                "fim": "20:40"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "18:00",
+                "fim": "20:40"
+            }
+        ],
+        "id": "SME0818,1",
+        "conflitos": [
+            "SME0500,1",
+            "SME0130,1",
+            "SME0821,1",
+            "SME0816,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "EST5102",
+        "nome": "Inferência Estatística",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5102",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5102,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0520",
+        "nome": "Introdução à Estatística",
+        "curso": "BSI",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0520",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qui.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            }
+        ],
+        "id": "SME0520,1",
+        "conflitos": [
+            "SME0825,1",
+            "SLC0609,1",
+            "SME0821,1",
+            "SME0829,1",
+            "SME0878,1",
+            "SME0827,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0221",
+        "nome": "Introdução à Inferência Estatística",
+        "curso": "BCDados, BMACC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0221",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0221,1",
+        "conflitos": [
+            "SME0340,4",
+            "SME0341,1",
+            "SME0121,2",
+            "SME0340,2",
+            "SME0104,1",
+            "SME0860,1",
+            "SME0121,1",
+            "SME0104,2",
+            "5500004,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0230",
+        "nome": "Introdução à Programação de Computadores",
+        "curso": "MAT-NG, BMACC",
+        "turma": 1,
+        "carga": 1.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0230",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0230,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0610,1",
+            "SME0340,3",
+            "SME0602,1",
+            "SME0202,1",
+            "SME0340,6",
+            "SME0340,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0346",
+        "nome": "Matemática para Arquitetura",
+        "curso": "Arquitetura",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0346",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qui.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "SME0346,1",
+        "conflitos": [
+            "SME0340,5",
+            "SME0320,3",
+            "SME0216,1",
+            "SME0341,2",
+            "5500004,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0825",
+        "nome": "Metodologia Científica I",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 0.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0825",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            }
+        ],
+        "id": "SME0825,1",
+        "conflitos": [
+            "SME0520,1",
+            "SME0807,1",
+            "SME0829,1",
+            "SME0878,1",
+            "SME0827,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0205",
+        "nome": "Métodos do Cálculo Numérico I",
+        "curso": "BMA, LMA, BMACC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0205",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0205,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0333,1",
+            "SME0121,2",
+            "SME0104,1",
+            "SME0121,1",
+            "SME0620,1",
+            "SME0104,2"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0305",
+        "nome": "Métodos Numéricos e Computacionais I",
+        "curso": "Civil",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0305",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0305,1",
+        "conflitos": [
+            "SME0285,1",
+            "SME0284,1",
+            "SME0130,1",
+            "SME0243,1",
+            "SME0340,2",
+            "SME0300,4",
+            "SME0273,1",
+            "SME0300,3"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0305",
+        "nome": "Métodos Numéricos e Computacionais I",
+        "curso": "Materiais",
+        "turma": 2,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0305",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0305,2",
+        "conflitos": [
+            "SME0300,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0202",
+        "nome": "Métodos Numéricos em Equações Diferenciais",
+        "curso": "BMA, BMACC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0202",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0202,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0610,1",
+            "SME0340,3",
+            "SME0230,1",
+            "SME0602,1",
+            "SME0340,6",
+            "SME0340,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0202",
+        "nome": "Métodos Numéricos em Equações Diferenciais",
+        "curso": "BMACC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0202",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Ter.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            }
+        ],
+        "id": "SME0202,1",
+        "conflitos": [
+            "SME0320,2",
+            "SME0340,5",
+            "SME0320,1",
+            "SME0320,3",
+            "SME0602,1",
+            "SME0852,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME5784",
+        "nome": "Métodos Numéricos para Equações Diferenciais",
+        "curso": "CCMC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5784",
+        "nivel": "p",
+        "horarios": [],
+        "id": "SME5784,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0878",
+        "nome": "Mineração Estatística de Dados",
+        "curso": "BCDados, BECD, BSI",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0878",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            }
+        ],
+        "id": "SME0878,1",
+        "conflitos": [
+            "SME0520,1",
+            "SME0825,1",
+            "SME0892,1",
+            "SME0829,1",
+            "SME0803,1",
+            "SME0827,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0816",
+        "nome": "Planejamento de Experimentos I",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0816",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            },
+            {
+                "dia": "Ter.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            }
+        ],
+        "id": "SME0816,1",
+        "conflitos": [
+            "SME0500,1",
+            "SME0801,1",
+            "SME0818,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0852",
+        "nome": "Prática em Ciência de Dados I",
+        "curso": "BCDados, BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0852",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0852,1",
+        "conflitos": [
+            "SME0340,5",
+            "SME0320,3",
+            "SME0216,1",
+            "SME0202,1",
+            "SME0340,6",
+            "SME0320,4"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0273",
+        "nome": "Prática em Matemática Aplicada e Computação Científica",
+        "curso": "BMACC",
+        "turma": 1,
+        "carga": 0.5,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0273",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            },
+            {
+                "dia": "Ter.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0273,1",
+        "conflitos": [
+            "SME0130,1",
+            "SME0243,1",
+            "SME0340,2",
+            "SME0300,4",
+            "SME0305,1",
+            "SME0300,3",
+            "SME0320,4"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "EST5801",
+        "nome": "Probabilidade Avançada",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5801",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5801,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0830",
+        "nome": "Probabilidade I (modalidade semipresencial)",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0830",
         "nivel": "g",
         "horarios": [],
-        "id": "SME0871,1",
+        "id": "SME0830,1",
         "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0801",
+        "nome": "Probabilidade II",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0801",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            }
+        ],
+        "id": "SME0801,1",
+        "conflitos": [
+            "SME0806,1",
+            "SME0816,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "SME0121",
+        "nome": "Processos Estocásticos",
+        "curso": "BCC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0121",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            }
+        ],
+        "id": "SME0121,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0340,4",
+            "SME0333,1",
+            "SME0860,1",
+            "SME0205,1",
+            "SME0221,1",
+            "SME0620,1",
+            "SME0104,2",
+            "5500004,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0121",
+        "nome": "Processos Estocásticos",
+        "curso": "BCC, BCDados",
+        "turma": 2,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0121",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Ter.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0121,2",
+        "conflitos": [
+            "SME0340,4",
+            "SME0341,1",
+            "SME0340,2",
+            "SME0104,1",
+            "SME0205,1",
+            "SME0221,1",
+            "SME0620,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0610",
+        "nome": "Programação Matemática",
+        "curso": "Eng. Computação",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0610",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "10:10",
+                "fim": "11:50"
+            }
+        ],
+        "id": "SME0610,1",
+        "conflitos": [
+            "SME0300,2",
+            "SME0340,3",
+            "SME0230,1",
+            "SME0602,1",
+            "SME0202,1",
+            "SME0340,6",
+            "SME0340,1"
+        ],
         "noturna": false
     },
     {
         "codigo": "SME0880",
-        "nome": "Projeto de graduação em estatística I",
+        "nome": "Projeto de Graduação em Estatística I",
         "curso": "BECD",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 0.27490234375,
+        "carga": 1.0,
+        "grupo": "",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0880",
         "nivel": "g",
         "horarios": [
@@ -1583,19 +1856,19 @@
         ],
         "id": "SME0880,1",
         "conflitos": [
-            "SME0881,1",
             "SME0814,1",
-            "SME0815,1"
+            "SME0815,1",
+            "SME0881,1"
         ],
         "noturna": false
     },
     {
         "codigo": "SME0881",
-        "nome": "Projeto de graduação em estatística II",
+        "nome": "Projeto de Graduação em Estatística II",
         "curso": "BECD",
         "turma": 1,
-        "grupo": "Estatística",
-        "carga": 0.27490234375,
+        "carga": 1.0,
+        "grupo": "",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0881",
         "nivel": "g",
         "horarios": [
@@ -1612,80 +1885,269 @@
         ],
         "id": "SME0881,1",
         "conflitos": [
-            "SME0814,1",
             "SME0880,1",
+            "SME0814,1",
             "SME0815,1"
         ],
         "noturna": false
     },
     {
-        "codigo": "SME5827",
-        "nome": "Geração de malhas",
-        "curso": "PPG-CCMC",
+        "codigo": "SME0130",
+        "nome": "Redes Complexas",
+        "curso": "BECD, CEE, BCDados",
         "turma": 1,
-        "grupo": "Numérico",
         "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
-        "nivel": "p",
-        "horarios": [],
-        "id": "SME5827,1",
-        "conflitos": [],
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0130",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "17:00",
+                "fim": "19:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "17:00",
+                "fim": "19:00"
+            }
+        ],
+        "id": "SME0130,1",
+        "conflitos": [
+            "SME0818,1",
+            "SME0243,1",
+            "SME0340,2",
+            "SME0300,4",
+            "SME0305,1",
+            "SME0273,1",
+            "SME0280,1",
+            "SME0300,3"
+        ],
         "noturna": false
     },
     {
-        "codigo": "SME5873",
-        "nome": "Ferramentas de Programação Paralela para Solução de EDPs",
-        "curso": "PPG-CCMC",
-        "turma": 1,
-        "grupo": "Numérico",
-        "carga": 0.75,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5873",
-        "nivel": "p",
-        "horarios": [],
-        "id": "SME5873,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME5962",
-        "nome": "Otimização Inteira",
-        "curso": "PPG-CCMC",
-        "turma": 1,
-        "grupo": "Otimização",
-        "carga": 0.75,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5962",
-        "nivel": "p",
-        "horarios": [],
-        "id": "SME5962,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME5975",
-        "nome": "Estatística na Ciência da Computação",
-        "curso": "PPG-CCMC",
-        "turma": 1,
-        "grupo": "Estatística",
-        "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5975",
-        "nivel": "p",
-        "horarios": [],
-        "id": "SME5975,1",
-        "conflitos": [],
-        "noturna": false
-    },
-    {
-        "codigo": "SME5978",
+        "codigo": "EST5108",
         "nome": "Sistemas Complexos",
-        "curso": "PPG-CCMC",
+        "curso": "PIPGes",
         "turma": 1,
-        "grupo": "Ciência de Dados",
         "carga": 1.0,
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5978",
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5108",
         "nivel": "p",
         "horarios": [],
-        "id": "SME5978,1",
+        "id": "EST5108,1",
         "conflitos": [],
         "noturna": false
+    },
+    {
+        "codigo": "SME0807",
+        "nome": "Técnicas de Amostragem",
+        "curso": "BECD",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0807",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            },
+            {
+                "dia": "Ter.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            }
+        ],
+        "id": "SME0807,1",
+        "conflitos": [
+            "SME0825,1"
+        ],
+        "noturna": true
+    },
+    {
+        "codigo": "EST5101",
+        "nome": "Teoria das Probabilidades",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5101",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5101,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0243",
+        "nome": "Teoria Espectral de Matrizes",
+        "curso": "BMACC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0243",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Seg.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            },
+            {
+                "dia": "Qua.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0243,1",
+        "conflitos": [
+            "SME0130,1",
+            "SME0340,2",
+            "SME0300,4",
+            "SME0305,1",
+            "SME0273,1",
+            "SME0280,1",
+            "SME0300,3"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "EST5805",
+        "nome": "Tópicos Avançados de Pesquisa II",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5805",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5805,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0216",
+        "nome": "Tópicos de Otimização Combinatória",
+        "curso": "BMACC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0216",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qui.",
+                "inicio": "14:20",
+                "fim": "16:00"
+            },
+            {
+                "dia": "Qui.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0216,1",
+        "conflitos": [
+            "SME0346,1",
+            "SME0340,5",
+            "SME0320,3",
+            "5500004,1",
+            "SME0852,1",
+            "SME0340,6",
+            "SME0341,2",
+            "SME0320,4"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "EST5105",
+        "nome": "Tópicos de Pesquisa I",
+        "curso": "PIPGes",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5105",
+        "nivel": "p",
+        "horarios": [],
+        "id": "EST5105,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME5826",
+        "nome": "Tópicos em Otimização",
+        "curso": "CCMC",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5826",
+        "nivel": "p",
+        "horarios": [],
+        "id": "SME5826,1",
+        "conflitos": [],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0285",
+        "nome": "Trabalho de Conclusão de Curso",
+        "curso": "BMACC",
+        "turma": 1,
+        "carga": 0.25,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0285",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Sex.",
+                "inicio": "08:10",
+                "fim": "09:50"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "16:20",
+                "fim": "18:00"
+            }
+        ],
+        "id": "SME0285,1",
+        "conflitos": [
+            "SME0305,1",
+            "SME0340,1",
+            "SME0300,1",
+            "SME0284,1"
+        ],
+        "noturna": false
+    },
+    {
+        "codigo": "SME0803",
+        "nome": "Visualização e Exploração de Dados",
+        "curso": "BECD, BCDados",
+        "turma": 1,
+        "carga": 1.0,
+        "grupo": "",
+        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0803",
+        "nivel": "g",
+        "horarios": [
+            {
+                "dia": "Qua.",
+                "inicio": "21:00",
+                "fim": "22:40"
+            },
+            {
+                "dia": "Sex.",
+                "inicio": "19:00",
+                "fim": "20:40"
+            }
+        ],
+        "id": "SME0803,1",
+        "conflitos": [
+            "SME0806,1",
+            "SLC0609,1",
+            "SME0892,1",
+            "SME0829,1",
+            "SME0878,1"
+        ],
+        "noturna": true
     }
 ]
