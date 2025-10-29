@@ -4,9 +4,9 @@ import { TurmaData, TurmaDataInicial } from "../types";
 type TurmasContextType = {
   turmas: Map<string, TurmaData>;
   selectedTurmas: Map<string, TurmaData>;
-  addTurma: (id: string) => void;
-  removeTurma: (id: string) => void;
-  setPrioridade: (id: string, prioridade: number) => void;
+  addTurma: (uuid: string) => void;
+  removeTurma: (uuid: string) => void;
+  setPrioridade: (uuid: string, prioridade: number) => void;
   semNoturnaMinhaArea: boolean;
   updateSemNoturnaMinhaArea: () => void;
 };
@@ -18,23 +18,6 @@ type Props = {
   children: ReactNode;
 };
 
-// const carregarTurmas = async (): Promise<Map<string, TurmaData>> => {
-//   const response = await fetch("./turmas.json"); // coloque em /public/
-//   if (!response.ok) throw new Error("Erro ao carregar turmas.json");
-
-//   const turmas: TurmaDataInicial[] = await response.json();
-
-//   const map = new Map<string, TurmaData>();
-//   turmas.forEach((turma) => {
-//     map.set(turma.id, {
-//       ...turma,
-//       conflitos: new Set(turma.conflitos),
-//     });
-//   });
-
-//   return map;
-// };
-
 export const TurmasProvider = ({ initialTurmas, children }: Props) => {
   //const [turmasNew, setTurmas] = useState<Map<string, TurmaData>>(new Map());
 
@@ -45,7 +28,7 @@ export const TurmasProvider = ({ initialTurmas, children }: Props) => {
         ...turma,
         conflitos: new Set(turma.conflitos),
       };
-      map.set(turma.id, newTurma);
+      map.set(turma.uuid, newTurma);
     });
     return map;
   });
@@ -54,27 +37,27 @@ export const TurmasProvider = ({ initialTurmas, children }: Props) => {
     new Map()
   );
 
-  const addTurma = (id: string) => {
-    const turma = turmas.get(id);
-    if (turma && !selectedTurmas.has(id)) {
-      setSelectedTurmas((prev) => new Map(prev).set(id, { ...turma }));
+  const addTurma = (uuid: string) => {
+    const turma = turmas.get(uuid);
+    if (turma && !selectedTurmas.has(uuid)) {
+      setSelectedTurmas((prev) => new Map(prev).set(uuid, { ...turma }));
     }
   };
 
-  const removeTurma = (id: string) => {
+  const removeTurma = (uuid: string) => {
     setSelectedTurmas((prev) => {
       const newMap = new Map(prev);
-      newMap.delete(id);
+      newMap.delete(uuid);
       return newMap;
     });
   };
 
-  const setPrioridade = (id: string, prioridade: number) => {
+  const setPrioridade = (uuid: string, prioridade: number) => {
     setSelectedTurmas((prev) => {
       const newMap = new Map(prev);
-      const turma = newMap.get(id);
+      const turma = newMap.get(uuid);
       if (turma) {
-        newMap.set(id, { ...turma, prioridade });
+        newMap.set(uuid, { ...turma, prioridade });
       }
       return newMap;
     });

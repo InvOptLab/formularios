@@ -27,12 +27,12 @@ const Confirmacao = () => {
     updateSemNoturnaMinhaArea,
   } = useTurmas();
 
-  const handlePriorityChange = (idTurma: string, newPriority: number) => {
-    setPrioridade(idTurma, newPriority);
+  const handlePriorityChange = (uuid: string, newPriority: number) => {
+    setPrioridade(uuid, newPriority);
   };
 
-  const handleRemove = (idTurma: string) => {
-    removeTurma(idTurma);
+  const handleRemove = (uuid: string) => {
+    removeTurma(uuid);
   };
 
   /** Implementada também em Seleção */
@@ -106,7 +106,7 @@ const Confirmacao = () => {
                 onRemove={handleRemove}
                 prioridadesSelecionadas={selectedTurmas
                   .values()
-                  .filter((t) => t.id !== turma.id)
+                  .filter((t) => t.uuid !== turma.uuid)
                   .map((t) => (t.prioridade ? t.prioridade : 0))
                   .toArray()}
                 conflitos={getConflitos(turma)}

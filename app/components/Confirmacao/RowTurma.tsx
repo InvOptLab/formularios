@@ -39,7 +39,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
     e: EventTarget & (HTMLInputElement | HTMLTextAreaElement)
   ) => {
     const value = parseInt(e.value, 10);
-    onPriorityChange(turma.id, isNaN(value) ? 0 : value);
+    onPriorityChange(turma.uuid, isNaN(value) ? 0 : value);
   };
 
   const hasError =
@@ -110,7 +110,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
           />
         </TableCell>
         <TableCell>
-          <IconButton color="error" onClick={() => onRemove(turma.id)}>
+          <IconButton color="error" onClick={() => onRemove(turma.uuid)}>
             <Delete />
           </IconButton>
         </TableCell>
@@ -147,7 +147,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   ))}
                   {turma.horarios.length === 0 && (
                     <Box
-                      key={turma.id}
+                      key={turma.uuid}
                       display="flex"
                       alignItems="center"
                       gap={1}
@@ -225,7 +225,10 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                       .entries()
                       .toArray()
                       .map((value, key) => (
-                        <Typography key={turma.id + "_" + key} variant="body2">
+                        <Typography
+                          key={turma.uuid + "_" + key}
+                          variant="body2"
+                        >
                           - {value[1]}
                         </Typography>
                       ))}

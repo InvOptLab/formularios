@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 
 interface CardTurmaProps {
-  id: string;
+  uuid: string;
   nome: string;
   turma: number;
   horarios: { dia: string; inicio: string; fim: string }[];
@@ -31,7 +31,7 @@ interface CardTurmaProps {
 }
 
 const CardTurma = ({
-  id,
+  uuid,
   nome,
   turma,
   horarios,
@@ -50,7 +50,7 @@ const CardTurma = ({
   const [prioridade, setPrioridade] = useState<number>(0);
 
   const handleAdd = () => {
-    onAdicionar(id, prioridade);
+    onAdicionar(uuid, prioridade);
   };
 
   return (
@@ -89,7 +89,7 @@ const CardTurma = ({
           <Typography variant="body1" fontWeight="bold">
             Carga:{" "}
             {carga.toLocaleString("pt-BR", {
-              minimumFractionDigits: 2
+              minimumFractionDigits: 2,
             })}
           </Typography>
         </Box>
@@ -125,7 +125,7 @@ const CardTurma = ({
             ))}
             {horarios.length === 0 && (
               <Chip
-                key={id}
+                key={uuid}
                 label={`A definir.`}
                 size="small"
                 color="default"

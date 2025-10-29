@@ -19,6 +19,7 @@ export type TurmaDataInicial = {
   noturna: boolean;
   grupo?: string;
   carga: number;
+  uuid: string;
 };
 
 export type TurmaData = {
@@ -36,6 +37,7 @@ export type TurmaData = {
   noturna: boolean;
   grupo?: string;
   carga: number;
+  uuid: string;
 };
 
 export type AvaliacaoData = {
