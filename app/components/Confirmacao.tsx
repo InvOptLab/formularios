@@ -98,12 +98,13 @@ const Confirmacao = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {[...selectedTurmas.entries()].map(([key, turma]) => (
+            {[...selectedTurmas.entries()].map(([key, turma], index) => (
               <RowTurma
                 key={key}
                 turma={turma}
                 onPriorityChange={handlePriorityChange}
                 onRemove={handleRemove}
+                isFirst={index === 0}
                 prioridadesSelecionadas={selectedTurmas
                   .values()
                   .filter((t) => t.uuid !== turma.uuid)
