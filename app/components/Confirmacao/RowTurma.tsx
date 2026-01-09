@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react"; // Adicionado useRef e useEffect
 import {
   TableRow,
   TableCell,
@@ -10,6 +10,8 @@ import {
   TextField,
   Badge,
   Tooltip,
+  Popover,
+  Button,
 } from "@mui/material";
 import {
   KeyboardArrowDown,
@@ -24,6 +26,7 @@ interface RowTurmaProps {
   onRemove: (idTurma: string) => void;
   prioridadesSelecionadas: number[];
   conflitos: Map<string, string>;
+  isFirst?: boolean;
 }
 
 const RowTurma: React.FC<RowTurmaProps> = ({
@@ -32,8 +35,30 @@ const RowTurma: React.FC<RowTurmaProps> = ({
   onRemove,
   prioridadesSelecionadas,
   conflitos,
+  isFirst = false,
 }) => {
   const [open, setOpen] = useState(false);
+
+  // Estado para o tutorial
+  const [tutorialAnchorEl, setTutorialAnchorEl] =
+    useState<HTMLButtonElement | null>(null);
+
+  // Referência para o botão de expandir
+  const expandButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Abre o tutorial automaticamente se for o primeiro item ao montar o componente
+  useEffect(() => {
+    if (isFirst && expandButtonRef.current) {
+      setTutorialAnchorEl(expandButtonRef.current);
+    }
+  }, [isFirst]);
+
+  const handleCloseTutorial = () => {
+    setTutorialAnchorEl(null);
+  };
+
+  const openTutorial = Boolean(tutorialAnchorEl);
+  const tutorialId = openTutorial ? "tutorial-popover" : undefined;
 
   const handlePriorityChange = (
     e: EventTarget & (HTMLInputElement | HTMLTextAreaElement)
@@ -67,7 +92,12 @@ const RowTurma: React.FC<RowTurmaProps> = ({
             invisible={!errorMessage && conflitos.size === 0}
           >
             <Tooltip title="Expandir">
-              <IconButton size="small" onClick={() => setOpen(!open)}>
+              {/* Adicionamos a ref aqui para o Popover saber onde apontar */}
+              <IconButton
+                size="small"
+                onClick={() => setOpen(!open)}
+                ref={expandButtonRef}
+              >
                 {open ? (
                   <KeyboardArrowUp
                     sx={{
@@ -92,6 +122,45 @@ const RowTurma: React.FC<RowTurmaProps> = ({
               </IconButton>
             </Tooltip>
           </Badge>
+
+          {/* Componente do Tutorial (Popover) */}
+          <Popover
+            id={tutorialId}
+            open={openTutorial}
+            anchorEl={tutorialAnchorEl}
+            onClose={handleCloseTutorial}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            slotProps={{
+              paper: {
+                sx: { maxWidth: 300, p: 2, backgroundColor: "#e3f2fd" },
+              },
+            }}
+          >
+            <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
+              Detalhes e Conflitos
+            </Typography>
+            <Typography variant="body2" paragraph>
+              Aqui você poderá encontrar os detalhes da turma, como também
+              problemas que podem estar ocorrendo e, caso exista conflito de
+              horário com outra turma selecionada, eles aparecerão aqui.
+            </Typography>
+            <Box display="flex" justifyContent="flex-end">
+              <Button
+                size="small"
+                onClick={handleCloseTutorial}
+                variant="contained"
+              >
+                Entendi
+              </Button>
+            </Box>
+          </Popover>
         </TableCell>
         <TableCell>{turma.codigo}</TableCell>
         <TableCell>{turma.grupo}</TableCell>
@@ -137,6 +206,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                 <Typography variant="subtitle1" gutterBottom fontWeight="bold">
                   Horários:
                 </Typography>
+
                 <Box display="flex" flexDirection="column" gap={1}>
                   {turma.horarios.map((h, idx) => (
                     <Box key={idx} display="flex" alignItems="center" gap={1}>
@@ -156,19 +226,6 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                     </Box>
                   )}
                 </Box>
-
-                {/* <Box mt={2} display="flex" alignItems="center" gap={1}>
-                  <Typography variant="body2" fontWeight="bold">
-                    Disciplina em inglês:
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color={turma.ingles ? "success.main" : "text.secondary"}
-                    fontWeight="medium"
-                  >
-                    {turma.ingles ? "Sim ✅" : "Não"}
-                  </Typography>
-                </Box> */}
 
                 <Box mt={2} display="flex" alignItems="center" gap={1}>
                   <Typography variant="body2" fontWeight="bold">
@@ -190,20 +247,9 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                     </Typography>
                   </Box>
                 )}
-
-                {/* {turma.grupo && (
-                  <>
-                    {" "}
-                    <Typography variant="body2" fontWeight="bold">
-                      Grupo:
-                    </Typography>
-                    <Typography variant="body2" fontWeight="medium">
-                      {turma.grupo}
-                    </Typography>
-                  </>
-                )} */}
               </Box>
 
+              {/* Box de Conflitos */}
               {conflitos.size > 0 && (
                 <Box
                   margin={2}
@@ -235,6 +281,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
                   </Box>
                 </Box>
               )}
+              {/* Box de Erros */}
               {hasError && (
                 <Box
                   margin={2}
