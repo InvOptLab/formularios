@@ -29,7 +29,8 @@ interface RowTurmaProps {
   onMove: (index: number, direction: "up" | "down") => void;
   onRemove: (idTurma: string) => void;
   conflitos: Map<string, string>;
-  isFirst?: boolean;
+  showTutorial?: boolean;
+  onDismissTutorial?: () => void;
 }
 
 const RowTurma: React.FC<RowTurmaProps> = ({
@@ -39,7 +40,8 @@ const RowTurma: React.FC<RowTurmaProps> = ({
   onMove,
   onRemove,
   conflitos,
-  isFirst = false,
+  showTutorial = false,
+  onDismissTutorial,
 }) => {
   const [open, setOpen] = useState(false);
   const [tutorialAnchorEl, setTutorialAnchorEl] =
@@ -47,13 +49,17 @@ const RowTurma: React.FC<RowTurmaProps> = ({
   const expandButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (isFirst && expandButtonRef.current) {
+    if (showTutorial && expandButtonRef.current) {
       setTutorialAnchorEl(expandButtonRef.current);
+    } else {
+      setTutorialAnchorEl(null); // Fecha se o pai disser que não deve mostrar
     }
-  }, [isFirst]);
+  }, [showTutorial]);
 
   const handleCloseTutorial = () => {
     setTutorialAnchorEl(null);
+    // Avisa o pai que o usuário fechou/dispensou
+    if (onDismissTutorial) onDismissTutorial();
   };
 
   const openTutorial = Boolean(tutorialAnchorEl);
@@ -93,17 +99,28 @@ const RowTurma: React.FC<RowTurmaProps> = ({
             anchorEl={tutorialAnchorEl}
             onClose={handleCloseTutorial}
             anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            disableRestoreFocus // Opcional: melhora usabilidade ao fechar
           >
-            <Box p={2} maxWidth={300} bgcolor="#e3f2fd">
-              <Typography variant="subtitle2" fontWeight="bold">
-                Detalhes
+            <Box p={2} maxWidth={320} bgcolor="#e3f2fd">
+              <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
+                Detalhes da Turma
               </Typography>
-              <Typography variant="body2">
-                Aqui você vê detalhes e conflitos.
+              <Typography variant="body2" paragraph>
+                Clique nesta seta para expandir. Você poderá ver os
+                <strong> horários</strong>, a <strong>carga horária</strong> e
+                verificar se existem <strong>conflitos</strong> com outras
+                disciplinas.
               </Typography>
-              <Button size="small" onClick={handleCloseTutorial}>
-                Entendi
-              </Button>
+              <Box display="flex" justifyContent="flex-end">
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={handleCloseTutorial}
+                  sx={{ textTransform: "none" }}
+                >
+                  Entendi
+                </Button>
+              </Box>
             </Box>
           </Popover>
         </TableCell>
