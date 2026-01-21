@@ -159,41 +159,99 @@ const RowTurma: React.FC<RowTurmaProps> = ({
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={7}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box margin={1}>
-              {/* Recoloque aqui o conteúdo detalhado da turma (Horários, etc.) 
-                   exatamente como estava no seu arquivo original ou na versão anterior.
-                   A lógica de exibição de conflitos permanece a mesma.
-                */}
+            <Box
+              display="flex"
+              flexDirection="row"
+              alignItems="flex-start"
+              flexWrap="wrap"
+              justifyContent="flex-start"
+            >
               <Box
+                margin={2}
                 p={2}
+                borderLeft="4px solid #1976d2"
                 bgcolor="#f5f5f5"
                 borderRadius={2}
-                display="flex"
-                gap={2}
+                width="20%"
               >
-                <Box>
-                  <Typography variant="subtitle2" fontWeight="bold">
-                    Horários:
-                  </Typography>
-                  {turma.horarios.map((h, i) => (
-                    <Typography key={i} variant="caption" display="block">
-                      {h.dia}: {h.inicio}-{h.fim}
-                    </Typography>
-                  ))}
-                </Box>
-                {conflitos.size > 0 && (
-                  <Box color="warning.main">
-                    <Typography variant="subtitle2" fontWeight="bold">
-                      ⚠️ Conflitos:
-                    </Typography>
-                    {[...conflitos.values()].map((c, i) => (
-                      <Typography key={i} variant="caption" display="block">
-                        - {c}
+                <Typography variant="subtitle1" gutterBottom fontWeight="bold">
+                  Horários:
+                </Typography>
+
+                <Box display="flex" flexDirection="column" gap={1}>
+                  {turma.horarios.map((h, idx) => (
+                    <Box key={idx} display="flex" alignItems="center" gap={1}>
+                      <Typography variant="body2">
+                        🕒 {`${h.dia}: ${h.inicio} - ${h.fim}`}
                       </Typography>
-                    ))}
+                    </Box>
+                  ))}
+                  {turma.horarios.length === 0 && (
+                    <Box
+                      key={turma.uuid}
+                      display="flex"
+                      alignItems="center"
+                      gap={1}
+                    >
+                      <Typography variant="body2">🕒 A definir.</Typography>
+                    </Box>
+                  )}
+                </Box>
+
+                <Box mt={2} display="flex" alignItems="center" gap={1}>
+                  <Typography variant="body2" fontWeight="bold">
+                    Carga:
+                  </Typography>
+                  <Typography variant="body2" fontWeight="medium">
+                    {" "}
+                    {turma.carga.toLocaleString("pt-BR", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </Typography>
+                </Box>
+
+                {turma.noturna && (
+                  <Box mt={2} display="flex" alignItems="center" gap={1}>
+                    <Typography variant="body2" fontWeight="medium">
+                      🌙 Turma Noturna
+                    </Typography>
                   </Box>
                 )}
               </Box>
+
+              {/* Box de Conflitos */}
+              {conflitos.size > 0 && (
+                <Box
+                  margin={2}
+                  p={2}
+                  borderLeft="4px solid #ed6c02"
+                  bgcolor="#f5f5f5"
+                  borderRadius={2}
+                  width="auto"
+                >
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    fontWeight="bold"
+                  >
+                    ⚠️🕒 Conflitos de horários
+                  </Typography>
+                  <Box>
+                    {conflitos
+                      .entries()
+                      .toArray()
+                      .map((value, key) => (
+                        <Typography
+                          key={turma.uuid + "_" + key}
+                          variant="body2"
+                        >
+                          - {value[1]}
+                        </Typography>
+                      ))}
+                  </Box>
+                </Box>
+              )}
             </Box>
           </Collapse>
         </TableCell>
