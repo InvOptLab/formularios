@@ -10,7 +10,7 @@ import Filtros, { FilterState } from "./Selecao/Filtros"; // Importar o novo com
 
 const Selecao = () => {
   const [horariosSelecionados, setHorariosSelecionados] = useState(
-    new Set<string>()
+    new Set<string>(),
   );
 
   const { turmas, selectedTurmas, addTurma, removeTurma } = useTurmas();
@@ -175,7 +175,11 @@ const Selecao = () => {
             turmasFiltradas.map((turma) => (
               <Grid2
                 key={`card_selecao_${turma.uuid}`}
-                size={{ xs: 12, sm: 6, md: 4 }}
+                // sm: omitido (herda xs=12) para evitar sobreposição em tablets pequenos
+                // md: 6  -> 2 por linha (em vez de 4/3, garantindo espaço para 21em)
+                // lg: 4  -> 3 por linha (reduz gaps em monitores comuns)
+                // xl: 3  -> 4 por linha (aproveita telas ultrawide/zoom out)
+                size={{ xs: 12, md: 6, lg: 4, xl: 3 }}
               >
                 <CardTurma
                   key={`${turma.uuid}`}

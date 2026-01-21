@@ -64,7 +64,7 @@ const CardTurma = ({
         opacity: isSelected ? 0.5 : 1,
         pointerEvents: isSelected ? "none" : "auto",
         height: "100%",
-        width: "21em",
+        maxWidth: "21em",
       }}
       elevation={3}
     >
@@ -108,7 +108,7 @@ const CardTurma = ({
                 key={idx}
                 label={`${horario.dia}: ${horario.inicio} - ${horario.fim} ${
                   horariosConflito.has(
-                    `${horario.dia}-${horario.inicio}-${horario.fim}`
+                    `${horario.dia}-${horario.inicio}-${horario.fim}`,
                   )
                     ? "(Conflito)"
                     : ""
@@ -116,7 +116,7 @@ const CardTurma = ({
                 size="small"
                 color={
                   horariosConflito.has(
-                    `${horario.dia}-${horario.inicio}-${horario.fim}`
+                    `${horario.dia}-${horario.inicio}-${horario.fim}`,
                   )
                     ? "warning"
                     : "info"
@@ -173,8 +173,8 @@ const CardTurma = ({
           )}
           {horarios.some((horario) =>
             horariosConflito.has(
-              `${horario.dia}-${horario.inicio}-${horario.fim}`
-            )
+              `${horario.dia}-${horario.inicio}-${horario.fim}`,
+            ),
           ) && <Chip label="Conflito" color="warning" size="small" />}
 
           {grupo && (
