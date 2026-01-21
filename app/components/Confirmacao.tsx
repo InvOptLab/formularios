@@ -30,29 +30,80 @@ const Confirmacao = () => {
   // Estado local para controlar a ordem de visualização
   const [orderedTurmas, setOrderedTurmas] = useState<TurmaData[]>([]);
 
-  // 1. Ao montar ou alterar a seleção, organizamos a lista inicial
+  // Ao montar ou alterar a seleção, organizamos a lista inicial
   // respeitando as prioridades que vieram da tela de Seleção.
-  useEffect(() => {
-    const sorted = [...selectedTurmas.values()].sort((a, b) => {
-      // Se tiver prioridade, usa. Se for 0 ou undefined, joga pro final (Infinity)
-      const pA =
-        a.prioridade && a.prioridade > 0
-          ? a.prioridade
-          : Number.MAX_SAFE_INTEGER;
-      const pB =
-        b.prioridade && b.prioridade > 0
-          ? b.prioridade
-          : Number.MAX_SAFE_INTEGER;
 
-      if (pA !== pB) return pA - pB;
-      // Desempate por nome
-      return a.nome.localeCompare(b.nome);
+  useEffect(() => {
+    const allTurmas = [...selectedTurmas.values()];
+    const total = allTurmas.length;
+
+    // Arrays auxiliares
+    const finalArray = new Array(total).fill(null); // Array com "buracos"
+    const leftovers: TurmaData[] = []; // Para itens que não cabem na posição desejada
+
+    // Separar quem tem prioridade definida de quem não tem
+    const defined = allTurmas
+      .filter((t) => t.prioridade && t.prioridade > 0)
+      .sort((a, b) => Number(a.prioridade) - Number(b.prioridade)); // Garante ordem numérica (1, 2, 10...)
+
+    const undefineds = allTurmas
+      .filter((t) => !t.prioridade || t.prioridade <= 0)
+      .sort((a, b) => a.nome.localeCompare(b.nome)); // Ordem alfabética para os sem prioridade
+
+    // Tentar colocar os itens com prioridade na POSIÇÃO exata (Indice = Prioridade - 1)
+    defined.forEach((t) => {
+      const desiredIndex = Number(t.prioridade) - 1;
+
+      // Se a posição existe e está vazia, ocupa ela
+      if (
+        desiredIndex >= 0 &&
+        desiredIndex < total &&
+        finalArray[desiredIndex] === null
+      ) {
+        finalArray[desiredIndex] = t;
+      } else {
+        // Se a posição é inválida (ex: Prioridade 10 numa lista de 2) ou já ocupada
+        leftovers.push(t);
+      }
     });
 
-    setOrderedTurmas(sorted);
-  }, [selectedTurmas.size]); // Re-executa apenas se o número de turmas mudar (adição/remoção)
+    // Preencher os buracos vazios com os itens sem prioridade (undefineds)
+    // Isso faz com que os itens '0' assumam as posições 1, 2, 3... que não foram ocupadas
+    undefineds.forEach((t) => {
+      const emptyIndex = finalArray.indexOf(null);
+      if (emptyIndex !== -1) {
+        finalArray[emptyIndex] = t;
+      } else {
+        leftovers.push(t); // Segurança
+      }
+    });
 
-  // 2. Função para mover itens na lista (Priorização Automática)
+    // Se ainda houver itens (ex: Prioridade 10 numa lista de 2), preencher o que sobrou
+    // Eles irão naturalmente para o final da lista, mantendo a ordem relativa
+    leftovers.forEach((t) => {
+      const emptyIndex = finalArray.indexOf(null);
+      if (emptyIndex !== -1) {
+        finalArray[emptyIndex] = t;
+      }
+    });
+
+    // Filtra nulos apenas por segurança e define o estado
+    const result = finalArray.filter((t) => t !== null) as TurmaData[];
+    setOrderedTurmas(result);
+
+    // Atualiza o contexto global com a nova ordem calculada
+    // Assim o botão "Próximo" valida corretamente as prioridades (1, 2, 3...)
+    result.forEach((turma, index) => {
+      const prioridadeCorreta = index + 1;
+      if (turma.prioridade !== prioridadeCorreta) {
+        setPrioridade(turma.uuid, prioridadeCorreta);
+      }
+    });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedTurmas.size]);
+
+  // Função para mover itens na lista (Priorização Automática)
   const moveTurma = (index: number, direction: "up" | "down") => {
     const newOrder = [...orderedTurmas];
 
@@ -96,6 +147,8 @@ const Confirmacao = () => {
     return turmasQueConflita;
   };
 
+  const [tutorialDismissed, setTutorialDismissed] = useState(false);
+
   return (
     <Box width="100%" display="flex" flexDirection="column" alignItems="center">
       <TableContainer
@@ -129,7 +182,7 @@ const Confirmacao = () => {
           <TableHead>
             <TableRow>
               <TableCell width="5%" />
-              <TableCell width="10%">Prioridade</TableCell>{" "}
+              <TableCell width="10%">Prioridade</TableCell>
               {/* Coluna de Ordem */}
               <TableCell>Código</TableCell>
               <TableCell>Turma</TableCell>
@@ -147,9 +200,9 @@ const Confirmacao = () => {
                 total={orderedTurmas.length}
                 onMove={moveTurma}
                 onRemove={handleRemove}
-                isFirst={index === 0} // Para o tutorial
+                showTutorial={index === 0 && !tutorialDismissed}
+                onDismissTutorial={() => setTutorialDismissed(true)}
                 conflitos={getConflitos(turma)}
-                // prioridadesSelecionadas não é mais necessário para validação pois é automático
               />
             ))}
           </TableBody>
