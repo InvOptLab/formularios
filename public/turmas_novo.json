@@ -11,7 +11,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "bd8e7216-ae33-47ba-b0cd-ef5a9a644d6b"
+        "uuid": "def30108-b264-4329-a426-f4dd784c8be7"
     },
     {
         "codigo": "EST5507",
@@ -25,21 +25,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "6ed3a74a-6147-4041-9514-d6073d344301"
-    },
-    {
-        "codigo": "EST5507",
-        "nome": "Modelos de Regressão",
-        "curso": "PIPGEs",
-        "turma": 2,
-        "id": "EST5507,2",
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5507",
-        "nivel": "p",
-        "horarios": [],
-        "conflitos": [],
-        "noturna": false,
-        "carga": 1.0,
-        "uuid": "bddb2ddb-0481-4dc9-bec3-32f01eb7d192"
+        "uuid": "a64348e3-7c9b-4b3f-96ec-2787d9d5e604"
     },
     {
         "codigo": "EST5523",
@@ -53,7 +39,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "fac08591-b874-4d15-928c-f9b5d0bb7066"
+        "uuid": "4a99b399-6820-438b-831c-54870509f986"
     },
     {
         "codigo": "EST5525",
@@ -67,7 +53,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "e10e08ff-e120-4295-8e0e-2c1d7ba997ac"
+        "uuid": "a9fe47c2-aae9-42a8-8b11-157d1678507a"
     },
     {
         "codigo": "EST5527",
@@ -81,7 +67,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "8fafdb4c-e921-42f3-b8ca-29db24a2c799"
+        "uuid": "4afa4272-3cd7-4f05-bea6-b6f9ab093b72"
     },
     {
         "codigo": "EST5528",
@@ -95,7 +81,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "ed1fc952-e7f6-4c49-943f-0528baec60de"
+        "uuid": "ecaa76af-8267-4559-8533-8db53d0291e9"
     },
     {
         "codigo": "EST5802",
@@ -109,21 +95,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "43e9f390-d6b6-4a18-9f27-6dce57ac2941"
-    },
-    {
-        "codigo": "EST5802",
-        "nome": "Inferência Avançada",
-        "curso": "PIPGEs",
-        "turma": 2,
-        "id": "EST5802,2",
-        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=EST5802",
-        "nivel": "p",
-        "horarios": [],
-        "conflitos": [],
-        "noturna": false,
-        "carga": 1.0,
-        "uuid": "fa889110-57da-4c1e-84ab-c1aab5a64c68"
+        "uuid": "03b49874-2f09-4c44-b0c6-901c6976f8ef"
     },
     {
         "codigo": "EST5804",
@@ -137,7 +109,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "aaf9f46e-14bc-416f-b230-adb9415e2e47"
+        "uuid": "46ca0c03-b17f-4b41-a28f-79d93e1144de"
     },
     {
         "codigo": "MAI5003",
@@ -151,7 +123,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "d2701564-31e4-4b1a-bc6c-06d511da96ab"
+        "uuid": "108d7623-6d0b-40bd-82b5-e5b066283f1c"
     },
     {
         "codigo": "MAI5014",
@@ -164,8 +136,8 @@
         "horarios": [],
         "conflitos": [],
         "noturna": false,
-        "carga": 1,
-        "uuid": "3052a56d-42db-4cd0-8b28-57989becabc0"
+        "carga": 1.0,
+        "uuid": "08c7feea-3c71-482c-91c9-fd08db2dc75b"
     },
     {
         "codigo": "MAI5032",
@@ -179,7 +151,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "7519814f-5003-4c7a-b60c-2c35c876ff36"
+        "uuid": "9b40cfcf-96c6-48ca-8356-80dc9d57cf6a"
     },
     {
         "codigo": "SCC5933",
@@ -193,7 +165,21 @@
         "conflitos": [],
         "noturna": false,
         "carga": 0,
-        "uuid": "5177e34d-5c24-464c-99cf-eb75a38c2c7d"
+        "uuid": "29ef433c-8671-40ed-9318-4835ad26f09a"
+    },
+    {
+        "codigo": "SMA5972",
+        "nome": "Sistemas Dinâmicos Impulsivos",
+        "curso": "Mat",
+        "turma": 1,
+        "id": "SMA5972 ,1",
+        "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SMA5972",
+        "nivel": "p",
+        "horarios": [],
+        "conflitos": [],
+        "noturna": false,
+        "carga": 1.0,
+        "uuid": "add39013-22d7-44c2-8952-fec7e1c820b2"
     },
     {
         "codigo": "SME0110",
@@ -216,12 +202,12 @@
             }
         ],
         "conflitos": [
-            "SME0306 ,2",
-            "SME0300 ,1"
+            "SME0300 ,1",
+            "SME0306 ,2"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "9a300f5c-443e-4048-923e-418557939930"
+        "uuid": "ce850b86-f787-440f-aced-cc72f4b86bb8"
     },
     {
         "codigo": "SME0110",
@@ -249,7 +235,7 @@
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "d432cbe7-93ca-4a17-98ff-7928e8bd0575"
+        "uuid": "3f2243a5-9c38-4151-ab93-e27852bb636b"
     },
     {
         "codigo": "SME0123",
@@ -272,16 +258,16 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
-            "SME0240,1",
-            "SME0241,1",
-            "SME0300 ,2",
             "SME0320 ,3",
-            "SME0285,1"
+            "SME0285,1",
+            "SME0240,1",
+            "SME0300 ,2",
+            "SME0241,1",
+            "SME0332 ,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "bbb10cf6-ed19-443b-b2a2-4fa8eb9db2ba"
+        "uuid": "8e2cefe7-14ad-4115-87fd-cb03f606635e"
     },
     {
         "codigo": "SME0123",
@@ -306,16 +292,16 @@
         "conflitos": [
             "SME0320 ,1",
             "SME0306 ,1",
-            "SME0332 ,2",
-            "SME0220,1",
-            "SME0341,1",
-            "SME0320 ,2",
             "SME0341,2",
-            "SME0285,1"
+            "SME0285,1",
+            "SME0320 ,2",
+            "SME0341,1",
+            "SME0332 ,2",
+            "SME0220,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "91770b38-9c43-48b8-9312-2ec9fecbebfe"
+        "uuid": "db5a944d-67d3-4760-8280-0634f9a03b44"
     },
     {
         "codigo": "SME0142",
@@ -338,14 +324,14 @@
             }
         ],
         "conflitos": [
-            "SME0212,1",
             "SME0300 ,1",
+            "SME0212,1",
             "SME0341,2",
             "SME0300 ,2"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "c183f8a3-2f72-418f-81ac-fb0f608bdfad"
+        "uuid": "a0828332-0a20-49bb-9734-1f2000a2d806"
     },
     {
         "codigo": "SME0142",
@@ -370,7 +356,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "a4f4eb97-caed-4531-b3c4-dfaa18cc1a33"
+        "uuid": "247417f9-aefb-4539-b5af-5ceb4bda725c"
     },
     {
         "codigo": "SME0206",
@@ -397,7 +383,7 @@
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "8f9066c9-b6da-4692-ac1f-b5fd3025116d"
+        "uuid": "18d0d483-ba53-4fb6-9c6e-dba77dc19f5c"
     },
     {
         "codigo": "SME0211",
@@ -420,15 +406,15 @@
             }
         ],
         "conflitos": [
+            "SME0320 ,3",
             "SME0245,1",
-            "SME0284,1",
-            "SME0320 ,4",
             "SME0320 ,2",
-            "SME0320 ,3"
+            "SME0320 ,4",
+            "SME0284,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "a8ad2a1f-85b7-43a4-a25b-da96d8cc7829"
+        "uuid": "f2518781-a1e1-4cf9-8c89-0e3fcab1f3b9"
     },
     {
         "codigo": "SME0212",
@@ -446,21 +432,21 @@
             },
             {
                 "dia": "Qui.",
-                "inicio": "14:10",
-                "fim": "15:50"
+                "inicio": "14:20",
+                "fim": "16:00"
             }
         ],
         "conflitos": [
-            "SME0142,1",
-            "SME0332 ,1",
-            "SME0334,1",
-            "SME0341,1",
             "SME0300 ,1",
-            "SME0240,1"
+            "SME0334,1",
+            "SME0142,1",
+            "SME0240,1",
+            "SME0341,1",
+            "SME0332 ,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "c4dd25da-01e3-4536-8817-dc940644da0b"
+        "uuid": "1fefd019-ff58-48fb-8fb4-f53ccdd59595"
     },
     {
         "codigo": "SME0213",
@@ -474,7 +460,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "8130f19e-9387-4425-a4b5-e10cb16bd18c"
+        "uuid": "05744f11-4968-41a5-935b-a3c7d5bb2478"
     },
     {
         "codigo": "SME0220",
@@ -497,19 +483,19 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,2",
             "SME0306 ,1",
             "SME0123,2",
+            "SME0285,1",
             "SME0320 ,2",
-            "SME0285,1"
+            "SME0332 ,2"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "e51116f8-0ea5-476f-a520-fb9de5d4372f"
+        "uuid": "bc46da20-d0d2-4841-9c83-ef792588732d"
     },
     {
         "codigo": "SME0231",
-        "nome": "Análise Topológica de Dados ",
+        "nome": "Análise Topológica de Dados",
         "curso": "BMACC",
         "turma": 1,
         "id": "SME0231,1",
@@ -518,8 +504,8 @@
         "horarios": [],
         "conflitos": [],
         "noturna": false,
-        "carga": 1,
-        "uuid": "31e5cee4-1b7a-4a8d-90c8-d0b06b66a93f"
+        "carga": 1.0,
+        "uuid": "a5d613b9-7634-4358-9b93-580c84bd50c1"
     },
     {
         "codigo": "SME0240",
@@ -542,18 +528,18 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
-            "SME0334,1",
-            "SME0212,1",
-            "SME0123,1",
-            "SME0241,1",
-            "SME0341,1",
             "SME0320 ,3",
-            "SME0285,1"
+            "SME0334,1",
+            "SME0123,1",
+            "SME0285,1",
+            "SME0341,1",
+            "SME0241,1",
+            "SME0212,1",
+            "SME0332 ,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "f47da472-0e75-49b5-8f45-dac399f747bc"
+        "uuid": "e218cbb5-5381-46f1-b3d1-7201c6999655"
     },
     {
         "codigo": "SME0241",
@@ -571,15 +557,15 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
-            "SME0285,1",
-            "SME0123,1",
             "SME0320 ,3",
-            "SME0240,1"
+            "SME0123,1",
+            "SME0285,1",
+            "SME0240,1",
+            "SME0332 ,1"
         ],
         "noturna": false,
         "carga": 0.5,
-        "uuid": "7c247a9a-36ac-43a8-b5e7-0cdec29eca0d"
+        "uuid": "3b20b260-7c52-4019-93ee-c3ac82d75f54"
     },
     {
         "codigo": "SME0245",
@@ -602,27 +588,13 @@
             }
         ],
         "conflitos": [
-            "SME0211,1",
+            "SME0320 ,2",
             "SME0284,1",
-            "SME0320 ,2"
+            "SME0211,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "7b564793-b1e5-45f3-af48-6b6c48e61acc"
-    },
-    {
-        "codigo": "SME0250",
-        "nome": "Métodos Numéricos para Geração de Malhas",
-        "curso": "BMACC",
-        "turma": 1,
-        "id": "SME0250,1",
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0250",
-        "nivel": "g",
-        "horarios": [],
-        "conflitos": [],
-        "noturna": false,
-        "carga": 1.0,
-        "uuid": "5eb79891-88ea-485c-83c9-ac6cfd7406b3"
+        "uuid": "71398eab-9178-4d3f-98e9-173fbce0b4ab"
     },
     {
         "codigo": "SME0251",
@@ -636,21 +608,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "e6034fc6-6bbb-45ae-9ed7-86adbf832cae"
-    },
-    {
-        "codigo": "SME0252",
-        "nome": "Sistemas Esparsos e Computação Paralela",
-        "curso": "BMACC",
-        "turma": 1,
-        "id": "SME0252,1",
-        "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0252",
-        "nivel": "g",
-        "horarios": [],
-        "conflitos": [],
-        "noturna": false,
-        "carga": 1.0,
-        "uuid": "c71a0a40-b1da-4424-bb95-4b27bf230ac5"
+        "uuid": "44e78a84-2d9d-4fb4-9968-88183494fa66"
     },
     {
         "codigo": "SME0254",
@@ -664,7 +622,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "2eeb2655-5998-483e-bb0a-4980052a4ef4"
+        "uuid": "3f54282a-29fd-48b5-b2f8-c2bcccf95fa3"
     },
     {
         "codigo": "SME0262",
@@ -678,7 +636,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "42fe1ae4-aa60-450c-b1b1-fc325e5cb2fd"
+        "uuid": "9a05c3f6-9fca-40a0-a95c-55f029d56362"
     },
     {
         "codigo": "SME0284",
@@ -701,14 +659,14 @@
             }
         ],
         "conflitos": [
-            "SME0206,1",
             "SME0245,1",
             "SME0320 ,2",
+            "SME0206,1",
             "SME0211,1"
         ],
         "noturna": false,
         "carga": 0.25,
-        "uuid": "64a323f1-133c-41ab-bd21-db367f298e10"
+        "uuid": "571b48e7-3c3f-4e97-8ae5-e44f4516f7a2"
     },
     {
         "codigo": "SME0285",
@@ -731,19 +689,19 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
-            "SME0332 ,2",
+            "SME0320 ,3",
             "SME0123,2",
             "SME0123,1",
-            "SME0241,1",
-            "SME0220,1",
+            "SME0240,1",
             "SME0320 ,2",
-            "SME0320 ,3",
-            "SME0240,1"
+            "SME0241,1",
+            "SME0332 ,2",
+            "SME0332 ,1",
+            "SME0220,1"
         ],
         "noturna": false,
         "carga": 0.25,
-        "uuid": "5f8c6221-0fc1-4053-b694-45be46623eaf"
+        "uuid": "e293b9d6-3e5e-4185-8d39-972745cd1534"
     },
     {
         "codigo": "SME0300",
@@ -766,14 +724,14 @@
             }
         ],
         "conflitos": [
-            "SME0142,1",
-            "SME0212,1",
             "SME0306 ,2",
-            "SME0110,1"
+            "SME0110,1",
+            "SME0212,1",
+            "SME0142,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "807e2897-80a8-4212-b3e4-735c710b9d54"
+        "uuid": "a17d0f70-f5a0-4f3d-8fb3-7aaa7a6af143"
     },
     {
         "codigo": "SME0300",
@@ -802,7 +760,7 @@
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "c226a000-b5ea-4879-adcf-257dd7f1499d"
+        "uuid": "8e81ab3a-4446-42a3-b755-8e03083a5b6f"
     },
     {
         "codigo": "SME0306",
@@ -825,16 +783,16 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,2",
             "SME0320 ,1",
             "SME0123,2",
-            "SME0220,1",
+            "SME0341,2",
             "SME0341,1",
-            "SME0341,2"
+            "SME0332 ,2",
+            "SME0220,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "720ab2ea-3c53-42da-beaf-5d7a2dc2eeaf"
+        "uuid": "97fda04b-b58c-4832-918e-de57601038ba"
     },
     {
         "codigo": "SME0306",
@@ -862,7 +820,7 @@
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "45138fd4-743b-4152-a8bf-910373b1ff65"
+        "uuid": "93610728-2d7c-4220-8d68-b2ead0a53910"
     },
     {
         "codigo": "SME0320",
@@ -888,13 +846,13 @@
             "SME0306 ,1",
             "SME0123,2",
             "SME0110,2",
+            "SME0341,2",
             "SME0320 ,4",
-            "SME0341,1",
-            "SME0341,2"
+            "SME0341,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "14af5df4-707a-49a9-a716-030845f343f3"
+        "uuid": "3c8f9831-a75d-4ee4-a182-d63efde2d9c0"
     },
     {
         "codigo": "SME0320",
@@ -917,17 +875,17 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,2",
+            "SME0211,1",
             "SME0123,2",
+            "SME0285,1",
             "SME0245,1",
             "SME0284,1",
-            "SME0220,1",
-            "SME0211,1",
-            "SME0285,1"
+            "SME0332 ,2",
+            "SME0220,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "bdab86e8-d5ad-4e87-96b5-d800779e1fde"
+        "uuid": "eea5bfb0-8d5e-41f9-9228-719bdcc3c186"
     },
     {
         "codigo": "SME0320",
@@ -950,17 +908,17 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
-            "SME0285,1",
-            "SME0123,1",
-            "SME0241,1",
-            "SME0320 ,4",
             "SME0211,1",
-            "SME0240,1"
+            "SME0123,1",
+            "SME0285,1",
+            "SME0240,1",
+            "SME0320 ,4",
+            "SME0241,1",
+            "SME0332 ,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "9807b4b2-d790-4bef-a8af-eb687a5b8c62"
+        "uuid": "52a07223-3712-45a8-a015-fc5af85dcbea"
     },
     {
         "codigo": "SME0320",
@@ -984,13 +942,13 @@
         ],
         "conflitos": [
             "SME0320 ,1",
+            "SME0320 ,3",
             "SME0211,1",
-            "SME0110,2",
-            "SME0320 ,3"
+            "SME0110,2"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "08106c1c-7da9-4cf6-8fca-00ee699c8cf4"
+        "uuid": "20b02cec-168d-4862-a5c1-e2e42c7fc3be"
     },
     {
         "codigo": "SME0332",
@@ -1013,18 +971,18 @@
             }
         ],
         "conflitos": [
-            "SME0285,1",
-            "SME0334,1",
-            "SME0212,1",
-            "SME0123,1",
-            "SME0241,1",
-            "SME0341,1",
             "SME0320 ,3",
-            "SME0240,1"
+            "SME0334,1",
+            "SME0123,1",
+            "SME0285,1",
+            "SME0240,1",
+            "SME0341,1",
+            "SME0241,1",
+            "SME0212,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "7dd4237f-6dab-43d9-86ef-bcbf4e6a524e"
+        "uuid": "184a447f-8265-469b-83e1-a5e5d638395d"
     },
     {
         "codigo": "SME0332",
@@ -1049,13 +1007,13 @@
         "conflitos": [
             "SME0306 ,1",
             "SME0123,2",
-            "SME0220,1",
+            "SME0285,1",
             "SME0320 ,2",
-            "SME0285,1"
+            "SME0220,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "96248cdc-a2f0-4b05-9315-7d4a7247b10e"
+        "uuid": "2793b0c7-e91c-4d14-8d89-d2ec1f0b7a8d"
     },
     {
         "codigo": "SME0334",
@@ -1078,14 +1036,14 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
+            "SME0240,1",
             "SME0212,1",
-            "SME0341,1",
-            "SME0240,1"
+            "SME0332 ,1",
+            "SME0341,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "018bac97-91ec-4424-8533-d8467405835a"
+        "uuid": "5c93b8af-49cd-46f7-88d7-2a098b2e8f3c"
     },
     {
         "codigo": "SME0341",
@@ -1108,18 +1066,18 @@
             }
         ],
         "conflitos": [
-            "SME0332 ,1",
             "SME0320 ,1",
+            "SME0334,1",
             "SME0306 ,1",
             "SME0123,2",
-            "SME0334,1",
-            "SME0212,1",
             "SME0341,2",
-            "SME0240,1"
+            "SME0240,1",
+            "SME0212,1",
+            "SME0332 ,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "63a01ab0-e13d-470e-b53f-c601ac744fec"
+        "uuid": "1c7b2c2c-a4b7-4276-849a-6030917fd36d"
     },
     {
         "codigo": "SME0341",
@@ -1142,16 +1100,16 @@
             }
         ],
         "conflitos": [
-            "SME0142,1",
             "SME0320 ,1",
             "SME0306 ,1",
             "SME0123,2",
+            "SME0142,1",
             "SME0300 ,2",
             "SME0341,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "f8a6aeb1-8d9b-4f19-8c0c-d4f8d1093690"
+        "uuid": "90c5b7f3-26ec-4e24-9c63-03168c77330f"
     },
     {
         "codigo": "SME0510",
@@ -1179,7 +1137,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "76306fea-747a-42da-ac39-5fd9f92efba5"
+        "uuid": "5372eaf8-6413-452c-a507-aeb57775ee4e"
     },
     {
         "codigo": "SME0800",
@@ -1207,7 +1165,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "4405ed5a-375c-4c9f-a882-d688750f8088"
+        "uuid": "ef9f40af-266c-40cd-ace4-3f46d33e4d09"
     },
     {
         "codigo": "SME0805",
@@ -1235,7 +1193,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "445317d2-e93d-4412-aece-c7ce1314a4f5"
+        "uuid": "51b49176-af9f-41c6-8ac5-ca092b838ca5"
     },
     {
         "codigo": "SME0808",
@@ -1258,12 +1216,12 @@
             }
         ],
         "conflitos": [
-            "SME0820,1",
-            "SME0824,1"
+            "SME0824,1",
+            "SME0820,1"
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "dd74b482-9ca7-4154-b0b4-7fd984c471fb"
+        "uuid": "3a53e337-aeff-4390-b122-009c3083fd7c"
     },
     {
         "codigo": "SME0809",
@@ -1286,12 +1244,12 @@
             }
         ],
         "conflitos": [
-            "SME0510,1",
-            "SME0823,1"
+            "SME0823,1",
+            "SME0510,1"
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "d6c9e6d5-3a32-4fc5-b1cf-a1e0880fd3af"
+        "uuid": "6a5b6b1a-94bf-4372-a22c-7cf05434b6aa"
     },
     {
         "codigo": "SME0810",
@@ -1318,7 +1276,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "b7fe9495-0f69-4a39-945d-15383fd812e5"
+        "uuid": "c1158747-34dd-426d-8eeb-b2b523ba7f47"
     },
     {
         "codigo": "SME0814",
@@ -1347,21 +1305,21 @@
         ],
         "noturna": false,
         "carga": 0.25,
-        "uuid": "d25b28b0-f712-4d66-8be2-0ee9e34c8bf1"
+        "uuid": "2c5f8296-e774-4694-98f3-dafaca2d5e5d"
     },
     {
         "codigo": "SME0814",
         "nome": "Estágio Supervisionado em Estatística I",
-        "curso": " BECD",
-        "turma": 1,
-        "id": "SME0814 ,1",
+        "curso": "BECD",
+        "turma": 2,
+        "id": "SME0814 ,2",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0814",
         "nivel": "g",
         "horarios": [],
         "conflitos": [],
         "noturna": false,
         "carga": 0.25,
-        "uuid": "fa6a365c-8b2a-4f8d-8b1f-5451c88ec940"
+        "uuid": "1952f2bd-f5d8-4d6f-bec2-2d9125247db7"
     },
     {
         "codigo": "SME0815",
@@ -1385,12 +1343,12 @@
         ],
         "conflitos": [
             "SME0880,1",
-            "SME0881,1",
-            "SME0814,1"
+            "SME0814,1",
+            "SME0881,1"
         ],
         "noturna": false,
         "carga": 0.25,
-        "uuid": "9a97c6b6-3cdd-45c3-a06a-9743b75f5b14"
+        "uuid": "b788f631-f711-45a8-9bc4-3250e1e17e6b"
     },
     {
         "codigo": "SME0815",
@@ -1404,7 +1362,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 0.25,
-        "uuid": "31fe0ec3-2c44-4ed7-867c-8edbb4cfb359"
+        "uuid": "6ff02097-92e4-4949-886f-1c39086ed075"
     },
     {
         "codigo": "SME0820",
@@ -1431,7 +1389,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "0112d683-4304-4b88-90de-b5643f6a2fd2"
+        "uuid": "56c9df8f-f83e-44f0-acdd-420136545de8"
     },
     {
         "codigo": "SME0822",
@@ -1459,7 +1417,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "3197700b-3af9-4662-bc0e-ca41711b308e"
+        "uuid": "9dbfe0eb-6e4d-446e-9671-1bf17700fc2d"
     },
     {
         "codigo": "SME0823",
@@ -1487,7 +1445,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "d2483ea6-93bc-4bdc-9cb2-14e4f2ad3912"
+        "uuid": "0c1ed219-b3ae-4505-9a66-2271ff469a3a"
     },
     {
         "codigo": "SME0824",
@@ -1514,7 +1472,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "7a78e998-0aac-49f1-9039-101f4d2cb881"
+        "uuid": "af27ad5b-8209-4d14-a145-067cfe80e981"
     },
     {
         "codigo": "SME0828",
@@ -1541,7 +1499,7 @@
         ],
         "noturna": true,
         "carga": 1.0,
-        "uuid": "5978688c-f260-41c3-9dfa-2c06063a350b"
+        "uuid": "404bf17f-4d3b-42d5-9e4c-6bed2f1d64b4"
     },
     {
         "codigo": "SME0871",
@@ -1555,7 +1513,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "cf84db3d-86b7-460f-a949-208d79565d46"
+        "uuid": "b44616e5-de14-4841-bd2d-7818a894bafd"
     },
     {
         "codigo": "SME0873",
@@ -1569,7 +1527,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "83330c63-247c-4c98-9551-811e0451d22e"
+        "uuid": "4c206f72-6e11-43e6-b982-02cb5b74fe00"
     },
     {
         "codigo": "SME0879",
@@ -1583,7 +1541,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "f126c1d0-4966-44da-98d7-dba8dc0e42ab"
+        "uuid": "06d9d10f-b0ce-4ded-99c7-0fb703799c83"
     },
     {
         "codigo": "SME0880",
@@ -1606,27 +1564,27 @@
             }
         ],
         "conflitos": [
+            "SME0814,1",
             "SME0881,1",
-            "SME0815,1",
-            "SME0814,1"
+            "SME0815,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "dcfc44e4-c0a8-467c-8813-49529218d78b"
+        "uuid": "74b59867-4924-4487-a9dc-bfad239e47c2"
     },
     {
         "codigo": "SME0880",
         "nome": "Projeto de Graduação em Estatística I",
         "curso": " BECD",
-        "turma": 1,
-        "id": "SME0880 ,1",
+        "turma": 2,
+        "id": "SME0880 ,2",
         "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0880",
         "nivel": "g",
         "horarios": [],
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "eee4dc57-06a0-4db4-ae16-fbe409e8f05f"
+        "uuid": "3e08ee3d-e9e9-424c-91ea-afc85d5d3b06"
     },
     {
         "codigo": "SME0881",
@@ -1650,12 +1608,12 @@
         ],
         "conflitos": [
             "SME0880,1",
-            "SME0815,1",
-            "SME0814,1"
+            "SME0814,1",
+            "SME0815,1"
         ],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "6ba4bdaf-f9cf-41ea-a371-056835f3caa6"
+        "uuid": "6f79d0d1-0af6-4a14-b1e8-09aea0bf1e38"
     },
     {
         "codigo": "SME0881",
@@ -1669,7 +1627,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "83a72b3a-6636-4872-bdd6-21dcfdcc8d6e"
+        "uuid": "92ad7a61-a068-45bb-ae07-6f62cc2bb50f"
     },
     {
         "codigo": "SME5785",
@@ -1683,7 +1641,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "52990e91-28ad-47e9-a142-a363377f8f21"
+        "uuid": "90f02950-9b6b-4aed-8fa3-99bde278e9e3"
     },
     {
         "codigo": "SME5962",
@@ -1697,7 +1655,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "c40dd547-01c3-48b3-9304-c1f889eb3a41"
+        "uuid": "cf4ca975-96dc-4c9a-a0ce-dd3fa54d73f6"
     },
     {
         "codigo": "SME5979",
@@ -1711,7 +1669,7 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "047ad387-7a4f-4057-898d-8e7bfda51133"
+        "uuid": "00f5dcd3-dab9-4e2e-bcd3-b878be4af8b6"
     },
     {
         "codigo": "SME5987",
@@ -1725,6 +1683,6 @@
         "conflitos": [],
         "noturna": false,
         "carga": 1.0,
-        "uuid": "c6fd14ee-425e-44b5-ab82-5b2765915e63"
+        "uuid": "d1d1e3f5-414c-4e4e-84bf-62aec906ead2"
     }
 ]
