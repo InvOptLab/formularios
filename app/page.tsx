@@ -1,14 +1,21 @@
 "use client";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
+  Container,
+  MobileStepper,
+  Paper,
   Step,
   StepLabel,
   Stepper,
   Typography,
-  // StepIconProps,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Introducao from "./components/Introducao";
 import Selecao from "./components/Selecao";
 import Confirmacao from "./components/Confirmacao";
@@ -18,7 +25,7 @@ import { useTurmas } from "./context/TurmasContext";
 import { useAlertsContext } from "./context/AlertasContext";
 import { TurmaData } from "./types";
 import { useAvaliacao } from "./context/AvaliacaoContext";
-// import CheckIcon from "@mui/icons-material/Check";
+import { MIN_TURMAS } from "./utils";
 
 // Passos do processo
 const steps = [
@@ -28,17 +35,6 @@ const steps = [
   "Avaliação da Atribuição Anterior",
   "Download do Arquivo",
 ];
-
-// Ícone customizado para indicar concluído
-// const CustomStepIcon = (props: StepIconProps) => {
-//   const { active, completed, className } = props;
-
-//   return completed ? (
-//     <CheckIcon color="success" />
-//   ) : (
-//     <div className={className} />
-//   );
-// };
 
 /**
  * Retorna se o usuário poderá seguir para o step após a Confirmação.
@@ -55,6 +51,13 @@ function avancaStepConfirmacao(
   podeContinuar: boolean;
   mensagem: string;
 } {
+  if (turmas.length < MIN_TURMAS) {
+    return {
+      podeContinuar: false,
+      mensagem: `Ao menos ${MIN_TURMAS} turmas devem ser selecionadas (atualmente: ${turmas.length}).`,
+    };
+  }
+
   if (step === 2) {
     const prioridadesDefinidas = new Set<number>();
     /**
@@ -87,20 +90,13 @@ function avancaStepConfirmacao(
     /**
      * Deve ter ao menos uma noturna Selecionada
      */
-
     if (!turmas.some((turma) => turma.noturna) && !semNoturnaMinhaArea) {
       return {
         podeContinuar: false,
-        mensagem: "Ao menos uma turma Noturna deve ser Selecionada.",
+        mensagem:
+          "Selecione ao menos uma turma noturna ou marque a opção indicando que não há turma noturna na sua área.",
       };
     }
-  }
-
-  if (turmas.length < 10) {
-    return {
-      podeContinuar: false,
-      mensagem: "Ao menos 10 turmas devem ser selecionadas.",
-    };
   }
 
   return { podeContinuar: true, mensagem: "" };
@@ -108,94 +104,79 @@ function avancaStepConfirmacao(
 
 const StepperFlow = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [completed, setCompleted] = useState<{ [k: number]: boolean }>({});
-
   const [exportado, setExportado] = useState(false);
 
   const { selectedTurmas, semNoturnaMinhaArea } = useTurmas();
   const { addAlerta } = useAlertsContext();
   const { avaliacao } = useAvaliacao();
 
-  const totalSteps = () => steps.length;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const isLastStep = () => activeStep === totalSteps() - 1;
-  const isFinalizado = () => activeStep === totalSteps();
+  const totalSteps = steps.length;
+  const isLastStep = activeStep === totalSteps - 1;
+  const isFinalizado = activeStep === totalSteps;
+
+  /**
+   * Todo o preenchimento fica apenas em memória. Avisa o usuário antes de
+   * fechar/recarregar a aba caso existam dados não exportados.
+   */
+  useEffect(() => {
+    if (selectedTurmas.size === 0 || exportado) return;
+    const handler = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handler);
+    return () => window.removeEventListener("beforeunload", handler);
+  }, [selectedTurmas.size, exportado]);
+
+  /** Ao trocar de passo, volta ao topo da página. */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activeStep]);
+
+  const avancar = () => setActiveStep((prev) => prev + 1);
 
   const handleNext = () => {
-    /**
-     * Não pode haver continuidade do processo caso nas etapas de Seleção e Confirmação não exista nenhuma Turma selecionada.
-     * Deve ser barrado em ambos os casos.
-     */
-    // if ([1, 2].includes(activeStep) && selectedTurmas.size === 0) {
-    //   addAlerta(
-    //     "Selecione ao menos uma Turma para que seja possível continuar.",
-    //     "error",
-    //     6
-    //   );
-    //   /**
-    //    * Para ter continuídade no processo de confirmação, nenhuma Turma pode apresentar Prioridade 0 ou repetida.
-    //    */
-    // } else
-    if (activeStep === 1) {
+    if (activeStep === 1 || activeStep === 2) {
       const { podeContinuar, mensagem } = avancaStepConfirmacao(
-        selectedTurmas.values().toArray(),
-        1,
+        Array.from(selectedTurmas.values()),
+        activeStep,
         semNoturnaMinhaArea
       );
       if (!podeContinuar) {
         addAlerta(mensagem, "error", 6);
-      } else {
-        handleComplete();
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-      }
-    } else if (activeStep === 2) {
-      const { podeContinuar, mensagem } = avancaStepConfirmacao(
-        selectedTurmas.values().toArray(),
-        2,
-        semNoturnaMinhaArea
-      );
-      if (!podeContinuar) {
-        addAlerta(mensagem, "error", 6);
-      } else {
-        handleComplete();
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        return;
       }
     } else if (activeStep === 3 && !avaliacao.nota) {
       addAlerta("Uma Nota deve ser selecionada.", "error", 6);
+      return;
     } else if (activeStep === 4 && !exportado) {
       addAlerta(
         "Para poder continuar o arquivo deve ser exportado.",
         "warning",
         6
       );
-    } else {
-      handleComplete();
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      return;
     }
+    avancar();
   };
 
   const handleBack = () => {
-    setCompleted((prev) => {
-      const newCompleted = { ...prev };
-      const targetStep = activeStep - 1;
-      if (targetStep >= 0) {
-        delete newCompleted[targetStep];
-      }
-      return newCompleted;
-    });
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleComplete = () => {
-    const newCompleted = { ...completed };
-    newCompleted[activeStep] = true;
-    setCompleted(newCompleted);
-  };
-
-  // const handleReset = () => {
-  //   setActiveStep(0);
-  //   setCompleted({});
-  // };
+  /**
+   * Em telas médias/grandes o conteúdo ocupa exatamente a altura disponível;
+   * etapas com layout próprio (Introdução, Seleção e Confirmação) controlam a
+   * própria rolagem, as demais rolam dentro deste wrapper.
+   */
+  const comRolagem = (conteudo: React.ReactNode) => (
+    <Box sx={{ height: { md: "100%" }, overflowY: { md: "auto" }, pr: { md: 1 } }}>
+      {conteudo}
+    </Box>
+  );
 
   const getStepContent = (step: number) => {
     switch (step) {
@@ -206,21 +187,23 @@ const StepperFlow = () => {
       case 2:
         return <Confirmacao />;
       case 3:
-        return <Avaliacao />;
+        return comRolagem(<Avaliacao />);
       case 4:
-        return <Download setExportado={setExportado} />;
+        return comRolagem(
+          <Download exportado={exportado} setExportado={setExportado} />
+        );
       case 5:
-        return (
+        return comRolagem(
           <Box
-            sx={{ mt: 4, textAlign: "center" }}
+            sx={{ mt: 4, textAlign: "center", maxWidth: 560, mx: "auto" }}
             display="flex"
             flexDirection="column"
             alignItems="center"
-            width="30%"
             gap={2}
           >
+            <CheckCircleOutlineIcon color="success" sx={{ fontSize: 64 }} />
             <Typography variant="h5" gutterBottom>
-              ✅ Todos os passos foram concluídos!
+              Todos os passos foram concluídos!
             </Typography>
 
             <Typography variant="body1" align="justify">
@@ -231,9 +214,13 @@ const StepperFlow = () => {
               essencial nessa jornada.
             </Typography>
 
-            {/* <Button variant="outlined" onClick={handleReset}>
-              Resetar Processo
-            </Button> */}
+            <Typography variant="body1" align="justify">
+              Não se esqueça de enviar o arquivo exportado para{" "}
+              <a href="mailto:carga-sme@icmc.usp.br">
+                <strong>carga-sme@icmc.usp.br</strong>
+              </a>
+              .
+            </Typography>
           </Box>
         );
       default:
@@ -241,87 +228,109 @@ const StepperFlow = () => {
     }
   };
 
+  const botaoVoltar = (
+    <Button
+      variant="outlined"
+      disabled={activeStep === 0}
+      onClick={handleBack}
+      startIcon={<ArrowBackIcon />}
+    >
+      Voltar
+    </Button>
+  );
+
+  const botaoProximo = (
+    <Button
+      onClick={handleNext}
+      disabled={isFinalizado}
+      variant={activeStep === 4 && !exportado ? "outlined" : "contained"}
+      endIcon={isLastStep ? undefined : <ArrowForwardIcon />}
+    >
+      {isLastStep ? "Finalizar" : "Próximo"}
+    </Button>
+  );
+
   return (
     <Box
-      sx={{}}
-      width="100%"
       display="flex"
       flexDirection="column"
-      flexWrap="wrap"
-      alignContent="center"
-      justifyContent="center"
-      alignItems="center"
+      sx={{ minHeight: "100vh", height: { md: "100dvh" } }}
     >
-      <Box
-        width="100%"
+      {/* Cabeçalho com o progresso do processo (fixo no topo) */}
+      <Paper
+        square
+        elevation={2}
+        sx={{ position: "sticky", top: 0, zIndex: 1100, px: 2, py: 1.5 }}
+      >
+        <Container maxWidth="xl" disableGutters>
+          <Typography
+            variant="subtitle1"
+            fontWeight={700}
+            color="primary"
+            textAlign={{ xs: "center", md: "left" }}
+            mb={1}
+          >
+            Formulário de Atribuição de Disciplinas — SME/ICMC
+          </Typography>
+
+          {isMobile ? (
+            <Box textAlign="center">
+              <Typography variant="body2" color="text.secondary">
+                Passo {Math.min(activeStep + 1, totalSteps)} de {totalSteps}
+                {activeStep < totalSteps && <>: <strong>{steps[activeStep]}</strong></>}
+              </Typography>
+            </Box>
+          ) : (
+            <Box display="flex" alignItems="center" gap={2}>
+              {botaoVoltar}
+              <Stepper
+                activeStep={activeStep}
+                alternativeLabel
+                sx={{ flex: 1 }}
+              >
+                {steps.map((label) => (
+                  <Step key={label}>
+                    <StepLabel>{label}</StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+              {botaoProximo}
+            </Box>
+          )}
+        </Container>
+      </Paper>
+
+      <Container
+        maxWidth="xl"
+        component="main"
         sx={{
-          display: "flex",
-          flexDirection: "row",
-          pt: 2,
-          justifyContent: "space-evenly",
+          flex: 1,
+          minHeight: 0,
+          py: 2,
+          pb: isMobile ? 10 : 2,
+          overflow: { md: "hidden" },
         }}
       >
-        {/* <Stepper activeStep={activeStep}>
-          {steps.map((label, index) => (
-            <Step key={label} completed={completed[index]}>
-              <StepLabel>{label}</StepLabel>
-            </Step>
-          ))}
-        </Stepper> */}
-        {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}> */}
-        <Button
-          variant="contained"
-          disabled={activeStep === 0}
-          onClick={handleBack}
-          sx={{ mr: 1 }}
-        >
-          Voltar
-        </Button>
-
-        {/* <Box sx={{ flex: "1 1 auto" }} /> */}
-        <Stepper activeStep={activeStep} sx={{ width: "80%" }}>
-          {steps.map((label, index) => (
-            <Step key={label} completed={completed[index]}>
-              <StepLabel>{label}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
-        <Button
-          onClick={handleNext}
-          disabled={isFinalizado()} //disabled={!completed[activeStep] || isLastStep()}
-          variant={activeStep === 4 && !exportado ? "outlined" : "contained"}
-        >
-          {isLastStep() ? "Finalizar" : "Próximo"}
-        </Button>
-      </Box>
-      {/* </Box> */}
-      <Box
-        sx={{ mt: 2, mb: 1 }}
-        display="flex"
-        justifyContent="center"
-        width="100%"
-      >
         {getStepContent(activeStep)}
-      </Box>
+      </Container>
 
-      {/* <Box sx={{ mt: 2, mb: 1 }} display="flex" justifyContent="flex-end">
-        {!completed[activeStep] && (
-          <Button onClick={handleComplete} variant="outlined" sx={{ mr: 1 }}>
-            Marcar como Concluído
-          </Button>
-        )}
-
-        {activeStep === totalSteps() - 1 && completed[activeStep] && (
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="h6">
-              Todos os passos foram concluídos ✅
-            </Typography>
-            <Button onClick={handleReset} sx={{ mt: 1 }}>
-              Resetar
-            </Button>
-          </Box>
-        )}
-      </Box> */}
+      {/* Navegação inferior em telas pequenas */}
+      {isMobile && (
+        <Paper
+          square
+          elevation={8}
+          sx={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 1100 }}
+        >
+          <MobileStepper
+            variant="dots"
+            steps={totalSteps}
+            position="static"
+            activeStep={Math.min(activeStep, totalSteps - 1)}
+            backButton={botaoVoltar}
+            nextButton={botaoProximo}
+          />
+        </Paper>
+      )}
     </Box>
   );
 };
