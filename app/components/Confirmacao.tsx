@@ -1,22 +1,25 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Typography,
+  Alert,
+  AlertTitle,
   Box,
   Checkbox,
-  FormGroup,
   FormControlLabel,
+  Paper,
+  Typography,
 } from "@mui/material";
+import {
+  ArrowDownward,
+  ArrowUpward,
+  DragIndicator,
+  VerticalAlignTop,
+} from "@mui/icons-material";
 import RowTurma from "./Confirmacao/RowTurma";
 import { useTurmas } from "../context/TurmasContext";
+import { useAlertsContext } from "../context/AlertasContext";
 import { TurmaData } from "../types";
+import { getConflitos, MIN_TURMAS } from "../utils";
 
 const Confirmacao = () => {
   const {
@@ -26,6 +29,7 @@ const Confirmacao = () => {
     semNoturnaMinhaArea,
     updateSemNoturnaMinhaArea,
   } = useTurmas();
+  const { addAlerta } = useAlertsContext();
 
   // Estado local para controlar a ordem de visualização
   const [orderedTurmas, setOrderedTurmas] = useState<TurmaData[]>([]);
@@ -103,27 +107,9 @@ const Confirmacao = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTurmas.size]);
 
-  // Função para mover itens na lista (Priorização Automática)
-  const moveTurma = (index: number, direction: "up" | "down") => {
-    const newOrder = [...orderedTurmas];
-
-    if (direction === "up" && index > 0) {
-      // Troca com o anterior
-      [newOrder[index], newOrder[index - 1]] = [
-        newOrder[index - 1],
-        newOrder[index],
-      ];
-    } else if (direction === "down" && index < newOrder.length - 1) {
-      // Troca com o próximo
-      [newOrder[index], newOrder[index + 1]] = [
-        newOrder[index + 1],
-        newOrder[index],
-      ];
-    }
-
+  /** Atualiza a ordem local e grava as prioridades (1, 2, 3...) no contexto. */
+  const aplicarOrdem = (newOrder: TurmaData[]) => {
     setOrderedTurmas(newOrder);
-
-    // Atualiza o contexto com as novas prioridades baseadas na nova ordem (1, 2, 3...)
     newOrder.forEach((turma, idx) => {
       const novaPrioridade = idx + 1;
       if (turma.prioridade !== novaPrioridade) {
@@ -132,97 +118,230 @@ const Confirmacao = () => {
     });
   };
 
+  // Move um item da posição `from` para `to` (Priorização Automática)
+  const moveTurma = (from: number, to: number) => {
+    if (from === to || to < 0 || to >= orderedTurmas.length) return;
+    const newOrder = [...orderedTurmas];
+    const [item] = newOrder.splice(from, 1);
+    newOrder.splice(to, 0, item);
+    aplicarOrdem(newOrder);
+  };
+
   const handleRemove = (uuid: string) => {
+    // Renumera as prioridades antes de remover, para que o recálculo feito
+    // pelo useEffect mantenha a ordem atual (sem "buracos" na numeração).
+    const turma = orderedTurmas.find((t) => t.uuid === uuid);
+    aplicarOrdem(orderedTurmas.filter((t) => t.uuid !== uuid));
     removeTurma(uuid);
-    // A lista será reordenada pelo useEffect quando o selectedTurmas mudar
-  };
-
-  const getConflitos = (turma: TurmaData): Map<string, string> => {
-    const turmasQueConflita: Map<string, string> = new Map<string, string>();
-    for (const selecionada of selectedTurmas.values()) {
-      if (turma.conflitos.has(selecionada.id)) {
-        turmasQueConflita.set(selecionada.id, selecionada.nome);
-      }
+    if (turma) {
+      addAlerta(`"${turma.nome}" foi removida da sua lista.`, "info", 4);
     }
-    return turmasQueConflita;
   };
 
-  const [tutorialDismissed, setTutorialDismissed] = useState(false);
+  // Estado do arrastar-e-soltar
+  const [dragIndex, setDragIndex] = useState<number | null>(null);
+  const [overIndex, setOverIndex] = useState<number | null>(null);
+
+  const finalizarArraste = () => {
+    if (dragIndex !== null && overIndex !== null) {
+      moveTurma(dragIndex, overIndex);
+    }
+    setDragIndex(null);
+    setOverIndex(null);
+  };
+
+  const conflitosPorTurma = new Map(
+    orderedTurmas.map((t) => [t.uuid, getConflitos(t, selectedTurmas.values())])
+  );
+  const qtdConflitos = [...conflitosPorTurma.values()].filter(
+    (c) => c.size > 0
+  ).length;
+  const qtdNoturnas = orderedTurmas.filter((t) => t.noturna).length;
+  const abaixoDoMinimo = orderedTurmas.length < MIN_TURMAS;
 
   return (
-    <Box width="100%" display="flex" flexDirection="column" alignItems="center">
-      <TableContainer
-        component={Paper}
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        gap: 2,
+        height: { md: "100%" },
+        minHeight: 0,
+      }}
+    >
+      {/* Lista ordenável */}
+      <Box
         sx={{
-          width: "90%",
-          maxHeight: "80vh",
-          mb: 2,
-          overflowY: "auto",
+          flex: 1,
+          minWidth: 0,
+          display: "flex",
+          flexDirection: "column",
+          minHeight: 0,
         }}
       >
-        <Typography
-          variant="h5"
-          textAlign="center"
-          p={2}
-          sx={{ backgroundColor: "#f5f5f5" }}
+        <Box flexShrink={0} mb={1.5}>
+          <Typography variant="h5" fontWeight={700}>
+            Confirme a ordem de prioridade
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            O topo da lista é a sua maior preferência. Reordene com as setas,
+            com o botão de topo ou arrastando os itens.
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            flex: 1,
+            minHeight: 0,
+            overflowY: { md: "auto" },
+            pr: { md: 1 },
+          }}
+          onDragOver={(e) => e.preventDefault()}
         >
-          Confirme a ordem de prioridade
-        </Typography>
-        <Typography
-          variant="body2"
-          textAlign="center"
-          pb={2}
-          color="text.secondary"
-        >
-          Use as setas para subir ou descer as turmas. A prioridade será
-          definida automaticamente pela ordem da lista (1º no topo).
+          {orderedTurmas.map((turma, index) => (
+            <RowTurma
+              key={turma.uuid}
+              turma={turma}
+              index={index}
+              total={orderedTurmas.length}
+              onMove={moveTurma}
+              onRemove={handleRemove}
+              conflitos={conflitosPorTurma.get(turma.uuid) ?? new Map()}
+              arrastando={dragIndex === index}
+              alvoArraste={
+                dragIndex !== null && overIndex === index && dragIndex !== index
+              }
+              onDragStart={setDragIndex}
+              onDragEnter={setOverIndex}
+              onDragEnd={finalizarArraste}
+            />
+          ))}
+          {orderedTurmas.length === 0 && (
+            <Paper variant="outlined" sx={{ p: 4, textAlign: "center" }}>
+              <Typography color="text.secondary">
+                Nenhuma turma selecionada. Volte ao passo anterior.
+              </Typography>
+            </Paper>
+          )}
+        </Box>
+      </Box>
+
+      {/* Painel lateral de resumo */}
+      <Paper
+        variant="outlined"
+        sx={{
+          width: { xs: "100%", md: 340, lg: 360 },
+          flexShrink: 0,
+          height: { md: "100%" },
+          overflowY: { md: "auto" },
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+        }}
+      >
+        <Typography variant="h6" fontWeight={700}>
+          Resumo
         </Typography>
 
-        <Table stickyHeader aria-label="Tabela de confirmação">
-          <TableHead>
-            <TableRow>
-              <TableCell width="5%" />
-              <TableCell width="10%">Prioridade</TableCell>
-              {/* Coluna de Ordem */}
-              <TableCell>Código</TableCell>
-              <TableCell>Turma</TableCell>
-              <TableCell>Disciplina</TableCell>
-              <TableCell align="center">Mover</TableCell> {/* Controles */}
-              <TableCell align="center">Ações</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {orderedTurmas.map((turma, index) => (
-              <RowTurma
-                key={turma.uuid}
-                turma={turma}
-                index={index}
-                total={orderedTurmas.length}
-                onMove={moveTurma}
-                onRemove={handleRemove}
-                showTutorial={index === 0 && !tutorialDismissed}
-                onDismissTutorial={() => setTutorialDismissed(true)}
-                conflitos={getConflitos(turma)}
-              />
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+        <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={1}>
+          {[
+            {
+              rotulo: "Turmas",
+              valor: orderedTurmas.length,
+              cor: abaixoDoMinimo ? "error.main" : "success.main",
+            },
+            {
+              rotulo: "Noturnas",
+              valor: qtdNoturnas,
+              cor: qtdNoturnas > 0 ? "success.main" : "warning.main",
+            },
+            {
+              rotulo: "Conflitos",
+              valor: qtdConflitos,
+              cor: qtdConflitos > 0 ? "warning.main" : "success.main",
+            },
+          ].map((e) => (
+            <Box
+              key={e.rotulo}
+              sx={{
+                border: 1,
+                borderColor: "divider",
+                borderRadius: 2,
+                py: 1,
+                textAlign: "center",
+              }}
+            >
+              <Typography variant="h5" fontWeight={700} color={e.cor}>
+                {e.valor}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                {e.rotulo}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
 
-      {!orderedTurmas.some((t) => t.noturna) && (
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={semNoturnaMinhaArea}
-                onChange={updateSemNoturnaMinhaArea}
-                name="semNoturnaMinhaArea"
-              />
-            }
-            label="Não há turma noturna para disciplinas de minha área."
-          />
-        </FormGroup>
-      )}
+        {abaixoDoMinimo && (
+          <Alert severity="error">
+            Você precisa de ao menos {MIN_TURMAS} turmas. Volte ao passo
+            anterior para adicionar mais {MIN_TURMAS - orderedTurmas.length}.
+          </Alert>
+        )}
+
+        {qtdConflitos > 0 && (
+          <Alert severity="warning">
+            <AlertTitle>Conflitos de horário</AlertTitle>
+            {qtdConflitos} turma{qtdConflitos > 1 ? "s têm" : " tem"} conflito
+            com outras da lista. Isso é permitido, mas considere ao ordenar as
+            prioridades. Passe o mouse sobre o selo laranja para ver detalhes.
+          </Alert>
+        )}
+
+        {qtdNoturnas === 0 && orderedTurmas.length > 0 && (
+          <Alert severity={semNoturnaMinhaArea ? "success" : "warning"}>
+            <AlertTitle>Nenhuma turma noturna</AlertTitle>
+            Volte ao passo anterior para adicionar uma, ou confirme abaixo caso
+            não exista turma noturna na sua área.
+            <FormControlLabel
+              sx={{ display: "flex", mt: 1 }}
+              control={
+                <Checkbox
+                  checked={semNoturnaMinhaArea}
+                  onChange={updateSemNoturnaMinhaArea}
+                  name="semNoturnaMinhaArea"
+                  size="small"
+                />
+              }
+              label="Não há turma noturna para disciplinas de minha área."
+            />
+          </Alert>
+        )}
+
+        <Box>
+          <Typography variant="subtitle2" gutterBottom>
+            Como ordenar
+          </Typography>
+          <Box
+            component="ul"
+            sx={{ pl: 2.5, m: 0, color: "text.secondary", typography: "body2" }}
+          >
+            <li>
+              <ArrowUpward sx={{ fontSize: 14, verticalAlign: "middle" }} />{" "}
+              <ArrowDownward sx={{ fontSize: 14, verticalAlign: "middle" }} />{" "}
+              sobem ou descem uma posição;
+            </li>
+            <li>
+              <VerticalAlignTop sx={{ fontSize: 14, verticalAlign: "middle" }} />{" "}
+              leva a turma direto para o 1º lugar;
+            </li>
+            <li>
+              <DragIndicator sx={{ fontSize: 14, verticalAlign: "middle" }} />{" "}
+              arraste o item para qualquer posição.
+            </li>
+          </Box>
+        </Box>
+      </Paper>
     </Box>
   );
 };

@@ -1,5 +1,8 @@
 import { Stack } from "@mui/material";
 import { createContext, JSX, useContext, useState } from "react";
+
+/** Contador incremental para evitar IDs repetidos quando dois alertas são criados no mesmo milissegundo. */
+let proximoIdAlerta = 0;
 import CustomAlert from "../components/CustomAlert";
 
 export interface Alerta {
@@ -67,7 +70,16 @@ export function AlertsWrapper({ children }: { children: React.ReactNode }) {
       }}
     >
       {children}
-      <Stack position="fixed" bottom={16} right={16} zIndex={10} spacing={1}>
+      <Stack
+        position="fixed"
+        bottom={{ xs: 80, md: 16 }}
+        right={16}
+        left={{ xs: 16, sm: "auto" }}
+        zIndex={1400}
+        spacing={1}
+        role="status"
+        aria-live="polite"
+      >
         {renderAlertas()}
       </Stack>
     </AlertsContext.Provider>
@@ -90,7 +102,18 @@ export function useAlertsContext() {
   ) {
     context.setAlertas((prevAlertas) => {
       const newAlerts = new Map(prevAlertas);
-      const id = new Date().getTime();
+      // Evita empilhar a mesma mensagem (ex.: vários cliques em "Próximo"):
+      // remove a anterior para que a nova reinicie o tempo de exibição.
+      for (const [key, alerta] of newAlerts) {
+        if (alerta.message === message && alerta.type === type) {
+          newAlerts.delete(key);
+        }
+      }
+      // Mantém no máximo 3 alertas visíveis (remove os mais antigos).
+      while (newAlerts.size >= 3) {
+        newAlerts.delete(newAlerts.keys().next().value as number);
+      }
+      const id = ++proximoIdAlerta;
       newAlerts.set(id, {
         id,
         message,

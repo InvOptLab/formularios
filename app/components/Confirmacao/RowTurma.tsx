@@ -1,24 +1,20 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import {
-  TableRow,
-  TableCell,
-  IconButton,
-  Collapse,
   Box,
-  Typography,
-  Badge,
-  Tooltip,
-  Popover,
-  Button,
   Chip,
+  IconButton,
+  Paper,
+  Tooltip,
+  Typography,
 } from "@mui/material";
 import {
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-  Delete,
-  ArrowUpward,
   ArrowDownward,
+  ArrowUpward,
+  Delete,
+  DragIndicator,
+  VerticalAlignTop,
+  Warning,
 } from "@mui/icons-material";
 import { TurmaData } from "@/app/types";
 
@@ -26,13 +22,22 @@ interface RowTurmaProps {
   turma: TurmaData;
   index: number;
   total: number;
-  onMove: (index: number, direction: "up" | "down") => void;
+  onMove: (from: number, to: number) => void;
   onRemove: (idTurma: string) => void;
   conflitos: Map<string, string>;
-  showTutorial?: boolean;
-  onDismissTutorial?: () => void;
+  /** Estado do arrastar-e-soltar controlado pelo componente pai. */
+  arrastando: boolean;
+  alvoArraste: boolean;
+  onDragStart: (index: number) => void;
+  onDragEnter: (index: number) => void;
+  onDragEnd: () => void;
 }
 
+/**
+ * Item da lista de prioridades. A posição na lista define a prioridade
+ * (index + 1). Pode ser reordenado pelas setas, pelo botão "topo" ou
+ * arrastando o item.
+ */
 const RowTurma: React.FC<RowTurmaProps> = ({
   turma,
   index,
@@ -40,240 +45,195 @@ const RowTurma: React.FC<RowTurmaProps> = ({
   onMove,
   onRemove,
   conflitos,
-  showTutorial = false,
-  onDismissTutorial,
+  arrastando,
+  alvoArraste,
+  onDragStart,
+  onDragEnter,
+  onDragEnd,
 }) => {
-  const [open, setOpen] = useState(false);
-  const [tutorialAnchorEl, setTutorialAnchorEl] =
-    useState<HTMLButtonElement | null>(null);
-  const expandButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (showTutorial && expandButtonRef.current) {
-      setTutorialAnchorEl(expandButtonRef.current);
-    } else {
-      setTutorialAnchorEl(null); // Fecha se o pai disser que não deve mostrar
-    }
-  }, [showTutorial]);
-
-  const handleCloseTutorial = () => {
-    setTutorialAnchorEl(null);
-    // Avisa o pai que o usuário fechou/dispensou
-    if (onDismissTutorial) onDismissTutorial();
-  };
-
-  const openTutorial = Boolean(tutorialAnchorEl);
-
-  // A prioridade agora é calculada visualmente com base no índice
-  const prioridadeExibida = index + 1;
+  const prioridade = index + 1;
+  const temConflito = conflitos.size > 0;
 
   return (
-    <>
-      <TableRow
+    <Paper
+      variant="outlined"
+      draggable
+      onDragStart={(e) => {
+        e.dataTransfer.effectAllowed = "move";
+        onDragStart(index);
+      }}
+      onDragEnter={() => onDragEnter(index)}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => {
+        e.preventDefault();
+        onDragEnd();
+      }}
+      onDragEnd={onDragEnd}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: { xs: 1, sm: 1.5 },
+        p: { xs: 1, sm: 1.5 },
+        mb: 1,
+        borderLeft: 4,
+        borderLeftColor: temConflito ? "warning.main" : "primary.light",
+        borderTopColor: alvoArraste ? "primary.main" : undefined,
+        borderTopWidth: alvoArraste ? 3 : undefined,
+        opacity: arrastando ? 0.4 : 1,
+        transition: "box-shadow .15s, opacity .15s",
+        "&:hover": { boxShadow: 3 },
+        "&:hover .drag-handle": { color: "text.primary" },
+      }}
+    >
+      <Box
+        className="drag-handle"
         sx={{
-          "& > *": { borderBottom: "unset" },
-          backgroundColor: open ? "#f9f9f9" : "inherit",
+          color: "text.disabled",
+          cursor: "grab",
+          display: { xs: "none", sm: "flex" },
         }}
+        aria-hidden
       >
-        <TableCell>
-          <Badge
-            color={conflitos.size > 0 ? "warning" : "info"}
-            anchorOrigin={{ horizontal: "left" }}
-            variant="dot"
-            invisible={conflitos.size === 0}
-          >
-            <Tooltip title="Ver detalhes">
-              <IconButton
+        <DragIndicator />
+      </Box>
+
+      {/* Posição = prioridade */}
+      <Box
+        sx={{
+          width: 40,
+          height: 40,
+          flexShrink: 0,
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontWeight: 700,
+          bgcolor: prioridade <= 3 ? "primary.main" : "#e8eef8",
+          color: prioridade <= 3 ? "primary.contrastText" : "primary.dark",
+        }}
+        aria-label={`Prioridade ${prioridade}`}
+      >
+        {prioridade}º
+      </Box>
+
+      {/* Informações da turma */}
+      <Box flex={1} minWidth={0}>
+        <Typography variant="subtitle1" fontWeight={600} lineHeight={1.3}>
+          {turma.nome}
+        </Typography>
+        <Typography variant="caption" color="text.secondary" component="div">
+          {turma.codigo} · Turma {turma.turma}
+          {turma.curso ? ` · ${turma.curso}` : ""} · Carga{" "}
+          {turma.carga.toLocaleString("pt-BR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}
+        </Typography>
+        <Box display="flex" flexWrap="wrap" gap={0.5} mt={0.75}>
+          {turma.horarios.length > 0 ? (
+            turma.horarios.map((h, idx) => (
+              <Chip
+                key={idx}
                 size="small"
-                onClick={() => setOpen(!open)}
-                ref={expandButtonRef}
-              >
-                {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-              </IconButton>
-            </Tooltip>
-          </Badge>
-
-          {/* Tutorial Popover (mantido da versão anterior) */}
-          <Popover
-            open={openTutorial}
-            anchorEl={tutorialAnchorEl}
-            onClose={handleCloseTutorial}
-            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-            disableRestoreFocus // Opcional: melhora usabilidade ao fechar
-          >
-            <Box p={2} maxWidth={320} bgcolor="#e3f2fd">
-              <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
-                Detalhes da Turma
-              </Typography>
-              <Typography variant="body2" paragraph>
-                Clique nesta seta para expandir. Você poderá ver os
-                <strong> horários</strong>, a <strong>carga horária</strong> e
-                verificar se existem <strong>conflitos</strong> com outras
-                disciplinas.
-              </Typography>
-              <Box display="flex" justifyContent="flex-end">
-                <Button
-                  size="small"
-                  variant="contained"
-                  onClick={handleCloseTutorial}
-                  sx={{ textTransform: "none" }}
-                >
-                  Entendi
-                </Button>
-              </Box>
-            </Box>
-          </Popover>
-        </TableCell>
-
-        {/* Coluna de Prioridade Automática */}
-        <TableCell>
+                variant="outlined"
+                label={`${h.dia} ${h.inicio}–${h.fim}`}
+              />
+            ))
+          ) : (
+            <Chip size="small" variant="outlined" label="Horário a definir" />
+          )}
+          {turma.noturna && (
+            <Chip
+              size="small"
+              label="Noturna"
+              sx={{ backgroundColor: "#131862", color: "#fff" }}
+            />
+          )}
           <Chip
-            label={`${prioridadeExibida}º`}
-            color="primary"
-            variant={prioridadeExibida === 1 ? "filled" : "outlined"}
             size="small"
-            sx={{ fontWeight: "bold" }}
+            label={turma.nivel === "g" ? "Graduação" : "Pós-graduação"}
+            color={turma.nivel === "g" ? "primary" : "secondary"}
+            variant="outlined"
           />
-        </TableCell>
+          {temConflito && (
+            <Tooltip
+              title={
+                <>
+                  Conflita com:
+                  {Array.from(conflitos.values()).map((n, i) => (
+                    <div key={i}>• {n}</div>
+                  ))}
+                </>
+              }
+            >
+              <Chip
+                size="small"
+                color="warning"
+                icon={<Warning />}
+                label={`Conflito (${conflitos.size})`}
+                sx={{ cursor: "help" }}
+              />
+            </Tooltip>
+          )}
+        </Box>
+      </Box>
 
-        <TableCell>{turma.codigo}</TableCell>
-        <TableCell>{turma.turma}</TableCell>
-        <TableCell>{turma.nome}</TableCell>
-
-        {/* Controles de Ordenação */}
-        <TableCell align="center">
-          <Box display="flex" justifyContent="center">
+      {/* Ações */}
+      <Box
+        display="flex"
+        flexDirection={{ xs: "column", sm: "row" }}
+        alignItems="center"
+        flexShrink={0}
+      >
+        <Tooltip title="Mover para o topo">
+          <span>
             <IconButton
               size="small"
-              onClick={() => onMove(index, "up")}
+              onClick={() => onMove(index, 0)}
               disabled={index === 0}
-              title="Aumentar prioridade (Subir)"
+              aria-label={`Mover ${turma.nome} para o topo`}
+              sx={{ display: { xs: "none", sm: "inline-flex" } }}
+            >
+              <VerticalAlignTop fontSize="small" />
+            </IconButton>
+          </span>
+        </Tooltip>
+        <Tooltip title="Subir (aumentar prioridade)">
+          <span>
+            <IconButton
+              size="small"
+              onClick={() => onMove(index, index - 1)}
+              disabled={index === 0}
+              aria-label={`Subir ${turma.nome}`}
             >
               <ArrowUpward fontSize="small" />
             </IconButton>
+          </span>
+        </Tooltip>
+        <Tooltip title="Descer (diminuir prioridade)">
+          <span>
             <IconButton
               size="small"
-              onClick={() => onMove(index, "down")}
+              onClick={() => onMove(index, index + 1)}
               disabled={index === total - 1}
-              title="Diminuir prioridade (Descer)"
+              aria-label={`Descer ${turma.nome}`}
             >
               <ArrowDownward fontSize="small" />
             </IconButton>
-          </Box>
-        </TableCell>
-
-        <TableCell align="center">
+          </span>
+        </Tooltip>
+        <Tooltip title="Remover turma">
           <IconButton
             color="error"
             onClick={() => onRemove(turma.uuid)}
             size="small"
+            aria-label={`Remover ${turma.nome}`}
           >
-            <Delete />
+            <Delete fontSize="small" />
           </IconButton>
-        </TableCell>
-      </TableRow>
-
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={7}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box
-              display="flex"
-              flexDirection="row"
-              alignItems="flex-start"
-              flexWrap="wrap"
-              justifyContent="flex-start"
-            >
-              <Box
-                margin={2}
-                p={2}
-                borderLeft="4px solid #1976d2"
-                bgcolor="#f5f5f5"
-                borderRadius={2}
-                width="20%"
-              >
-                <Typography variant="subtitle1" gutterBottom fontWeight="bold">
-                  Horários:
-                </Typography>
-
-                <Box display="flex" flexDirection="column" gap={1}>
-                  {turma.horarios.map((h, idx) => (
-                    <Box key={idx} display="flex" alignItems="center" gap={1}>
-                      <Typography variant="body2">
-                        🕒 {`${h.dia}: ${h.inicio} - ${h.fim}`}
-                      </Typography>
-                    </Box>
-                  ))}
-                  {turma.horarios.length === 0 && (
-                    <Box
-                      key={turma.uuid}
-                      display="flex"
-                      alignItems="center"
-                      gap={1}
-                    >
-                      <Typography variant="body2">🕒 A definir.</Typography>
-                    </Box>
-                  )}
-                </Box>
-
-                <Box mt={2} display="flex" alignItems="center" gap={1}>
-                  <Typography variant="body2" fontWeight="bold">
-                    Carga:
-                  </Typography>
-                  <Typography variant="body2" fontWeight="medium">
-                    {" "}
-                    {turma.carga.toLocaleString("pt-BR", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </Typography>
-                </Box>
-
-                {turma.noturna && (
-                  <Box mt={2} display="flex" alignItems="center" gap={1}>
-                    <Typography variant="body2" fontWeight="medium">
-                      🌙 Turma Noturna
-                    </Typography>
-                  </Box>
-                )}
-              </Box>
-
-              {/* Box de Conflitos */}
-              {conflitos.size > 0 && (
-                <Box
-                  margin={2}
-                  p={2}
-                  borderLeft="4px solid #ed6c02"
-                  bgcolor="#f5f5f5"
-                  borderRadius={2}
-                  width="auto"
-                >
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    fontWeight="bold"
-                  >
-                    ⚠️🕒 Conflitos de horários
-                  </Typography>
-                  <Box>
-                    {conflitos
-                      .entries()
-                      .toArray()
-                      .map((value, key) => (
-                        <Typography
-                          key={turma.uuid + "_" + key}
-                          variant="body2"
-                        >
-                          - {value[1]}
-                        </Typography>
-                      ))}
-                  </Box>
-                </Box>
-              )}
-            </Box>
-          </Collapse>
-        </TableCell>
-      </TableRow>
-    </>
+        </Tooltip>
+      </Box>
+    </Paper>
   );
 };
 

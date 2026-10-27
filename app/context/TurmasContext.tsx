@@ -4,7 +4,7 @@ import { TurmaData, TurmaDataInicial } from "../types";
 type TurmasContextType = {
   turmas: Map<string, TurmaData>;
   selectedTurmas: Map<string, TurmaData>;
-  addTurma: (uuid: string) => void;
+  addTurma: (uuid: string, prioridade?: number) => void;
   removeTurma: (uuid: string) => void;
   setPrioridade: (uuid: string, prioridade: number) => void;
   semNoturnaMinhaArea: boolean;
@@ -37,10 +37,19 @@ export const TurmasProvider = ({ initialTurmas, children }: Props) => {
     new Map()
   );
 
-  const addTurma = (uuid: string) => {
+  /**
+   * Adiciona uma turma à seleção. A prioridade é gravada apenas na cópia
+   * selecionada, sem alterar o objeto original de ``turmas``.
+   */
+  const addTurma = (uuid: string, prioridade?: number) => {
     const turma = turmas.get(uuid);
     if (turma && !selectedTurmas.has(uuid)) {
-      setSelectedTurmas((prev) => new Map(prev).set(uuid, { ...turma }));
+      setSelectedTurmas((prev) =>
+        new Map(prev).set(uuid, {
+          ...turma,
+          prioridade: prioridade && prioridade > 0 ? prioridade : 0,
+        })
+      );
     }
   };
 

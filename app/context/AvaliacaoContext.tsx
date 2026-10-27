@@ -1,10 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-
-export type AvaliacaoData = {
-  nota: number | null;
-  comentario: string;
-  preferencia: "Agrupar" | "Espalhar" | "Indiferente";
-};
+import { AvaliacaoData } from "../types";
 
 type AvaliacaoContextType = {
   avaliacao: AvaliacaoData;

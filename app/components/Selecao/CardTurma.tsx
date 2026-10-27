@@ -10,20 +10,28 @@ import {
   Chip,
   Stack,
   Link,
+  Tooltip,
 } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import CheckIcon from "@mui/icons-material/Check";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { Horario } from "@/app/types";
 
 interface CardTurmaProps {
   uuid: string;
   nome: string;
   turma: number;
-  horarios: { dia: string; inicio: string; fim: string }[];
+  horarios: Horario[];
   curso: string;
   ementa: string;
-  //ingles: boolean;
   nivel: string;
   onAdicionar: (key: string, prioridade: number) => void;
+  onRemover: (key: string) => void;
   isSelected: boolean;
-  horariosConflito: Set<string>;
+  /** Índices dos horários desta turma que se sobrepõem a turmas já selecionadas. */
+  horariosEmConflito: Set<number>;
+  /** Nomes das turmas selecionadas com as quais esta turma conflita. */
+  conflitos: Map<string, string>;
   noturna: boolean;
   codigo: string;
   grupo?: string;
@@ -37,128 +45,91 @@ const CardTurma = ({
   horarios,
   curso,
   ementa,
-  //ingles,
   nivel,
   onAdicionar,
+  onRemover,
   isSelected,
-  horariosConflito,
+  horariosEmConflito,
+  conflitos,
   noturna,
   codigo,
   grupo,
   carga,
 }: CardTurmaProps) => {
-  const [prioridade, setPrioridade] = useState<number>(0);
+  const [prioridade, setPrioridade] = useState<string>("");
+
+  const prioridadeNumero = Number(prioridade);
+  const prioridadeInvalida =
+    prioridade !== "" &&
+    (!Number.isInteger(prioridadeNumero) || prioridadeNumero < 1);
 
   const handleAdd = () => {
-    onAdicionar(uuid, prioridade);
+    onAdicionar(uuid, prioridadeInvalida ? 0 : prioridadeNumero);
+    setPrioridade("");
   };
+
+  const temConflito = !isSelected && conflitos.size > 0;
 
   return (
     <Card
       sx={{
-        mb: 2,
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        alignContent: "space-around",
-        opacity: isSelected ? 0.5 : 1,
-        pointerEvents: isSelected ? "none" : "auto",
         height: "100%",
-        maxWidth: "21em",
+        borderLeft: 4,
+        borderColor: isSelected
+          ? "success.main"
+          : temConflito
+          ? "warning.main"
+          : "transparent",
+        bgcolor: isSelected ? "#f3faf3" : "background.paper",
+        transition: "border-color .2s, box-shadow .2s",
+        "&:hover": { boxShadow: 6 },
       }}
-      elevation={3}
+      elevation={2}
     >
       <CardContent
         sx={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          alignContent: "space-around",
+          gap: 1,
           height: "100%",
         }}
       >
         <Box
           display="flex"
           justifyContent="space-between"
-          flexDirection="row"
+          alignItems="center"
           flexWrap="wrap"
+          gap={1}
         >
-          <Typography variant="body1" fontWeight="bold">
-            {codigo}
+          <Typography variant="body2" fontWeight="bold" color="text.secondary">
+            {codigo} · Turma {turma}
           </Typography>
-          <Typography variant="body1" fontWeight="bold">
+          <Typography variant="body2" fontWeight="bold" color="text.secondary">
             Carga:{" "}
             {carga.toLocaleString("pt-BR", {
               minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
             })}
           </Typography>
         </Box>
 
-        <Typography variant="h6">{nome}</Typography>
-        <Typography variant="h6">(Turma {turma})</Typography>
-        <Typography variant="body2" color="text.secondary">
-          Curso: {curso}
+        <Typography variant="h6" lineHeight={1.25}>
+          {nome}
         </Typography>
-
-        <Box mt={1}>
-          <Typography variant="subtitle2">Horários:</Typography>
-          <Stack spacing={0.5}>
-            {horarios.map((horario, idx) => (
-              <Chip
-                key={idx}
-                label={`${horario.dia}: ${horario.inicio} - ${horario.fim} ${
-                  horariosConflito.has(
-                    `${horario.dia}-${horario.inicio}-${horario.fim}`,
-                  )
-                    ? "(Conflito)"
-                    : ""
-                }`}
-                size="small"
-                color={
-                  horariosConflito.has(
-                    `${horario.dia}-${horario.inicio}-${horario.fim}`,
-                  )
-                    ? "warning"
-                    : "info"
-                }
-              />
-            ))}
-            {horarios.length === 0 && (
-              <Chip
-                key={uuid}
-                label={`A definir.`}
-                size="small"
-                color="default"
-              />
-            )}
-          </Stack>
-        </Box>
-
-        <Box mt={1}>
-          <Typography variant="body2">
-            Ementa:{" "}
-            <Link href={ementa} target="_blank" rel="noopener">
-              Visualizar
-            </Link>
+        {curso && (
+          <Typography variant="body2" color="text.secondary">
+            Curso: {curso}
           </Typography>
-        </Box>
+        )}
 
-        <Box
-          mt={1}
-          display="flex"
-          justifyContent="space-evenly"
-          flexDirection="row"
-          flexWrap="wrap"
-        >
-          {/* {ingles ? (
-            <Chip label="Disciplina em Inglês" color="error" size="small" />
+        <Box display="flex" flexWrap="wrap" gap={0.5}>
+          {nivel === "g" ? (
+            <Chip label="Graduação" color="primary" size="small" />
           ) : (
-            <Chip
-              label="Disciplina em Português"
-              color="success"
-              size="small"
-            />
-          )} */}
+            <Chip label="Pós-graduação" color="secondary" size="small" />
+          )}
           {noturna && (
             <Chip
               label="Noturna"
@@ -166,17 +137,6 @@ const CardTurma = ({
               size="small"
             />
           )}
-          {nivel === "g" ? (
-            <Chip label="Graduação" color="primary" size="small" />
-          ) : (
-            <Chip label="Pós-graduação" color="secondary" size="small" />
-          )}
-          {horarios.some((horario) =>
-            horariosConflito.has(
-              `${horario.dia}-${horario.inicio}-${horario.fim}`,
-            ),
-          ) && <Chip label="Conflito" color="warning" size="small" />}
-
           {grupo && (
             <Chip
               label={grupo}
@@ -186,25 +146,114 @@ const CardTurma = ({
           )}
         </Box>
 
-        <Box
-          mt={2}
-          display="flex"
-          alignItems="center"
-          justifyContent="end"
-          gap={2}
+        <Box>
+          <Typography variant="subtitle2">Horários:</Typography>
+          <Stack spacing={0.5} mt={0.5}>
+            {horarios.map((horario, idx) => {
+              const conflita = !isSelected && horariosEmConflito.has(idx);
+              return (
+                <Chip
+                  key={idx}
+                  label={`${horario.dia} ${horario.inicio} – ${horario.fim}${
+                    conflita ? " (conflito)" : ""
+                  }`}
+                  size="small"
+                  variant={conflita ? "filled" : "outlined"}
+                  color={conflita ? "warning" : "default"}
+                />
+              );
+            })}
+            {horarios.length === 0 && (
+              <Chip label="A definir" size="small" variant="outlined" />
+            )}
+          </Stack>
+        </Box>
+
+        {temConflito && (
+          <Tooltip
+            title={
+              <>
+                Conflita com:
+                {Array.from(conflitos.values()).map((n, i) => (
+                  <div key={i}>• {n}</div>
+                ))}
+              </>
+            }
+          >
+            <Typography
+              variant="caption"
+              color="warning.dark"
+              fontWeight={600}
+              sx={{ cursor: "help" }}
+            >
+              ⚠ Conflita com {conflitos.size} turma
+              {conflitos.size > 1 ? "s" : ""} selecionada
+              {conflitos.size > 1 ? "s" : ""}
+            </Typography>
+          </Tooltip>
+        )}
+
+        <Link
+          href={ementa}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="body2"
+          sx={{ display: "inline-flex", alignItems: "center", gap: 0.5 }}
         >
-          <TextField
-            label="Prioridade"
-            type="number"
-            size="small"
-            value={undefined}
-            onChange={(e) => setPrioridade(Number(e.target.value))}
-            sx={{ width: 120 }}
-            slotProps={{ htmlInput: { min: 0 } }}
-          />
-          <Button variant="contained" onClick={handleAdd} disabled={isSelected}>
-            {isSelected ? "Adicionado" : "Adicionar"}
-          </Button>
+          Ver ementa <OpenInNewIcon sx={{ fontSize: 14 }} />
+        </Link>
+
+        <Box
+          mt="auto"
+          pt={1}
+          display="flex"
+          alignItems="flex-start"
+          justifyContent="flex-end"
+          gap={1}
+        >
+          {isSelected ? (
+            <Button
+              variant="outlined"
+              color="success"
+              startIcon={<CheckIcon />}
+              onClick={() => onRemover(uuid)}
+              sx={{
+                "&:hover": {
+                  color: "error.main",
+                  borderColor: "error.main",
+                },
+              }}
+              aria-label={`Remover ${nome} da seleção`}
+            >
+              Adicionada · remover
+            </Button>
+          ) : (
+            <>
+              <TextField
+                label="Prioridade"
+                placeholder="Opcional"
+                type="number"
+                size="small"
+                value={prioridade}
+                onChange={(e) => setPrioridade(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleAdd();
+                }}
+                error={prioridadeInvalida}
+                helperText={prioridadeInvalida ? "Inteiro ≥ 1" : undefined}
+                sx={{ width: 120 }}
+                slotProps={{ htmlInput: { min: 1, step: 1 } }}
+              />
+              <Button
+                variant="contained"
+                onClick={handleAdd}
+                startIcon={<AddIcon />}
+                sx={{ height: 40 }}
+              >
+                Adicionar
+              </Button>
+            </>
+          )}
         </Box>
       </CardContent>
     </Card>

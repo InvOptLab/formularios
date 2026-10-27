@@ -2,6 +2,7 @@
 import React from "react";
 import {
   Box,
+  Paper,
   Typography,
   Rating,
   TextField,
@@ -21,8 +22,8 @@ const Avaliacao = () => {
     useAvaliacao();
 
   return (
-    <Box sx={{ maxWidth: 600, mx: "auto", p: 2 }}>
-      <Typography variant="h4" gutterBottom>
+    <Paper variant="outlined" sx={{ maxWidth: 720, mx: "auto", p: { xs: 2, sm: 4 } }}>
+      <Typography variant="h5" fontWeight={600} gutterBottom>
         Avaliação da Atribuição Anterior
       </Typography>
 
@@ -36,12 +37,11 @@ const Avaliacao = () => {
       {/* Componente de Rating */}
       <Box mb={4}>
         <Typography variant="subtitle1" gutterBottom>
-          Sua Nota (1 a 10):
+          Sua Nota (1 a 10) *
         </Typography>
         <Box display="flex" flexDirection="row" flexWrap="wrap">
           <Rating
             name="avaliacao-nota"
-            defaultValue={5}
             value={avaliacao.nota}
             onChange={(_, newValue) => updateNota(newValue)}
             max={10}
@@ -103,7 +103,8 @@ const Avaliacao = () => {
             e.target.value as "Agrupar" | "Espalhar" | "Indiferente"
           )
         }
-        sx={{ gap: "2em", justifyContent: "center", flexDirection: "row" }}
+        aria-label="Preferência de distribuição de horários"
+        sx={{ columnGap: "2em", justifyContent: "center", flexDirection: "row" }}
       >
         <FormControlLabel value="Agrupar" control={<Radio />} label="Agrupar" />
         <FormControlLabel
@@ -117,7 +118,7 @@ const Avaliacao = () => {
           label="Indiferente"
         />
       </RadioGroup>
-    </Box>
+    </Paper>
   );
 };
 

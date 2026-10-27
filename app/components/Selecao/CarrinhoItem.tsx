@@ -37,28 +37,27 @@ const CarrinhoItem = ({
 }: CarrinhoItemProps) => {
   return (
     <Paper
-      elevation={2}
+      elevation={0}
       sx={{
         px: 1.5,
         py: 1,
-        mb: 1.2,
+        mb: 1,
         borderRadius: 2,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: conflitos.size > 0 ? "#fff8e1" : "#fdfdfd",
-        border: conflitos.size > 0 ? "1.5px solid #ff9800" : "1px solid #eee",
+        backgroundColor: conflitos.size > 0 ? "#fff8e1" : "background.paper",
+        border: conflitos.size > 0 ? "1.5px solid #ff9800" : "1px solid #e0e0e0",
       }}
     >
-      <Box display="flex" flexDirection="column" flexGrow={1} mr={1}>
-        <Box display="flex" alignItems="center" gap={1}>
-          <Typography variant="subtitle2" fontWeight={500}>
+      <Box display="flex" flexDirection="column" flexGrow={1} mr={1} minWidth={0}>
+        <Box display="flex" alignItems="center" gap={1} flexWrap="wrap">
+          <Typography variant="subtitle2" fontWeight={600}>
             {codigo} - {nome}
           </Typography>
           {noturna && (
             <Chip
               label="Noturna"
-              color="default"
               sx={{
                 fontSize: "0.65rem",
                 height: "20px",
@@ -69,15 +68,10 @@ const CarrinhoItem = ({
           )}
         </Box>
 
-        <Box
-          display="flex"
-          alignItems="center"
-          flexWrap="wrap"
-          gap={2}
-          justifyContent="flex-start"
-        >
+        <Box display="flex" alignItems="center" flexWrap="wrap" columnGap={2}>
           <Typography variant="caption" color="text.secondary">
-            Turma {turma} - {curso}
+            Turma {turma}
+            {curso ? ` - ${curso}` : ""}
           </Typography>
           <Typography variant="caption" color="text.secondary">
             Carga:{" "}
@@ -90,27 +84,46 @@ const CarrinhoItem = ({
             variant="caption"
             sx={{
               fontWeight: 600,
-              backgroundColor: "#e0f7fa",
+              backgroundColor: prioridade ? "#e0f7fa" : "#f0f0f0",
+              color: prioridade ? "inherit" : "text.secondary",
               px: 1,
               borderRadius: "8px",
             }}
           >
-            Prioridade: {prioridade ?? 0}
+            {prioridade ? `Prioridade: ${prioridade}` : "Sem prioridade"}
           </Typography>
         </Box>
 
         {conflitos.size > 0 && (
-          <Box display="flex" alignItems="center" mt={0.5} gap={0.5}>
-            <WarningIcon fontSize="small" color="warning" />
-            <Typography variant="caption" color="warning.main" fontWeight={500}>
-              Conflito de horário
-            </Typography>
-          </Box>
+          <Tooltip
+            title={
+              <>
+                {Array.from(conflitos.values()).map((n, i) => (
+                  <div key={i}>• {n}</div>
+                ))}
+              </>
+            }
+          >
+            <Box
+              display="flex"
+              alignItems="center"
+              mt={0.5}
+              gap={0.5}
+              sx={{ cursor: "help" }}
+            >
+              <WarningIcon fontSize="small" color="warning" />
+              <Typography variant="caption" color="warning.dark" fontWeight={500}>
+                Conflito de horário com {conflitos.size} turma
+                {conflitos.size > 1 ? "s" : ""}
+              </Typography>
+            </Box>
+          </Tooltip>
         )}
       </Box>
 
       <Tooltip title="Remover turma">
         <IconButton
+          aria-label={`Remover ${nome}`}
           onClick={() => onRemover(uuid)}
           sx={{
             color: "error.main",
