@@ -9,8 +9,8 @@ export const dynamic = "force-static";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Formulário de Atribuição de Disciplinas — SME/ICMC",
-    short_name: "Atribuição SME",
+    name: "Sistema de Formulários",
+    short_name: "Sistema de Formulários",
     description:
       "Seleção e priorização de turmas para o processo de atribuição de carga didática do SME/ICMC.",
     start_url: ".",

@@ -46,7 +46,7 @@ const steps = [
 function avancaStepConfirmacao(
   turmas: TurmaData[],
   step: number,
-  semNoturnaMinhaArea: boolean
+  semNoturnaMinhaArea: boolean,
 ): {
   podeContinuar: boolean;
   mensagem: string;
@@ -143,7 +143,7 @@ const StepperFlow = () => {
       const { podeContinuar, mensagem } = avancaStepConfirmacao(
         Array.from(selectedTurmas.values()),
         activeStep,
-        semNoturnaMinhaArea
+        semNoturnaMinhaArea,
       );
       if (!podeContinuar) {
         addAlerta(mensagem, "error", 6);
@@ -156,7 +156,7 @@ const StepperFlow = () => {
       addAlerta(
         "Para poder continuar o arquivo deve ser exportado.",
         "warning",
-        6
+        6,
       );
       return;
     }
@@ -173,7 +173,9 @@ const StepperFlow = () => {
    * própria rolagem, as demais rolam dentro deste wrapper.
    */
   const comRolagem = (conteudo: React.ReactNode) => (
-    <Box sx={{ height: { md: "100%" }, overflowY: { md: "auto" }, pr: { md: 1 } }}>
+    <Box
+      sx={{ height: { md: "100%" }, overflowY: { md: "auto" }, pr: { md: 1 } }}
+    >
       {conteudo}
     </Box>
   );
@@ -190,7 +192,7 @@ const StepperFlow = () => {
         return comRolagem(<Avaliacao />);
       case 4:
         return comRolagem(
-          <Download exportado={exportado} setExportado={setExportado} />
+          <Download exportado={exportado} setExportado={setExportado} />,
         );
       case 5:
         return comRolagem(
@@ -221,7 +223,7 @@ const StepperFlow = () => {
               </a>
               .
             </Typography>
-          </Box>
+          </Box>,
         );
       default:
         return <Typography>Passo desconhecido</Typography>;
@@ -270,14 +272,18 @@ const StepperFlow = () => {
             textAlign={{ xs: "center", md: "left" }}
             mb={1}
           >
-            Formulário de Atribuição de Disciplinas — SME/ICMC
+            Sistema de Formulários
           </Typography>
 
           {isMobile ? (
             <Box textAlign="center">
               <Typography variant="body2" color="text.secondary">
                 Passo {Math.min(activeStep + 1, totalSteps)} de {totalSteps}
-                {activeStep < totalSteps && <>: <strong>{steps[activeStep]}</strong></>}
+                {activeStep < totalSteps && (
+                  <>
+                    : <strong>{steps[activeStep]}</strong>
+                  </>
+                )}
               </Typography>
             </Box>
           ) : (
