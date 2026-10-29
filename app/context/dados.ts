@@ -22,18 +22,18 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0346,1",
-      "SME0860,1",
-      "SME0340,5",
-      "SME0121,1",
-      "SME0340,4",
       "SME0104,2",
+      "SME0121,1",
       "SME0221,1",
-      "SME0320,3"
+      "SME0320,3",
+      "SME0340,4",
+      "SME0340,5",
+      "SME0346,1",
+      "SME0860,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "b9bf203b-9217-43c0-9b42-380e2a9bf106"
+    "uuid": "448796ca-7adb-4557-a62e-773fa2d1dfcb"
   },
   {
     "codigo": "EST5101",
@@ -47,7 +47,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "508d24ef-9cba-42ad-aaef-00312721dc5d"
+    "uuid": "e1521498-d4e8-4789-8c02-e4728ee473f7"
   },
   {
     "codigo": "EST5102",
@@ -61,7 +61,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "670fb712-37d0-44e9-aed8-9c6502cd4783"
+    "uuid": "6981ab6f-a361-4bf3-b10a-d03a9424e490"
   },
   {
     "codigo": "EST5104",
@@ -75,7 +75,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "3ecee5db-23ac-493c-859b-82bffdc3caee"
+    "uuid": "e71c0e1d-da9e-4aa1-bf82-01a4566f58b6"
   },
   {
     "codigo": "EST5105",
@@ -89,7 +89,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "4b8865e6-4ec7-4960-b892-0f9bb99aa8c6"
+    "uuid": "c8f34313-ca47-46a2-8495-9c330f011b1e"
   },
   {
     "codigo": "EST5527",
@@ -103,7 +103,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "a3c21b07-e208-480b-a075-a813763c2fe9"
+    "uuid": "fb96f910-ee2c-461f-aef2-af424d1209ed"
   },
   {
     "codigo": "EST5534",
@@ -117,7 +117,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "1fb03803-5004-4502-96a7-e6e4c5bf5706"
+    "uuid": "edbf1704-559d-4ab5-b4dd-116660ba3b79"
   },
   {
     "codigo": "EST5801",
@@ -131,7 +131,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "df28a54d-17f1-4b94-8aee-acd25bac7b7e"
+    "uuid": "741f4b38-16b5-4b9e-a2a9-245c57ded842"
   },
   {
     "codigo": "EST5805",
@@ -145,7 +145,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "37e7d510-05aa-4f54-923c-733fa921bb2d"
+    "uuid": "f920320b-6021-4105-8b91-0f95332dca32"
   },
   {
     "codigo": "MAI5002",
@@ -159,7 +159,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "ed9fcdf5-08fc-4752-8555-dca8ac40182a"
+    "uuid": "08ddd707-b8f9-4352-9eb4-88f4dd23d71c"
   },
   {
     "codigo": "MAI5015",
@@ -173,7 +173,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "3ea05819-beec-4323-be5e-fd057f9e71c3"
+    "uuid": "be3cbeb0-34f9-46b4-a544-c91b618d674c"
   },
   {
     "codigo": "MAI5017",
@@ -187,7 +187,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "8b6607c8-8774-4b0c-b63e-9651cd4a4765"
+    "uuid": "ceb37391-3cef-4781-ba50-639bb59908e1"
   },
   {
     "codigo": "MAI5036",
@@ -201,7 +201,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "b358327e-089f-4fec-8e63-c5a77b65fa81"
+    "uuid": "fb0c8731-12db-411c-a4e9-fd7c6c31cfd8"
   },
   {
     "codigo": "SME0104",
@@ -225,16 +225,16 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0121,2",
-      "SME0340,2",
       "SME0205,1",
+      "SME0221,1",
+      "SME0340,2",
       "SME0340,4",
       "SME0341,1",
-      "SME0221,1",
       "SME0620,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "da185ad6-004c-4759-b2e4-40f0c5e82c12"
+    "uuid": "0aef7f2d-cc10-4ae7-af04-606b57c90b43"
   },
   {
     "codigo": "SME0104",
@@ -257,19 +257,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0860,1",
-      "SME0300,2",
-      "SME0205,1",
+      "5500004,1",
       "SME0121,1",
+      "SME0205,1",
+      "SME0221,1",
+      "SME0300,2",
       "SME0333,1",
       "SME0340,4",
-      "5500004,1",
-      "SME0221,1",
-      "SME0620,1"
+      "SME0620,1",
+      "SME0860,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "362d5d1d-f362-4584-8754-b747d970aa94"
+    "uuid": "059c4c1b-03ac-46aa-9a92-4756d879f97f"
   },
   {
     "codigo": "SME0121",
@@ -292,19 +292,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0860,1",
-      "SME0300,2",
+      "5500004,1",
+      "SME0104,2",
       "SME0205,1",
+      "SME0221,1",
+      "SME0300,2",
       "SME0333,1",
       "SME0340,4",
-      "SME0104,2",
-      "5500004,1",
-      "SME0221,1",
-      "SME0620,1"
+      "SME0620,1",
+      "SME0860,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "9e350f14-8198-4932-af3c-89e94f46f972"
+    "uuid": "d29edacd-558b-4c60-9348-830ebe64b366"
   },
   {
     "codigo": "SME0121",
@@ -327,17 +327,17 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,2",
+      "SME0104,1",
       "SME0205,1",
+      "SME0221,1",
+      "SME0340,2",
       "SME0340,4",
       "SME0341,1",
-      "SME0221,1",
-      "SME0620,1",
-      "SME0104,1"
+      "SME0620,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "c51c1869-4691-42c5-b0a3-3993f526f08d"
+    "uuid": "da169cd5-b9c2-477e-81d8-0166320a0c12"
   },
   {
     "codigo": "SME0130",
@@ -360,26 +360,33 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,2",
       "SME0243,1",
-      "SME0305,1",
-      "SME0300,3",
-      "SME0818,1",
       "SME0280,1",
-      "SME0300,4"
+      "SME0300,3",
+      "SME0300,4",
+      "SME0305,1",
+      "SME0340,2",
+      "SME0818,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "2fe565fe-51a0-43eb-9e18-f4fdbf9d0d1c"
+    "uuid": "ead0d1a0-b74e-4dfb-ae1e-8df9fe565e5c"
   },
   {
     "codigo": "SME0202",
     "nome": "Métodos Numéricos em Equações Diferenciais",
     "curso": "BMA, BMACC",
     "turma": 1,
+    "espelho": {
+      "codigo": "SME5784",
+      "id": "SME5784,1",
+      "nome": "Métodos Numéricos para Equações Diferenciais",
+      "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5784",
+      "uuid": "7ae9c2fd-bab0-4b1e-9a38-3316fae34356"
+    },
     "id": "SME0202,1",
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0202",
-    "nivel": "g",
+    "nivel": "g+p",
     "horarios": [
       {
         "dia": "Seg.",
@@ -393,17 +400,17 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,3",
-      "SME0300,2",
       "SME0230,1",
+      "SME0300,2",
       "SME0340,1",
-      "SME0602,1",
+      "SME0340,3",
       "SME0340,6",
+      "SME0602,1",
       "SME0610,1"
     ],
     "noturna": false,
-    "carga": 1.0,
-    "uuid": "13137e49-1d79-47c4-a7ff-87c0fa7c44cb"
+    "carga": 1.5,
+    "uuid": "e225dc67-b95b-459c-92d8-cd150e0afc32"
   },
   {
     "codigo": "SME0205",
@@ -426,31 +433,38 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
+      "SME0104,1",
+      "SME0104,2",
+      "SME0121,1",
       "SME0121,2",
       "SME0300,2",
-      "SME0121,1",
       "SME0333,1",
-      "SME0104,2",
-      "SME0620,1",
-      "SME0104,1"
+      "SME0620,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "23a8e58b-acc6-40ce-a5fe-4d0a173a5ba5"
+    "uuid": "1ee9760c-8f50-4ffa-886b-c43f6d226a2b"
   },
   {
     "codigo": "SME0214",
     "nome": "Fluxos em Redes",
     "curso": "BMACC",
     "turma": 1,
+    "espelho": {
+      "codigo": "SME5976",
+      "id": "SME5976,1",
+      "nome": "Fluxos em Redes",
+      "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5976",
+      "uuid": "9cc81c1e-ce0d-443a-90bf-dbde5d452940"
+    },
     "id": "SME0214,1",
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0214",
-    "nivel": "g",
+    "nivel": "g+p",
     "horarios": [],
     "conflitos": [],
     "noturna": false,
-    "carga": 1.0,
-    "uuid": "5c785784-0570-4407-983c-73aee3fc81be"
+    "carga": 1.5,
+    "uuid": "98ba7ce7-985e-47c1-9c59-4f5d1a3d976b"
   },
   {
     "codigo": "SME0221",
@@ -473,19 +487,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
+      "5500004,1",
+      "SME0104,1",
+      "SME0104,2",
+      "SME0121,1",
       "SME0121,2",
       "SME0340,2",
-      "SME0860,1",
-      "SME0121,1",
       "SME0340,4",
-      "SME0104,2",
-      "5500004,1",
       "SME0341,1",
-      "SME0104,1"
+      "SME0860,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "a544afcd-04f1-4e10-8b68-80ca84fc5d63"
+    "uuid": "e33ae2bb-3277-4590-bd06-91fae2f75c44"
   },
   {
     "codigo": "SME0230",
@@ -513,19 +527,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,3",
+      "SME0202,1",
       "SME0300,2",
       "SME0340,1",
-      "SME0341,1",
-      "SME0202,1",
-      "SME0602,1",
-      "SME0341,2",
+      "SME0340,3",
       "SME0340,6",
+      "SME0341,1",
+      "SME0341,2",
+      "SME0602,1",
       "SME0610,1"
     ],
     "noturna": false,
     "carga": 1.5,
-    "uuid": "f233fb1e-8a2b-4fb0-bd69-9e804209a889"
+    "uuid": "0cb19a16-5d6b-4683-9c99-054cde8c692b"
   },
   {
     "codigo": "SME0243",
@@ -548,44 +562,58 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,2",
-      "SME0305,1",
-      "SME0300,3",
       "SME0130,1",
       "SME0280,1",
-      "SME0300,4"
+      "SME0300,3",
+      "SME0300,4",
+      "SME0305,1",
+      "SME0340,2"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "e243f16a-6cd4-4ba4-8286-cefe3b43191d"
+    "uuid": "7fbf01c0-7882-4be8-92da-686ac46ee15d"
   },
   {
     "codigo": "SME0250",
     "nome": "Métodos Numéricos para Geração de Malhas",
     "curso": "BMACC",
     "turma": 1,
+    "espelho": {
+      "codigo": "SME5827",
+      "id": "SME5827,1",
+      "nome": "Geração de Malhas",
+      "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
+      "uuid": "ae47da10-ed47-496b-aa2e-918a0a217c8f"
+    },
     "id": "SME0250,1",
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0250",
-    "nivel": "g",
+    "nivel": "g+p",
     "horarios": [],
     "conflitos": [],
     "noturna": false,
-    "carga": 1.0,
-    "uuid": "163badd1-cf82-4ffa-ba3c-14b5e9a087f6"
+    "carga": 1.5,
+    "uuid": "752cb7eb-6330-466a-a2c1-aed422482ce5"
   },
   {
     "codigo": "SME0255",
     "nome": "Simulação Computacional de Fluidos",
     "curso": "BMACC",
     "turma": 1,
+    "espelho": {
+      "codigo": "SME5969",
+      "id": "SME5969,1",
+      "nome": "Modelagem e Simulação de Escoamentos Transicionais e Turbulentos",
+      "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5969",
+      "uuid": "fa8cfed3-2841-4022-ba1c-d093a505df11"
+    },
     "id": "SME0255,1",
     "ementa": "https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=SME0255",
-    "nivel": "g",
+    "nivel": "g+p",
     "horarios": [],
     "conflitos": [],
     "noturna": false,
-    "carga": 1.0,
-    "uuid": "c264141f-ec9a-44f2-a01c-dab75ba34497"
+    "carga": 1.5,
+    "uuid": "a0386fc8-0994-4cdc-b65b-dcf0ee29ad64"
   },
   {
     "codigo": "SME0262",
@@ -599,7 +627,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "b94233fb-f5cc-4a99-b26c-b0027292fe27"
+    "uuid": "900d5501-5d5a-4942-b2a2-52a61ef937af"
   },
   {
     "codigo": "SME0273",
@@ -622,14 +650,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
+      "SME0300,3",
       "SME0320,1",
       "SME0320,2",
-      "SME0300,3",
       "SME0602,1"
     ],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "d76728be-7b3f-4578-84f6-cdeb4e217b46"
+    "uuid": "f2d8d739-f4e9-4eac-bbf4-47d2624ea80f"
   },
   {
     "codigo": "SME0280",
@@ -653,7 +681,7 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "1fd54979-b11f-4b08-9d26-33e363c2e89c"
+    "uuid": "3acf646b-a7a8-42c8-8507-4f3c10de10c4"
   },
   {
     "codigo": "SME0284",
@@ -677,13 +705,13 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0285,1",
-      "SME0340,1",
       "SME0300,1",
-      "SME0305,1"
+      "SME0305,1",
+      "SME0340,1"
     ],
     "noturna": false,
     "carga": 0.25,
-    "uuid": "cba0e356-a6af-4678-adaf-a15bb7159313"
+    "uuid": "9f89e114-6aa2-437b-bba4-eeda85699c43"
   },
   {
     "codigo": "SME0285",
@@ -713,7 +741,7 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "noturna": false,
     "carga": 0.25,
-    "uuid": "661315e0-ac81-4521-b67b-420bebe896a6"
+    "uuid": "e09dae25-a388-44c9-a99a-5b8492a8d3a0"
   },
   {
     "codigo": "SME0300",
@@ -736,14 +764,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0285,1",
       "SME0284,1",
+      "SME0285,1",
       "SME0305,2",
       "SME0340,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "1bdb3c16-9a76-42dd-9bea-5237ca7db141"
+    "uuid": "2cac3163-9540-40b3-b4d7-eb07a64aa87b"
   },
   {
     "codigo": "SME0300",
@@ -766,21 +794,21 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,3",
-      "SME0230,1",
-      "SME0205,1",
+      "SME0104,2",
       "SME0121,1",
+      "SME0202,1",
+      "SME0205,1",
+      "SME0230,1",
       "SME0333,1",
       "SME0340,1",
-      "SME0104,2",
-      "SME0620,1",
-      "SME0202,1",
+      "SME0340,3",
       "SME0602,1",
-      "SME0610,1"
+      "SME0610,1",
+      "SME0620,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "017f87f8-2d74-4ac9-89be-aadddf0ac4d2"
+    "uuid": "da83a2ed-661f-4514-9bbd-5fdc2c4403fc"
   },
   {
     "codigo": "SME0300",
@@ -803,18 +831,18 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,2",
-      "SME0320,1",
-      "SME0273,1",
-      "SME0243,1",
-      "SME0305,1",
-      "SME0320,2",
       "SME0130,1",
-      "SME0300,4"
+      "SME0243,1",
+      "SME0273,1",
+      "SME0300,4",
+      "SME0305,1",
+      "SME0320,1",
+      "SME0320,2",
+      "SME0340,2"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "61b8b686-d215-4c44-b2aa-8e7f7e62ca6e"
+    "uuid": "d63d3bb3-c879-4aee-bf77-cfa86866bc42"
   },
   {
     "codigo": "SME0300",
@@ -837,16 +865,16 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,2",
-      "SME0243,1",
-      "SME0305,1",
-      "SME0300,3",
       "SME0130,1",
-      "SME0280,1"
+      "SME0243,1",
+      "SME0280,1",
+      "SME0300,3",
+      "SME0305,1",
+      "SME0340,2"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "063168d8-c825-4207-83ea-777708a4b311"
+    "uuid": "f1fc4ee3-18ec-4762-827f-4d27e5a82a53"
   },
   {
     "codigo": "SME0305",
@@ -869,17 +897,17 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0284,1",
-      "SME0340,2",
-      "SME0285,1",
-      "SME0243,1",
-      "SME0300,3",
       "SME0130,1",
-      "SME0300,4"
+      "SME0243,1",
+      "SME0284,1",
+      "SME0285,1",
+      "SME0300,3",
+      "SME0300,4",
+      "SME0340,2"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "6c62a10f-5f73-4a5d-8080-b49a2c8c91a3"
+    "uuid": "fd32c389-479f-41e4-b78f-512b07aa48a6"
   },
   {
     "codigo": "SME0305",
@@ -906,7 +934,7 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "ca2a6074-d812-4cd8-a6d0-2db95f81bfd6"
+    "uuid": "50af53d9-9deb-4c7c-83e5-413fc63dbe16"
   },
   {
     "codigo": "SME0320",
@@ -930,13 +958,13 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0273,1",
-      "SME0320,2",
       "SME0300,3",
+      "SME0320,2",
       "SME0602,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "c67e4606-133f-4d77-b0d1-59e97d5248de"
+    "uuid": "62f591d2-195e-4fd4-80ca-04b981795907"
   },
   {
     "codigo": "SME0320",
@@ -959,14 +987,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0320,1",
       "SME0273,1",
       "SME0300,3",
+      "SME0320,1",
       "SME0602,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "b73bcf8c-52f2-4d3d-bd38-fd270094cf7d"
+    "uuid": "5c18b928-b7cd-44c4-97fa-f8c3aba9551f"
   },
   {
     "codigo": "SME0320",
@@ -989,14 +1017,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0346,1",
+      "5500004,1",
       "SME0340,5",
-      "SME0852,1",
-      "5500004,1"
+      "SME0346,1",
+      "SME0852,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "9fb7706c-d47a-4087-8bb8-7c7a59080010"
+    "uuid": "123a51ad-7021-4e16-84d7-5cb03e135f66"
   },
   {
     "codigo": "SME0320",
@@ -1020,12 +1048,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0340,6",
-      "SME0852,1",
-      "SME0341,2"
+      "SME0341,2",
+      "SME0852,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "28676d42-3c74-4c42-b0c1-ba733de253d0"
+    "uuid": "206919a0-6af2-4bfb-a533-cfa64e0e8fb1"
   },
   {
     "codigo": "SME0333",
@@ -1043,15 +1071,15 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0300,2",
-      "SME0205,1",
-      "SME0121,1",
       "SME0104,2",
+      "SME0121,1",
+      "SME0205,1",
+      "SME0300,2",
       "SME0620,1"
     ],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "0ee21d75-bddd-4585-a748-dbeed2089fad"
+    "uuid": "6819a8cc-afcf-4010-b9bb-6ba8b85167cf"
   },
   {
     "codigo": "SME0340",
@@ -1074,19 +1102,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0284,1",
-      "SME0340,3",
-      "SME0300,2",
-      "SME0230,1",
-      "SME0300,1",
       "SME0202,1",
-      "SME0602,1",
+      "SME0230,1",
+      "SME0284,1",
       "SME0285,1",
+      "SME0300,1",
+      "SME0300,2",
+      "SME0340,3",
+      "SME0602,1",
       "SME0610,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "a8b8776d-4866-48f3-a800-fbe75b5b9dde"
+    "uuid": "6011fd3e-0d35-4b5b-b3ca-71dea5df83b7"
   },
   {
     "codigo": "SME0340",
@@ -1109,20 +1137,20 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0121,2",
-      "SME0340,4",
-      "SME0243,1",
-      "SME0221,1",
-      "SME0341,1",
-      "SME0305,1",
-      "SME0300,3",
-      "SME0130,1",
       "SME0104,1",
-      "SME0300,4"
+      "SME0121,2",
+      "SME0130,1",
+      "SME0221,1",
+      "SME0243,1",
+      "SME0300,3",
+      "SME0300,4",
+      "SME0305,1",
+      "SME0340,4",
+      "SME0341,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "acdd775a-8858-49bf-8242-4a24dd8ee8d0"
+    "uuid": "93a024e7-7920-4935-ae6f-a077679773ba"
   },
   {
     "codigo": "SME0340",
@@ -1145,18 +1173,18 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0300,2",
+      "SME0202,1",
       "SME0230,1",
+      "SME0300,2",
       "SME0340,1",
       "SME0341,1",
-      "SME0202,1",
-      "SME0602,1",
       "SME0341,2",
+      "SME0602,1",
       "SME0610,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "05541cc9-b60a-405d-9243-7d601783be4d"
+    "uuid": "15fc23cd-ca9b-4f46-a315-5c37cce45882"
   },
   {
     "codigo": "SME0340",
@@ -1179,19 +1207,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0121,2",
-      "SME0340,2",
-      "SME0860,1",
-      "SME0121,1",
-      "SME0104,2",
       "5500004,1",
+      "SME0104,1",
+      "SME0104,2",
+      "SME0121,1",
+      "SME0121,2",
       "SME0221,1",
+      "SME0340,2",
       "SME0341,1",
-      "SME0104,1"
+      "SME0860,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "5839ae73-66c5-41a9-85cd-4b9a0e833267"
+    "uuid": "c5822854-96ae-4b54-8b5f-c4a5f5e9a171"
   },
   {
     "codigo": "SME0340",
@@ -1214,14 +1242,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0346,1",
-      "SME0852,1",
+      "5500004,1",
       "SME0320,3",
-      "5500004,1"
+      "SME0346,1",
+      "SME0852,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "6bff6e35-5546-44db-a8f4-015c25033220"
+    "uuid": "2aee630a-0ef4-45b4-8485-954a493bf151"
   },
   {
     "codigo": "SME0340",
@@ -1244,16 +1272,16 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0230,1",
       "SME0202,1",
+      "SME0230,1",
+      "SME0320,4",
       "SME0341,2",
       "SME0610,1",
-      "SME0852,1",
-      "SME0320,4"
+      "SME0852,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "05aa23af-7a2e-422e-9880-a6d876d7114f"
+    "uuid": "d6a9fba5-5e7e-4055-b52f-3f31d1c99138"
   },
   {
     "codigo": "SME0341",
@@ -1276,18 +1304,18 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
+      "SME0104,1",
       "SME0121,2",
+      "SME0221,1",
+      "SME0230,1",
       "SME0340,2",
       "SME0340,3",
-      "SME0230,1",
       "SME0340,4",
-      "SME0221,1",
-      "SME0341,2",
-      "SME0104,1"
+      "SME0341,2"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "796cf388-482d-4265-b2d5-7207dab6e0ce"
+    "uuid": "9d6b934c-855b-4f4c-b548-c06e8c3d9bc8"
   },
   {
     "codigo": "SME0341",
@@ -1310,16 +1338,16 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,3",
       "SME0230,1",
-      "SME0341,1",
+      "SME0320,4",
+      "SME0340,3",
       "SME0340,6",
-      "SME0852,1",
-      "SME0320,4"
+      "SME0341,1",
+      "SME0852,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "a43a01ce-bab9-471e-92d7-8fd3eec051e0"
+    "uuid": "a6f0c1bd-cea4-40a9-bfa6-b373dfb2381f"
   },
   {
     "codigo": "SME0346",
@@ -1342,13 +1370,13 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,5",
+      "5500004,1",
       "SME0320,3",
-      "5500004,1"
+      "SME0340,5"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "cf481a33-4ea5-430d-9e1e-c43656ba57e9"
+    "uuid": "18cd5a56-7919-4a67-ae4a-72c37e8198d9"
   },
   {
     "codigo": "SME0500",
@@ -1366,12 +1394,12 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0818,1",
-      "SME0816,1"
+      "SME0816,1",
+      "SME0818,1"
     ],
     "noturna": true,
     "carga": 0.5,
-    "uuid": "59342c16-7c06-40d2-be39-7b9f62cd58f2"
+    "uuid": "d599676a-fae3-49fc-b7b5-2443da7ea1cc"
   },
   {
     "codigo": "SME0520",
@@ -1394,15 +1422,15 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0829,1",
-      "SME0827,1",
-      "SME0825,1",
       "SME0821,1",
+      "SME0825,1",
+      "SME0827,1",
+      "SME0829,1",
       "SME0878,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "50ff16de-711f-483d-a9dc-2d00e991ca02"
+    "uuid": "b7fe05fe-c221-4e13-b047-a31a9d3a866f"
   },
   {
     "codigo": "SME0602",
@@ -1425,19 +1453,19 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0320,1",
-      "SME0340,3",
-      "SME0300,2",
-      "SME0230,1",
-      "SME0340,1",
-      "SME0273,1",
       "SME0202,1",
+      "SME0230,1",
+      "SME0273,1",
+      "SME0300,2",
+      "SME0320,1",
       "SME0320,2",
+      "SME0340,1",
+      "SME0340,3",
       "SME0610,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "a86f5096-7f99-44ad-8e4e-f3536a9e711a"
+    "uuid": "79abd1b1-5927-4d7f-8b80-11254bb09a3b"
   },
   {
     "codigo": "SME0610",
@@ -1460,17 +1488,17 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,3",
-      "SME0300,2",
-      "SME0230,1",
-      "SME0340,1",
       "SME0202,1",
-      "SME0602,1",
-      "SME0340,6"
+      "SME0230,1",
+      "SME0300,2",
+      "SME0340,1",
+      "SME0340,3",
+      "SME0340,6",
+      "SME0602,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "566fe1de-d710-47f3-8006-f8352268ae3b"
+    "uuid": "cf376dca-2e31-43a4-aefb-2b7b1e4249a4"
   },
   {
     "codigo": "SME0620",
@@ -1493,17 +1521,17 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0121,2",
-      "SME0300,2",
-      "SME0205,1",
-      "SME0121,1",
-      "SME0333,1",
+      "SME0104,1",
       "SME0104,2",
-      "SME0104,1"
+      "SME0121,1",
+      "SME0121,2",
+      "SME0205,1",
+      "SME0300,2",
+      "SME0333,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "3a090677-6626-42dd-a833-cbb1dbaba903"
+    "uuid": "3268519f-d0b8-434f-acdd-9b84e876730e"
   },
   {
     "codigo": "SME0801",
@@ -1526,13 +1554,13 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
+      "SME0806,1",
       "SME0816,1",
-      "SME0882,1",
-      "SME0806,1"
+      "SME0882,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "aec5bc4d-cd28-4e26-9e65-e553f6182802"
+    "uuid": "ea3b578a-fb30-4b6c-9f5d-a09fcc411980"
   },
   {
     "codigo": "SME0803",
@@ -1555,14 +1583,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0892,1",
-      "SME0878,1",
+      "SME0806,1",
       "SME0829,1",
-      "SME0806,1"
+      "SME0878,1",
+      "SME0892,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "818fd4b7-bed5-4c9b-89e2-b4c603eb5004"
+    "uuid": "7866aa22-2866-4648-8d17-916c598c5f32"
   },
   {
     "codigo": "SME0806",
@@ -1585,14 +1613,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0892,1",
+      "SME0801,1",
       "SME0803,1",
       "SME0882,1",
-      "SME0801,1"
+      "SME0892,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "26e0a7ed-20c5-4826-971c-111bf77453b7"
+    "uuid": "ba139b96-ed9b-436c-b53e-d695fb84dfc1"
   },
   {
     "codigo": "SME0807",
@@ -1619,7 +1647,7 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "aea87cad-8558-4b28-bea1-b4da45990e13"
+    "uuid": "68f4c87c-70bc-4a7c-8a35-70ed0b9a3618"
   },
   {
     "codigo": "SME0814",
@@ -1642,13 +1670,13 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0880,1",
       "SME0815,1",
+      "SME0880,1",
       "SME0881,1"
     ],
     "noturna": false,
     "carga": 0.25,
-    "uuid": "46eab53f-d11b-42bf-8a24-58de324d854a"
+    "uuid": "a22b40f4-c8e5-4999-a8a7-e2c0cfbd82b2"
   },
   {
     "codigo": "SME0815",
@@ -1677,7 +1705,7 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "noturna": false,
     "carga": 0.25,
-    "uuid": "02c8bfbf-ee2e-4ff0-af70-23b76f4632bb"
+    "uuid": "6fcc151a-b1bc-4a09-87ec-8713ef45f1f3"
   },
   {
     "codigo": "SME0816",
@@ -1700,13 +1728,13 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0818,1",
       "SME0500,1",
-      "SME0801,1"
+      "SME0801,1",
+      "SME0818,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "6cc3d068-7dbe-465e-b9b3-2976976477d3"
+    "uuid": "aa729a8e-c69d-4aeb-baee-d3d8fe2450e8"
   },
   {
     "codigo": "SME0818",
@@ -1729,15 +1757,15 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0882,1",
-      "SME0816,1",
-      "SME0500,1",
       "SME0130,1",
-      "SME0821,1"
+      "SME0500,1",
+      "SME0816,1",
+      "SME0821,1",
+      "SME0882,1"
     ],
     "noturna": true,
     "carga": 1.5,
-    "uuid": "a8b96500-218a-4f25-ad70-4cb21e38bb4c"
+    "uuid": "f6512690-a07e-49da-bc44-dd6b138054ee"
   },
   {
     "codigo": "SME0821",
@@ -1760,13 +1788,13 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0882,1",
+      "SME0520,1",
       "SME0818,1",
-      "SME0520,1"
+      "SME0882,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "9b242cf6-b232-46bc-93e2-9bad33518dd4"
+    "uuid": "3d288fa8-a094-406f-bd04-b20277299760"
   },
   {
     "codigo": "SME0825",
@@ -1789,15 +1817,15 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0807,1",
       "SME0520,1",
-      "SME0829,1",
+      "SME0807,1",
       "SME0827,1",
+      "SME0829,1",
       "SME0878,1"
     ],
     "noturna": true,
     "carga": 0.5,
-    "uuid": "98ce83a9-031b-4a7a-941f-d7ef1b3b6034"
+    "uuid": "40d2b8e3-0015-421a-a646-c406d2da8b2f"
   },
   {
     "codigo": "SME0827",
@@ -1815,14 +1843,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0825,1",
-      "SME0878,1",
       "SME0520,1",
-      "SME0829,1"
+      "SME0825,1",
+      "SME0829,1",
+      "SME0878,1"
     ],
     "noturna": true,
     "carga": 0.75,
-    "uuid": "b063a460-320c-45fa-9fcc-30c8421dcd45"
+    "uuid": "7cc3e933-3bd2-4ec0-8f96-550f9e035745"
   },
   {
     "codigo": "SME0829",
@@ -1846,15 +1874,15 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0520,1",
-      "SME0892,1",
-      "SME0827,1",
-      "SME0825,1",
       "SME0803,1",
-      "SME0878,1"
+      "SME0825,1",
+      "SME0827,1",
+      "SME0878,1",
+      "SME0892,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "9ebdc56e-3c24-46b5-9210-1d12dfb8db54"
+    "uuid": "2194c6b3-5ec7-4ad1-9704-595f4e9502fb"
   },
   {
     "codigo": "SME0852",
@@ -1877,15 +1905,15 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0340,5",
-      "SME0341,2",
-      "SME0340,6",
       "SME0320,3",
-      "SME0320,4"
+      "SME0320,4",
+      "SME0340,5",
+      "SME0340,6",
+      "SME0341,2"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "e872fb05-e015-45bc-b0ce-8a396a6a9daf"
+    "uuid": "17be4252-b032-4340-99a1-474d151ec8d0"
   },
   {
     "codigo": "SME0860",
@@ -1903,15 +1931,15 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0121,1",
-      "SME0340,4",
-      "SME0104,2",
       "5500004,1",
-      "SME0221,1"
+      "SME0104,2",
+      "SME0121,1",
+      "SME0221,1",
+      "SME0340,4"
     ],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "ae652858-9839-4985-88b3-f882258bfa7b"
+    "uuid": "33571d7c-0e15-4402-b6e6-c0f417f96830"
   },
   {
     "codigo": "SME0871",
@@ -1925,7 +1953,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "f94c1ae4-188a-4762-b830-27d100328463"
+    "uuid": "73899bba-4975-4f02-ab31-6b5d03738c6a"
   },
   {
     "codigo": "SME0878",
@@ -1949,15 +1977,15 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0520,1",
-      "SME0892,1",
-      "SME0829,1",
-      "SME0827,1",
+      "SME0803,1",
       "SME0825,1",
-      "SME0803,1"
+      "SME0827,1",
+      "SME0829,1",
+      "SME0892,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "98bce62e-80ec-42de-8989-52e54495ebb3"
+    "uuid": "c6962fc4-f597-492b-8b19-b96055f008d8"
   },
   {
     "codigo": "SME0880",
@@ -1986,7 +2014,7 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "ae5ab749-614b-4d26-ab77-4e8fcbebfb7d"
+    "uuid": "c93a42f1-acd9-4214-b0b1-34ea7948a10b"
   },
   {
     "codigo": "SME0881",
@@ -2010,12 +2038,12 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0814,1",
-      "SME0880,1",
-      "SME0815,1"
+      "SME0815,1",
+      "SME0880,1"
     ],
     "noturna": false,
     "carga": 1.0,
-    "uuid": "52873474-376c-4906-8e2e-c98468d40bc8"
+    "uuid": "83c1df04-a1c4-4079-8cbc-b07e0e52ee6b"
   },
   {
     "codigo": "SME0882",
@@ -2038,14 +2066,14 @@ export const turmasJson: TurmaDataInicial[] = [
       }
     ],
     "conflitos": [
-      "SME0821,1",
+      "SME0801,1",
       "SME0806,1",
       "SME0818,1",
-      "SME0801,1"
+      "SME0821,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "c13484c0-9f16-46ba-bf1e-02c8e7d2e7c1"
+    "uuid": "40627355-74ea-4e15-9f88-072e4831f492"
   },
   {
     "codigo": "SME0890",
@@ -2065,7 +2093,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": true,
     "carga": 0.25,
-    "uuid": "142e4879-4209-487d-b66e-74e8f1a14d73"
+    "uuid": "d180e66a-867f-4971-be39-363efcaad907"
   },
   {
     "codigo": "SME0892",
@@ -2089,41 +2117,13 @@ export const turmasJson: TurmaDataInicial[] = [
     ],
     "conflitos": [
       "SME0803,1",
-      "SME0878,1",
+      "SME0806,1",
       "SME0829,1",
-      "SME0806,1"
+      "SME0878,1"
     ],
     "noturna": true,
     "carga": 1.0,
-    "uuid": "06eae5bd-ec4d-4f42-ba36-826ecdef5b2d"
-  },
-  {
-    "codigo": "SME5784",
-    "nome": "Métodos Numéricos para Equações Diferenciais",
-    "curso": "",
-    "turma": 1,
-    "id": "SME5784,1",
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5784",
-    "nivel": "p",
-    "horarios": [],
-    "conflitos": [],
-    "noturna": false,
-    "carga": 1.0,
-    "uuid": "15ba54a1-5002-4564-9fee-fbc394b43e5e"
-  },
-  {
-    "codigo": "SME5827",
-    "nome": "Geração de Malhas",
-    "curso": "",
-    "turma": 1,
-    "id": "SME5827,1",
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5827",
-    "nivel": "p",
-    "horarios": [],
-    "conflitos": [],
-    "noturna": false,
-    "carga": 1.0,
-    "uuid": "d9b8e07b-b082-4a68-b477-401cfcc0045e"
+    "uuid": "6141f66e-d86d-4646-9732-ba4ea9fd3a7c"
   },
   {
     "codigo": "SME5901",
@@ -2137,7 +2137,7 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "f4f49e11-007b-4ebd-8914-1f6d3f548599"
+    "uuid": "a9670513-238d-450b-8601-c147e79c74a0"
   },
   {
     "codigo": "SME5902",
@@ -2151,34 +2151,6 @@ export const turmasJson: TurmaDataInicial[] = [
     "conflitos": [],
     "noturna": false,
     "carga": 0.5,
-    "uuid": "f92d2d47-26c2-496e-aa92-9480f41327f9"
-  },
-  {
-    "codigo": "SME5969",
-    "nome": "Modelagem e Simulação de Escoamentos Transicionais e Turbulentos",
-    "curso": "",
-    "turma": 1,
-    "id": "SME5969,1",
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5969",
-    "nivel": "p",
-    "horarios": [],
-    "conflitos": [],
-    "noturna": false,
-    "carga": 1.0,
-    "uuid": "1a1b52b3-b154-44b7-92b0-d45dc23e8b88"
-  },
-  {
-    "codigo": "SME5976",
-    "nome": "Fluxos em Redes",
-    "curso": "",
-    "turma": 1,
-    "id": "SME5976,1",
-    "ementa": "https://www.icmc.usp.br/pos-graduacao/disciplinas?programa=55134&disciplina=SME5976",
-    "nivel": "p",
-    "horarios": [],
-    "conflitos": [],
-    "noturna": false,
-    "carga": 1.0,
-    "uuid": "70f02b0f-4627-41a9-82d2-a81f70d67983"
+    "uuid": "c3aee55e-b5d0-4517-9a66-2a656cc23ab9"
   }
 ]
