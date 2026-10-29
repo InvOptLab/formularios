@@ -60,7 +60,13 @@ const Selecao = () => {
         if (
           busca &&
           !normalizarTexto(turma.nome).includes(busca) &&
-          !normalizarTexto(turma.codigo).includes(busca)
+          !normalizarTexto(turma.codigo).includes(busca) &&
+          // Turmas espelho também são encontradas pelo código/nome da pós
+          !(
+            turma.espelho &&
+            (normalizarTexto(turma.espelho.codigo).includes(busca) ||
+              normalizarTexto(turma.espelho.nome).includes(busca))
+          )
         ) {
           return false;
         }
@@ -76,8 +82,13 @@ const Selecao = () => {
           return false;
         }
 
-        // 3. Filtro por Nível
-        if (filtros.nivel && turma.nivel !== filtros.nivel) {
+        // 3. Filtro por Nível. Turmas espelho ('g+p') pertencem aos dois
+        // níveis: aparecem em "Graduação" e em "Pós", e sozinhas em "G + P".
+        if (
+          filtros.nivel &&
+          turma.nivel !== filtros.nivel &&
+          !(turma.nivel === "g+p" && filtros.nivel !== "g+p")
+        ) {
           return false;
         }
 
@@ -241,6 +252,7 @@ const Selecao = () => {
                   curso={turma.curso}
                   ementa={turma.ementa}
                   nivel={turma.nivel}
+                  espelho={turma.espelho}
                   onAdicionar={handleAdicionar}
                   onRemover={handleRemover}
                   isSelected={selectedTurmas.has(turma.uuid)}
@@ -371,6 +383,7 @@ const Selecao = () => {
                 noturna={turma.noturna}
                 codigo={turma.codigo}
                 carga={turma.carga}
+                nivel={turma.nivel}
               />
             ))}
           </Box>

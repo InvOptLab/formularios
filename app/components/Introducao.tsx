@@ -117,6 +117,9 @@ const Introducao = () => {
           nível ou horário. Conflitos de horário com turmas já escolhidas são
           sinalizados em laranja. Se quiser, já é possível indicar uma
           prioridade ao adicionar — ela poderá ser revista no passo seguinte.
+          Turmas <strong>espelho</strong> (selo verde <em>Graduação + Pós</em>)
+          são oferecidas simultaneamente na graduação e na pós e aparecem uma
+          única vez, com o código da graduação e carga 1,5.
         </Etapa>
 
         <Etapa

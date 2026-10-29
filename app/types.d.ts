@@ -4,6 +4,18 @@ export type Horario = {
   fim: string;
 };
 
+/** 'g' = graduação, 'p' = pós-graduação, 'g+p' = turma espelho (graduação + pós). */
+export type Nivel = "g" | "p" | "g+p";
+
+/** Dados da turma da pós que foi mesclada na turma espelho da graduação. */
+export type TurmaEspelho = {
+  codigo: string;
+  id: string;
+  nome: string;
+  ementa: string;
+  uuid: string;
+};
+
 export type TurmaDataInicial = {
   id: string;
   codigo: string;
@@ -14,7 +26,8 @@ export type TurmaDataInicial = {
   ementa: string;
   ingles?: boolean;
   prioridade?: number;
-  nivel: string; // 'p' | 'g'
+  nivel: Nivel;
+  espelho?: TurmaEspelho;
   conflitos: string[];
   noturna: boolean;
   grupo?: string;
@@ -32,7 +45,8 @@ export type TurmaData = {
   ementa: string;
   ingles?: boolean;
   prioridade?: number;
-  nivel: string; // 'p' | 'g'
+  nivel: Nivel;
+  espelho?: TurmaEspelho;
   conflitos: Set<string>;
   noturna: boolean;
   grupo?: string;

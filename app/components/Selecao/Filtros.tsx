@@ -22,11 +22,12 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SearchIcon from "@mui/icons-material/Search";
+import { NIVEIS } from "../NivelChip";
 
 export interface FilterState {
   nome: string;
   curso: string;
-  nivel: string; // 'p', 'g' ou ''
+  nivel: string; // 'g', 'p', 'g+p' ou ''
   noturna: string; // 'sim', 'nao' ou ''
   dia: string;
   horarioInicio: string;
@@ -88,7 +89,7 @@ const Filtros: React.FC<FiltrosProps> = ({
         name="nome"
         value={filtros.nome}
         onChange={handleChange}
-        placeholder="Buscar por nome ou código da disciplina…"
+        placeholder="Buscar por nome ou código da disciplina (inclui código da pós em turmas espelho)…"
         size="small"
         sx={{ bgcolor: "background.paper" }}
         slotProps={{
@@ -152,8 +153,22 @@ const Filtros: React.FC<FiltrosProps> = ({
                   <MenuItem value="">
                     <em>Todos</em>
                   </MenuItem>
-                  <MenuItem value="g">Graduação</MenuItem>
-                  <MenuItem value="p">Pós-Graduação</MenuItem>
+                  <MenuItem value="g">{NIVEIS.g.rotulo} (inclui espelhos)</MenuItem>
+                  <MenuItem value="p">{NIVEIS.p.rotulo} (inclui espelhos)</MenuItem>
+                  <MenuItem value="g+p">
+                    <Box display="flex" alignItems="center" gap={1}>
+                      <Box
+                        component="span"
+                        sx={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: "50%",
+                          bgcolor: NIVEIS["g+p"].cor,
+                        }}
+                      />
+                      Somente espelhos ({NIVEIS["g+p"].rotuloCurto})
+                    </Box>
+                  </MenuItem>
                 </Select>
               </FormControl>
             </Grid>

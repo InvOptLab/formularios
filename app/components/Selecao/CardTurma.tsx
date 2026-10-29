@@ -15,7 +15,8 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { Horario } from "@/app/types";
+import { Horario, Nivel, TurmaEspelho } from "@/app/types";
+import NivelChip from "../NivelChip";
 
 interface CardTurmaProps {
   uuid: string;
@@ -24,7 +25,8 @@ interface CardTurmaProps {
   horarios: Horario[];
   curso: string;
   ementa: string;
-  nivel: string;
+  nivel: Nivel;
+  espelho?: TurmaEspelho;
   onAdicionar: (key: string, prioridade: number) => void;
   onRemover: (key: string) => void;
   isSelected: boolean;
@@ -46,6 +48,7 @@ const CardTurma = ({
   curso,
   ementa,
   nivel,
+  espelho,
   onAdicionar,
   onRemover,
   isSelected,
@@ -125,11 +128,7 @@ const CardTurma = ({
         )}
 
         <Box display="flex" flexWrap="wrap" gap={0.5}>
-          {nivel === "g" ? (
-            <Chip label="Graduação" color="primary" size="small" />
-          ) : (
-            <Chip label="Pós-graduação" color="secondary" size="small" />
-          )}
+          <NivelChip nivel={nivel} />
           {noturna && (
             <Chip
               label="Noturna"
@@ -145,6 +144,29 @@ const CardTurma = ({
             />
           )}
         </Box>
+
+        {espelho && (
+          <Box
+            sx={{
+              bgcolor: "#e0f2f1",
+              borderLeft: 3,
+              borderColor: "#00796b",
+              borderRadius: 1,
+              px: 1.25,
+              py: 0.75,
+            }}
+          >
+            <Typography variant="caption" component="div" fontWeight={600}>
+              Turma espelho com a pós-graduação
+            </Typography>
+            <Typography variant="caption" component="div" color="text.secondary">
+              {espelho.codigo} · {espelho.nome} ·{" "}
+              <Link href={espelho.ementa} target="_blank" rel="noopener noreferrer">
+                ementa
+              </Link>
+            </Typography>
+          </Box>
+        )}
 
         <Box>
           <Typography variant="subtitle2">Horários:</Typography>

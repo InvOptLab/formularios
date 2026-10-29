@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import WarningIcon from "@mui/icons-material/Warning";
+import { Nivel } from "@/app/types";
+import NivelChip from "../NivelChip";
 
 interface CarrinhoItemProps {
   uuid: string;
@@ -21,6 +23,7 @@ interface CarrinhoItemProps {
   conflitos: Map<string, string>;
   noturna: boolean;
   carga: number;
+  nivel: Nivel;
 }
 
 const CarrinhoItem = ({
@@ -34,6 +37,7 @@ const CarrinhoItem = ({
   conflitos,
   noturna,
   carga,
+  nivel,
 }: CarrinhoItemProps) => {
   return (
     <Paper
@@ -55,6 +59,9 @@ const CarrinhoItem = ({
           <Typography variant="subtitle2" fontWeight={600}>
             {codigo} - {nome}
           </Typography>
+          {nivel === "g+p" && (
+            <NivelChip nivel={nivel} sx={{ fontSize: "0.65rem", height: "20px" }} />
+          )}
           {noturna && (
             <Chip
               label="Noturna"

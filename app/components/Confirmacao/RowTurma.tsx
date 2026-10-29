@@ -17,6 +17,7 @@ import {
   Warning,
 } from "@mui/icons-material";
 import { TurmaData } from "@/app/types";
+import NivelChip from "../NivelChip";
 
 interface RowTurmaProps {
   turma: TurmaData;
@@ -128,6 +129,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })}
+          {turma.espelho && ` · Espelho: ${turma.espelho.codigo}`}
         </Typography>
         <Box display="flex" flexWrap="wrap" gap={0.5} mt={0.75}>
           {turma.horarios.length > 0 ? (
@@ -149,12 +151,7 @@ const RowTurma: React.FC<RowTurmaProps> = ({
               sx={{ backgroundColor: "#131862", color: "#fff" }}
             />
           )}
-          <Chip
-            size="small"
-            label={turma.nivel === "g" ? "Graduação" : "Pós-graduação"}
-            color={turma.nivel === "g" ? "primary" : "secondary"}
-            variant="outlined"
-          />
+          <NivelChip nivel={turma.nivel} variant="outlined" />
           {temConflito && (
             <Tooltip
               title={
